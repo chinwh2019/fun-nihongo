@@ -1,0 +1,9 @@
+# Generated files
+index.html
+
+# Runtimes & dependencies
+node_modules/
+.bun/
+
+# OS metadata
+.DS_Store
