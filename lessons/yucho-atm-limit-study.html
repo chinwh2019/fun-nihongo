@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checking Japan Post Bank ATM Limits - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #667085;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --accent-soft: #dff6f2;
+      --border: #d5d7dc;
+      --line: #eef0f3;
+      --warn: #92400e;
+      --warn-soft: #fff4d6;
+      --ok-soft: #e9f7ec;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.62;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.28; }
+    h1 { font-size: 1.85rem; }
+    h2 { font-size: 1.22rem; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    h3 { font-size: 1rem; margin-top: 14px; }
+    p { margin: 8px 0; }
+    ul, ol { padding-left: 1.25rem; }
+    li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 0.85rem;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.96rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f8fafc; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    button:hover { background: var(--accent-dark); }
+    code {
+      background: #f3f4f6;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+    }
+    .jp {
+      font-size: 1.06rem;
+      font-weight: 700;
+    }
+    .phrase, .shadow-line, .dialogue-line {
+      padding: 10px 12px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .contrast {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 10px;
+    }
+    .bad, .good {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .bad { background: #fff7ed; }
+    .good { background: var(--ok-soft); }
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fcfcfd;
+    }
+    .quiz-item {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      margin-top: 12px;
+    }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .source-list a { color: var(--accent-dark); }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .card { padding: 14px; }
+      .contrast { grid-template-columns: 1fr; }
+      table { font-size: 0.9rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>ゆうちょ銀行のATM引き出し上限変更</h1>
+      <p class="muted">Session date: 2026-06-17. Level: beginner to lower-intermediate. Focus: asking about bank limits, checking whether you are affected, and using soft uncertainty at a post office counter.</p>
+      <span class="tag">banking</span>
+      <span class="tag">official counter</span>
+      <span class="tag">soft uncertainty</span>
+      <span class="tag">procedure questions</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>Today&apos;s topic is a practical Japan-life news item: ゆうちょ銀行 announced an ATM withdrawal-limit change connected to security and fraud prevention. From <strong>August 17, 2026</strong>, personal ATM transactions authenticated only by PIN are set to be limited to <strong>50万円 per day</strong>. Higher limits may be possible when using ATM biometric authentication through the ゆうちょ通帳アプリ, depending on the bank&apos;s rules and your setup.</p>
+      <p>This is useful Japanese because it gives you real phrases for a bank or post-office counter: checking whether your card is affected, asking what procedure is needed, and explaining that you are not sure without sounding blunt.</p>
+      <span class="warning-pill">Verify official procedures before acting</span>
+      <span class="warning-pill">Good for post-office counter role-play</span>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Japanese</th>
+            <th>Reading</th>
+            <th>Meaning</th>
+            <th>Study note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="jp">引き出し上限額</td>
+            <td>ひきだしじょうげんがく</td>
+            <td>withdrawal limit</td>
+            <td>Useful at banks and ATMs.</td>
+          </tr>
+          <tr>
+            <td class="jp">限度額</td>
+            <td>げんどがく</td>
+            <td>limit amount</td>
+            <td>Shorter and very common.</td>
+          </tr>
+          <tr>
+            <td class="jp">暗証番号</td>
+            <td>あんしょうばんごう</td>
+            <td>PIN</td>
+            <td>Literally a secret number.</td>
+          </tr>
+          <tr>
+            <td class="jp">生体認証</td>
+            <td>せいたいにんしょう</td>
+            <td>biometric authentication</td>
+            <td>Often appears in app and security contexts.</td>
+          </tr>
+          <tr>
+            <td class="jp">対象</td>
+            <td>たいしょう</td>
+            <td>covered by / subject to</td>
+            <td>Use in <code>対象になりますか</code>.</td>
+          </tr>
+          <tr>
+            <td class="jp">変更する</td>
+            <td>へんこうする</td>
+            <td>to change</td>
+            <td>Common for rules, settings, and plans.</td>
+          </tr>
+          <tr>
+            <td class="jp">手続き</td>
+            <td>てつづき</td>
+            <td>procedure</td>
+            <td>Very useful at counters and city offices.</td>
+          </tr>
+          <tr>
+            <td class="jp">窓口</td>
+            <td>まどぐち</td>
+            <td>service counter</td>
+            <td>Bank, post office, city office, clinic.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>Soft uncertainty: 〜かどうか確認したいんですが</h3>
+      <p>This pattern is one of the safest ways to ask a real-life procedural question. It sounds less abrupt than directly saying <code>分かりません</code> or <code>これは何ですか</code>.</p>
+      <div class="phrase">
+        <div class="jp">自分のカードが対象かどうか確認したいんですが。</div>
+        <div>I&apos;d like to check whether my card is affected.</div>
+      </div>
+      <div class="phrase">
+        <div class="jp">限度額を上げられるかどうか確認したいんですが。</div>
+        <div>I&apos;d like to check whether I can raise the limit.</div>
+      </div>
+      <div class="phrase">
+        <div class="jp">窓口で手続きが必要かどうか確認したいんですが。</div>
+        <div>I&apos;d like to check whether a counter procedure is necessary.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <div class="phrase">
+        <div class="jp">ATMの引き出し上限額について確認したいんですが。</div>
+        <div>I&apos;d like to check about the ATM withdrawal limit.</div>
+      </div>
+      <div class="phrase">
+        <div class="jp">私のカードも対象になりますか。</div>
+        <div>Will my card also be affected?</div>
+      </div>
+      <div class="phrase">
+        <div class="jp">限度額を変更したい場合、どの手続きが必要ですか。</div>
+        <div>If I want to change the limit, what procedure is needed?</div>
+      </div>
+      <div class="phrase">
+        <div class="jp">生体認証を使うと、上限額は変わりますか。</div>
+        <div>If I use biometric authentication, does the limit change?</div>
+      </div>
+      <div class="phrase">
+        <div class="jp">すみません、もう一度ゆっくり説明していただけますか。</div>
+        <div>Sorry, could you explain that again slowly?</div>
+      </div>
+
+      <h3>Too blunt vs. natural</h3>
+      <div class="contrast">
+        <div class="bad">
+          <strong>Understandable, but blunt</strong>
+          <p class="jp">これは何ですか？分かりません。</p>
+          <p>This can sound abrupt at a bank counter.</p>
+        </div>
+        <div class="good">
+          <strong>More natural and polite</strong>
+          <p class="jp">すみません、この変更についてよく分からないので、確認したいんですが。</p>
+          <p>This explains uncertainty gently and invites the staff member to help.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p><strong>Scenario:</strong> You are at a post office bank counter. Ask whether your card is affected by the new ATM limit.</p>
+      <div class="dialogue-line">
+        <strong>Staff:</strong>
+        <div class="jp">本日はどうされましたか。</div>
+        <div>How can I help you today?</div>
+      </div>
+      <div class="dialogue-line">
+        <strong>Your model answer:</strong>
+        <div class="jp">ATMの引き出し上限額について確認したいんですが。私のカードも対象になるかどうか、教えていただけますか。</div>
+        <div>I&apos;d like to check about the ATM withdrawal limit. Could you tell me whether my card is also affected?</div>
+      </div>
+      <details>
+        <summary>Optional follow-up if the staff explains too quickly</summary>
+        <p class="jp">すみません、もう一度ゆっくり説明していただけますか。</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner role-play answer was submitted before this file was saved. Use the model answer above as your first practice line.</p>
+      <p><strong>Correction target to remember:</strong> when you do not understand a rule, avoid sounding abrupt. Prefer <code>確認したいんですが</code>, <code>教えていただけますか</code>, and <code>〜かどうか</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <p><strong>Pattern:</strong> too direct / blunt uncertainty.</p>
+      <div class="contrast">
+        <div class="bad">
+          <strong>Too direct</strong>
+          <p class="jp">分かりません。これは対象ですか。</p>
+        </div>
+        <div class="good">
+          <strong>Smoother</strong>
+          <p class="jp">自分のカードが対象かどうか確認したいんですが。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Read each line aloud 3 times. Keep the final <code>んですが</code> soft, like you are politely opening the conversation.</p>
+      <div class="shadow-line">ATMの引き出し上限額について確認したいんですが。</div>
+      <div class="shadow-line">私のカードも対象になりますか。</div>
+      <div class="shadow-line">どの手続きが必要ですか。</div>
+      <div class="shadow-line">もう一度ゆっくり説明していただけますか。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <strong>Card 1</strong>
+        <p class="jp">引き出し上限額</p>
+        <button type="button" onclick="toggleById('fc1')">Reveal meaning</button>
+        <p id="fc1" class="reveal" hidden>withdrawal limit</p>
+      </div>
+      <div class="flashcard">
+        <strong>Card 2</strong>
+        <p class="jp">暗証番号</p>
+        <button type="button" onclick="toggleById('fc2')">Reveal meaning</button>
+        <p id="fc2" class="reveal" hidden>PIN</p>
+      </div>
+      <div class="flashcard">
+        <strong>Card 3</strong>
+        <p class="jp">対象になりますか。</p>
+        <button type="button" onclick="toggleById('fc3')">Reveal meaning</button>
+        <p id="fc3" class="reveal" hidden>Will it be covered / affected?</p>
+      </div>
+      <div class="flashcard">
+        <strong>Card 4</strong>
+        <p class="jp">〜かどうか確認したいんですが。</p>
+        <button type="button" onclick="toggleById('fc4')">Reveal use</button>
+        <p id="fc4" class="reveal" hidden>Use this to politely say: I&apos;d like to check whether...</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>At banks, post offices, clinics, and city offices, Japanese often favors soft lead-ins like <code>確認したいんですが</code> before the main question.</li>
+        <li><code>教えていただけますか</code> sounds polite and natural when asking staff to explain a procedure.</li>
+        <li>For rules involving money, immigration, insurance, or official documents, avoid guessing. Ask staff to confirm the exact procedure.</li>
+      </ul>
+      <p class="source-list">Sources used for the topic: <a href="https://www.watch.impress.co.jp/docs/news/2117818.html">Impress Watch</a>, <a href="https://www.jp-bank.japanpost.jp/kojin/access/atm/kj_acs_atm_hikidasiseigen.html">ゆうちょ銀行 ATM limits</a>, <a href="https://www.jp-bank.japanpost.jp/kojin/chokin/sogou/kj_cho_sg_iccard.html">ゆうちょICキャッシュカード案内</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <div class="quiz-item">
+        <p><strong>1.</strong> How do you say &quot;withdrawal limit&quot;?</p>
+        <button type="button" onclick="toggleById('q1')">Show answer</button>
+        <p id="q1" class="quiz-answer" hidden><span class="jp">引き出し上限額</span> or more generally <span class="jp">限度額</span>.</p>
+      </div>
+      <div class="quiz-item">
+        <p><strong>2.</strong> Make this polite: &quot;I don&apos;t know if my card is affected.&quot;</p>
+        <button type="button" onclick="toggleById('q2')">Show answer</button>
+        <p id="q2" class="quiz-answer" hidden><span class="jp">自分のカードが対象かどうか確認したいんですが。</span></p>
+      </div>
+      <div class="quiz-item">
+        <p><strong>3.</strong> Ask: &quot;What procedure is needed?&quot;</p>
+        <button type="button" onclick="toggleById('q3')">Show answer</button>
+        <p id="q3" class="quiz-answer" hidden><span class="jp">どの手続きが必要ですか。</span></p>
+      </div>
+      <div class="quiz-item">
+        <p><strong>4.</strong> What is a softer alternative to <span class="jp">これは何ですか？分かりません。</span>?</p>
+        <button type="button" onclick="toggleById('q4')">Show answer</button>
+        <p id="q4" class="quiz-answer" hidden><span class="jp">すみません、この変更についてよく分からないので、確認したいんですが。</span></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Say the model answer aloud 5 times: <span class="jp">ATMの引き出し上限額について確認したいんですが。私のカードも対象になるかどうか、教えていただけますか。</span></li>
+        <li>Write one version for asking about a credit card, app, or bank account using <code>〜かどうか確認したいんですが</code>.</li>
+        <li>Practice the follow-up line: <span class="jp">もう一度ゆっくり説明していただけますか。</span></li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next time, practice the staff member&apos;s reply and your follow-up questions: whether a counter visit is required, what ID is needed, and how to ask about changing a limit without sounding demanding.</p>
+      <p><strong>Difficulty snapshot:</strong> beginner to lower-intermediate, with practical official-counter phrasing and a small grammar focus on <code>〜かどうか確認したいんですが</code>.</p>
+    </section>
+  </main>
+</body>
+</html>
