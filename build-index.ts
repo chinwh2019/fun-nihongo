@@ -58,7 +58,7 @@ async function buildDashboard() {
       
       // 6. Extract Tags
       const tags: string[] = [];
-      const tagRegex = /<span class="tag">([^<]+)<\/span>/g;
+      const tagRegex = /<span class="(?:tag|warning-pill)">([^<]+)<\/span>/g;
       let tagMatch;
       while ((tagMatch = tagRegex.exec(content)) !== null) {
         const val = tagMatch[1].trim();
