@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>June 2026 Study: 自転車の青切符</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #667085;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d7dce2;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --line: #f8fbfa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.25; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.35rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    h3 { font-size: 1rem; margin-top: 16px; }
+    p { margin: 8px 0; }
+    ul, ol { margin: 8px 0 0 20px; padding: 0; }
+    li { margin: 4px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+    }
+    button:hover { filter: brightness(0.95); }
+    details { margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: #fcfcfd; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard { border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin: 10px 0; background: #fff; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: var(--line); margin: 10px 0; }
+    .contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    .bad, .good { border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+    .bad { background: #fff7ed; }
+    .good { background: #f0fdf4; }
+    .jp { font-size: 1.05rem; font-weight: 700; }
+    .small { font-size: 0.92rem; }
+    .source-list a { color: var(--accent); }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      .contrast { grid-template-columns: 1fr; }
+      table, thead, tbody, tr, th, td { display: block; }
+      th { display: none; }
+      td { border-top: 0; }
+      tr { border: 1px solid var(--border); margin-bottom: 10px; display: block; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>自転車の青切符: Japan's New Bicycle Fine System</h1>
+      <p class="muted">June 2026 topic pick for practical daily-life Japanese. Level: beginner to lower-intermediate, with a focus on natural small talk, rainy-season bicycle rules, and polite confirmation phrases.</p>
+      <span class="warning-pill">daily life</span>
+      <span class="warning-pill">rainy season</span>
+      <span class="warning-pill">workplace small talk</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p>From April 1, 2026, Japan expanded the traffic "blue ticket" system to bicycle riders. It applies to riders aged 16 and older, and covers common violations such as smartphone use while riding, ignoring signals, riding without lights, riding with earphones, and riding while holding an umbrella.</p>
+      <p>This is a good June topic because rainy season makes <strong>傘差し運転</strong> especially relevant, and it creates natural conversation at work, with neighbors, or when asking about local rules.</p>
+      <details>
+        <summary>Source notes</summary>
+        <p class="source-list small">Based on public information from the National Police Agency bicycle rules page, Osaka Prefectural Police example fine list, and Tokyo's multilingual TIPS information page.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Natural use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>青切符</td><td>あおきっぷ</td><td>blue traffic ticket</td><td>自転車にも青切符が始まりました。</td></tr>
+          <tr><td>反則金</td><td>はんそくきん</td><td>administrative fine</td><td>反則金がけっこう高いみたいです。</td></tr>
+          <tr><td>取り締まり</td><td>とりしまり</td><td>enforcement / police checks</td><td>最近、取り締まりが増えそうですね。</td></tr>
+          <tr><td>傘差し運転</td><td>かささしうんてん</td><td>riding while holding an umbrella</td><td>雨の日の傘差し運転は気をつけないといけません。</td></tr>
+          <tr><td>ながらスマホ</td><td>ながらスマホ</td><td>using a phone while doing something</td><td>自転車のながらスマホは危ないですね。</td></tr>
+          <tr><td>ルールが厳しくなった</td><td>ルールがきびしくなった</td><td>the rules got stricter</td><td>自転車のルールが厳しくなりましたね。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <h3>1. Shared observation: 〜ましたね / 〜ですね</h3>
+      <p><span class="jp">最近、自転車のルールが厳しくなりましたね。</span><br />Use this when you want to make a soft, shared observation instead of sounding like you are complaining.</p>
+      <h3>2. Soft hearsay: 〜みたいです / 〜みたいですね</h3>
+      <p><span class="jp">反則金がけっこう高いみたいですね。</span><br />This is useful when you learned something from news or another person and do not want to sound overly certain.</p>
+      <h3>3. "Need to be careful": 気をつけないといけません</h3>
+      <p><span class="jp">雨の日は気をつけないといけませんね。</span><br />Natural for safety rules. Softer than directly telling someone, "Don't do that."</p>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <div class="contrast">
+        <div class="bad">
+          <h3>Too blunt</h3>
+          <p class="jp">傘で自転車に乗ったらだめです。</p>
+          <p class="small">Understandable, but it can sound like scolding in casual conversation.</p>
+        </div>
+        <div class="good">
+          <h3>More natural</h3>
+          <p class="jp">雨の日に傘を差して乗るのも、気をつけないといけませんね。</p>
+          <p class="small">Softer and more conversation-friendly.</p>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Workplace small talk:</strong> 最近、自転車のルールが厳しくなりましたね。</li>
+        <li><strong>Rainy-day comment:</strong> 雨の日は、傘差し運転に気をつけないといけませんね。</li>
+        <li><strong>Checking a rule:</strong> これって反則金の対象になりますか。</li>
+        <li><strong>Soft uncertainty:</strong> 対象になるかどうか、ちょっと分からないんですが。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Role-Play and Dialogue</h2>
+      <p><strong>Scenario:</strong> You are chatting with a coworker on a rainy morning. They mention riding a bicycle to the station.</p>
+      <div class="shadow-line"><strong>同僚:</strong> 今日、雨ですね。駅まで自転車で行くつもりです。</div>
+      <p><strong>Your goal:</strong> Respond naturally in Japanese. Mention that bicycle rules have gotten stricter and that riding with an umbrella needs care.</p>
+      <details>
+        <summary>Model answer</summary>
+        <p class="jp">そうですね。最近、自転車のルールが厳しくなりましたし、傘差し運転も気をつけないといけませんね。</p>
+        <p class="small">This uses <strong>そうですね</strong> for agreement, <strong>〜し</strong> to connect reasons, and <strong>〜ませんね</strong> to keep the tone shared and gentle.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner response was corrected in this short export. Use the role-play above for a first practice turn next time.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <p>Current focus from recent lessons: soften direct statements into shared observations.</p>
+      <div class="contrast">
+        <div class="bad">
+          <h3>Direct</h3>
+          <p class="jp">自転車のルールは厳しいです。</p>
+        </div>
+        <div class="good">
+          <h3>Natural small talk</h3>
+          <p class="jp">最近、自転車のルールが厳しくなりましたね。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p>Read each line aloud two or three times. Aim for smooth, calm conversation rhythm.</p>
+      <div class="shadow-line">最近、自転車のルールが厳しくなりましたね。</div>
+      <div class="shadow-line">反則金がけっこう高いみたいですね。</div>
+      <div class="shadow-line">雨の日は、傘差し運転に気をつけないといけませんね。</div>
+      <div class="shadow-line">対象になるかどうか、ちょっと分からないんですが。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flashcard">
+        <p><strong>青切符</strong></p>
+        <button type="button" onclick="toggleById('card1')">Reveal</button>
+        <p id="card1" class="reveal" hidden>あおきっぷ: blue traffic ticket</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>傘差し運転</strong></p>
+        <button type="button" onclick="toggleById('card2')">Reveal</button>
+        <p id="card2" class="reveal" hidden>かささしうんてん: riding a bicycle while holding an umbrella</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>反則金</strong></p>
+        <button type="button" onclick="toggleById('card3')">Reveal</button>
+        <p id="card3" class="reveal" hidden>はんそくきん: administrative fine</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <ul>
+        <li>In Japanese small talk, it is often safer to frame rules as a shared situation: <strong>気をつけないといけませんね</strong>.</li>
+        <li><strong>〜みたいですね</strong> helps you discuss news or rule changes without sounding like you are giving official advice.</li>
+        <li>For official or police-related rules, avoid overstating certainty unless you are reading from an official source. Use <strong>確認したほうがよさそうです</strong> when unsure.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>How do you say "blue ticket" in Japanese?</li>
+        <li>Make this softer: 自転車のルールは厳しいです。</li>
+        <li>What does 傘差し運転 mean?</li>
+      </ol>
+      <button type="button" onclick="toggleById('quizAnswers')">Show answers</button>
+      <div id="quizAnswers" class="quiz-answer" hidden>
+        <ol>
+          <li>青切符（あおきっぷ）</li>
+          <li>最近、自転車のルールが厳しくなりましたね。</li>
+          <li>Riding while holding an umbrella.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write one Japanese sentence for this situation: "It is raining, and I want to tell a coworker that riding with an umbrella needs care." Try to use <strong>〜ないといけませんね</strong>.</p>
+      <details>
+        <summary>Example answer</summary>
+        <p class="jp">雨の日は、傘差し運転に気をつけないといけませんね。</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Recommended next practice: short role-play where you ask a local police box, city office desk, or coworker whether a specific bicycle behavior is allowed. Useful pattern: <strong>〜かどうか確認したいんですが</strong>.</p>
+    </section>
+  </main>
+</body>
+</html>
