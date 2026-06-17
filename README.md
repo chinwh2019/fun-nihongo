@@ -8,7 +8,7 @@ All lessons are dynamically compiled into a modern study dashboard hosted on **G
 
 ## 🚀 How It Works
 
-1. **Write Lessons:** You write standard HTML study pages (e.g., `inflation.html`, `paypay-rule.html`).
+1. **Write Lessons:** You write standard HTML study pages inside the `lessons/` directory (e.g., `lessons/inflation.html`).
 2. **Build Automatically:** A TypeScript script runs on push to extract metadata from your HTML pages (such as topics, level, study focus, session date, and tags).
 3. **Deploy Dashboard:** GitHub Actions runs the compiler and deploys a glassmorphic dashboard homepage containing live search, category tagging, theme toggles, and study progress tracking.
 
@@ -19,7 +19,7 @@ All lessons are dynamically compiled into a modern study dashboard hosted on **G
 Follow these steps to add a new study sheet and update your online dashboard:
 
 ### Step 1: Create the HTML File
-Create a new `.html` file in the root directory (e.g., `family-conversation.html`).
+Create a new `.html` file inside the `lessons/` directory (e.g., `lessons/family-conversation.html`).
 
 To make sure the dashboard parses your lesson metadata correctly, use the following structure in your HTML file:
 
@@ -69,7 +69,7 @@ If you want to verify the dashboard layout and check your new lesson locally bef
 ### Step 3: Push Your Changes
 To push your new lesson online and update the GitHub Pages site, run:
 ```bash
-git add family-conversation.html
+git add lessons/family-conversation.html
 git commit -m "feat: add family conversation lesson"
 git push origin main
 ```

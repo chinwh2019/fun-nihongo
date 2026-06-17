@@ -15,13 +15,11 @@ interface LessonMetadata {
 async function buildDashboard() {
   console.log("Starting Japanese Learning Hub dashboard compilation...");
   
-  const glob = new Glob("*.html");
+  const glob = new Glob("lessons/*.html");
   const lessons: LessonMetadata[] = [];
   
   // Scan directory for HTML files
   for await (const file of glob.scan(".")) {
-    if (file === "index.html") continue;
-    
     try {
       const content = await Bun.file(file).text();
       
