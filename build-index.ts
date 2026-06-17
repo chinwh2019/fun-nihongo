@@ -922,6 +922,11 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
     let activeStatus = null;
     let searchQuery = '';
     
+    // Get Lesson Status Helper
+    function getLessonStatus(filename) {
+      return userProgress[filename] || 'unstarted';
+    }
+    
     // Elements
     const themeToggle = document.getElementById('themeToggle');
     const sunIcon = document.getElementById('sunIcon');
@@ -944,7 +949,7 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
     const clearStatusBtn = document.getElementById('clearStatusBtn');
     
     // Initialize LocalStorage and UI
-    document.addEventListener('DOMContentLoaded', () => {
+    function init() {
       // 1. Theme Configuration
       const savedTheme = localStorage.getItem('theme') || 'dark';
       setTheme(savedTheme);
@@ -981,7 +986,13 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
       // Initial render & stats calculation
       updateStats();
       render();
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
     
     // Theme Handler
     function setTheme(theme) {
@@ -1004,7 +1015,7 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
       let unstartedCount = 0;
       
       LESSONS.forEach(l => {
-        const state = userProgress[l.filename] || 'unstarted';
+        const state = getLessonStatus(l.filename);
         if (state === 'completed') completedCount++;
         else if (state === 'progress') progressCount++;
         else unstartedCount++;
@@ -1136,7 +1147,7 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
       
       // 2. Status filtering
       if (activeStatus) {
-        filtered = filtered.filter(l => userProgress[l.filename] === activeStatus);
+        filtered = filtered.filter(l => getLessonStatus(l.filename) === activeStatus);
       }
       
       // 3. Search filtering
@@ -1181,7 +1192,7 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
         emptyState.classList.remove('visible');
         
         lessonGrid.innerHTML = filtered.map(l => {
-          const status = userProgress[l.filename] || 'unstarted';
+          const status = getLessonStatus(l.filename);
           const safeId = l.filename.replace(/[^a-zA-Z0-9]/g, '');
           
           let statusText = 'Not Started';
