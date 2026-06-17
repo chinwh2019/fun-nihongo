@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>W杯視聴とDAZN料金表示 - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #667085;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d7dce2;
+      --warn: #92400e;
+      --warn-soft: #fff1cf;
+      --good: #166534;
+      --good-soft: #dcfce7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+    }
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.25; }
+    p { margin: 8px 0; }
+    ul { margin: 8px 0 0; padding-left: 22px; }
+    li + li { margin-top: 4px; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 9px 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 11px;
+      cursor: pointer;
+      margin-top: 8px;
+      font: inherit;
+    }
+    button:focus { outline: 3px solid #99f6e4; outline-offset: 2px; }
+    details {
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #fbfcfd;
+    }
+    summary { cursor: pointer; font-weight: 700; }
+    .reveal[hidden], .quiz-answer[hidden] { display: none; }
+    .answer-box {
+      margin-top: 8px;
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f4fffc;
+      border-radius: 6px;
+    }
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fff;
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f4fffc;
+      margin: 10px 0;
+      border-radius: 6px;
+    }
+    .contrast-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .contrast {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcfd;
+    }
+    .good { border-left: 4px solid var(--good); background: var(--good-soft); }
+    .warn { border-left: 4px solid var(--warn); background: var(--warn-soft); }
+    .jp { font-size: 1.06rem; font-weight: 700; }
+    .small { font-size: 0.93rem; }
+    @media (max-width: 640px) {
+      body { padding: 12px; }
+      .card { padding: 14px; }
+      table { font-size: 0.92rem; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>W杯視聴とDAZN料金表示</h1>
+      <p class="muted">Saved lesson from June 13, 2026 JST. Focus: subscription Japanese, soft confirmation requests, and workplace-safe comments about confusing pricing.</p>
+      <span class="tag">subscriptions</span>
+      <span class="tag">customer support</span>
+      <span class="tag">workplace small talk</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>日本ではW杯をどこで見るかが話題になりやすく、DAZNの「月額980円」という料金表示についても、年間契約や総額を確認したほうがよいという反応が出ています。</p>
+      <p>This is useful because real life in Japan often involves checking plans, apps, campaigns, and cancellation rules. The safest Japanese is not accusatory. It sounds calmer to say <strong>ちょっと分かりにくいですね</strong> and then ask for confirmation.</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Natural use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>月額</td><td>げつがく</td><td>monthly fee</td><td>月額980円</td></tr>
+          <tr><td>年間契約</td><td>ねんかんけいやく</td><td>annual contract</td><td>年間契約みたいですね</td></tr>
+          <tr><td>途中解約</td><td>とちゅうかいやく</td><td>mid-contract cancellation</td><td>途中解約できますか</td></tr>
+          <tr><td>総額</td><td>そうがく</td><td>total amount</td><td>総額はいくらになりますか</td></tr>
+          <tr><td>料金表示</td><td>りょうきんひょうじ</td><td>price display</td><td>料金表示が分かりにくい</td></tr>
+          <tr><td>見逃し配信</td><td>みのがしはいしん</td><td>catch-up streaming</td><td>見逃し配信はありますか</td></tr>
+          <tr><td>分かりにくい</td><td>わかりにくい</td><td>hard to understand</td><td>ちょっと分かりにくいですね</td></tr>
+          <tr><td>確認する</td><td>かくにんする</td><td>to check / confirm</td><td>確認したいんですが</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>1. 〜かどうか確認したいんですが</h3>
+      <p>Use this when you want to check whether something is true. It sounds polite, soft, and practical.</p>
+      <div class="shadow-line">途中で解約できるかどうか確認したいんですが。</div>
+      <div class="shadow-line">ポイントが付くかどうか確認したいんですが。</div>
+
+      <h3>2. 〜みたいですね</h3>
+      <p>Use this when you are not stating something too strongly. It means “it seems like...”</p>
+      <div class="shadow-line">年間契約みたいですね。</div>
+      <div class="shadow-line">思ったより高くなりそうですね。</div>
+
+      <h3>3. 〜たほうがよさそうです</h3>
+      <p>A useful soft-advice pattern. It is less forceful than direct advice.</p>
+      <div class="shadow-line">総額を確認したほうがよさそうです。</div>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <div class="contrast-grid">
+        <div class="contrast warn">
+          <h3>Too blunt</h3>
+          <p class="jp">この表示はだましです。</p>
+          <p class="small">Understandable, but too accusatory for normal workplace small talk or customer support.</p>
+        </div>
+        <div class="contrast good">
+          <h3>Natural and safer</h3>
+          <p class="jp">この表示、ちょっと分かりにくいですね。</p>
+          <p class="small">Soft criticism. Natural in workplace conversation.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Show polite customer-support phrases</summary>
+        <ul>
+          <li>すみません、このプランは途中で解約できますか。</li>
+          <li>総額も確認したいんですが。</li>
+          <li>この料金は月額ですか、それとも年間契約ですか。</li>
+          <li>見逃し配信があるかどうか確認したいんですが。</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Show casual coworker phrases</summary>
+        <ul>
+          <li>980円って書いてあるけど、年間契約みたいだよ。</li>
+          <li>総額を見たほうがよさそうだね。</li>
+          <li>ちょっと分かりにくいよね。</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p><strong>Scenario:</strong> You are chatting with a coworker about watching the World Cup.</p>
+      <div class="shadow-line">
+        <strong>同僚:</strong><br />
+        W杯、DAZNで見ようかなと思ってるんですけど、980円って安いですよね。
+      </div>
+      <p><strong>Your goal:</strong> Say that it looks like an annual contract, so it may be better to check the total cost.</p>
+      <button onclick="toggleById('roleplay-model')">Reveal model answer</button>
+      <div id="roleplay-model" class="answer-box reveal" hidden>
+        <p class="jp">そうですね。でも年間契約みたいなので、総額を確認したほうがよさそうです。</p>
+        <p>Natural because it starts with agreement, then softly adds the caution.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p class="muted">No learner attempt was submitted before saving this file. Use the role-play above and compare your answer with the model.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <ul>
+        <li><strong>Too direct:</strong> Avoid jumping straight to words like だまし or 詐欺 in ordinary conversation.</li>
+        <li><strong>Missing softness:</strong> Add ちょっと, みたい, よさそう, or んですが to reduce pressure.</li>
+        <li><strong>Total cost check:</strong> For online plans, ask about 総額, not only 月額.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Read each line aloud once slowly, then once at natural speed.</p>
+      <div class="shadow-line">この表示、ちょっと分かりにくいですね。</div>
+      <div class="shadow-line">途中で解約できるかどうか確認したいんですが。</div>
+      <div class="shadow-line">総額を確認したほうがよさそうです。</div>
+      <div class="shadow-line">思ったより高くなりそうですね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <p class="jp">月額</p>
+        <button onclick="toggleById('fc1')">Reveal</button>
+        <p id="fc1" class="answer-box reveal" hidden>げつがく - monthly fee</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">途中解約</p>
+        <button onclick="toggleById('fc2')">Reveal</button>
+        <p id="fc2" class="answer-box reveal" hidden>とちゅうかいやく - cancellation before the contract ends</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">総額を確認したほうがよさそうです。</p>
+        <button onclick="toggleById('fc3')">Reveal</button>
+        <p id="fc3" class="answer-box reveal" hidden>It seems better to check the total amount.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>In Japanese workplace small talk, soft agreement first is often smoother: そうですね。でも...</li>
+        <li>For customer support, use confirmation language rather than accusation: 確認したいんですが.</li>
+        <li>When a price display looks cheap, Japanese users often check whether it is monthly, annual, campaign-only, or cancellable.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <p><strong>Q1.</strong> How do you say “I’d like to check whether I can cancel midway”?</p>
+      <button onclick="toggleById('q1')">Reveal answer</button>
+      <p id="q1" class="quiz-answer answer-box" hidden>途中で解約できるかどうか確認したいんですが。</p>
+
+      <p><strong>Q2.</strong> Make this softer: この表示はだましです。</p>
+      <button onclick="toggleById('q2')">Reveal answer</button>
+      <p id="q2" class="quiz-answer answer-box" hidden>この表示、ちょっと分かりにくいですね。</p>
+
+      <p><strong>Q3.</strong> What does 総額 mean?</p>
+      <button onclick="toggleById('q3')">Reveal answer</button>
+      <p id="q3" class="quiz-answer answer-box" hidden>そうがく - total amount</p>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write one polite customer-support question using this pattern:</p>
+      <div class="shadow-line">〜かどうか確認したいんですが。</div>
+      <p>Example topic ideas: cancellation, total cost, catch-up streaming, campaign price, payment method.</p>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Practice softening direct reactions. Aim for this shape:</p>
+      <div class="shadow-line">そうですね。でも、〜みたいなので、〜たほうがよさそうです。</div>
+      <p class="muted">Recommended next scenario: asking customer support about a streaming or phone plan without sounding frustrated.</p>
+    </section>
+  </main>
+</body>
+</html>

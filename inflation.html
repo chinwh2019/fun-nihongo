@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スーパーでの値上げラッシュ - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --panel: #ffffff;
+      --ink: #20242a;
+      --muted: #626b75;
+      --accent: #0f766e;
+      --accent-strong: #0b5f59;
+      --accent-soft: #e2f4ef;
+      --border: #d9ded8;
+      --warn: #8a4b12;
+      --warn-soft: #fff3d8;
+      --good: #245f35;
+      --good-soft: #e6f4ea;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.25; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.35rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    h3 { font-size: 1.05rem; }
+    p { margin: 8px 0; }
+    ul, ol { padding-left: 1.3rem; margin: 8px 0; }
+    li { margin: 5px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 2px 4px 2px 0;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #eef3ef; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+      margin-top: 8px;
+    }
+    button:hover { background: var(--accent-strong); }
+    details { margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; padding: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard { border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin: 10px 0; background: #fbfcfb; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: #f7fffc; margin: 10px 0; }
+    .correction { background: var(--good-soft); border-left: 4px solid var(--good); padding: 10px; margin: 10px 0; }
+    .watch { background: var(--warn-soft); border-left: 4px solid var(--warn); padding: 10px; margin: 10px 0; }
+    .jp { font-size: 1.08rem; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      .two-col { grid-template-columns: 1fr; }
+      table { font-size: 0.95rem; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>スーパーでの値上げラッシュ</h1>
+      <p class="muted">Session date: 2026-06-07 JST. Focus: talking naturally about grocery price increases in Japan, especially rice and everyday supermarket items.</p>
+      <span class="tag">shopping</span>
+      <span class="tag">small talk</span>
+      <span class="tag">natural phrasing</span>
+      <span class="tag">beginner to lower-intermediate</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>In early June 2026, Japanese sources were discussing another wave of food price increases. 帝国データバンク reported that many飲食料品 were scheduled for price hikes, and everyday items such as seasonings, natto, canned food, instant noodles, mayonnaise, seaweed, and coffee were part of the wider conversation.</p>
+      <p>This topic is useful because people in Japan often talk about prices in casual, softened ways. Instead of bluntly saying something is expensive, it is common to make a shared observation:</p>
+      <div class="shadow-line jp">最近、いろいろ高くなりましたね。</div>
+      <p class="muted">"Lately, lots of things have gotten expensive, haven't they?"</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>値上げ</td><td>ねあげ</td><td>price increase</td></tr>
+          <tr><td>値上がり</td><td>ねあがり</td><td>prices going up</td></tr>
+          <tr><td>物価高</td><td>ぶっかだか</td><td>high prices / inflation</td></tr>
+          <tr><td>家計</td><td>かけい</td><td>household budget</td></tr>
+          <tr><td>食料品</td><td>しょくりょうひん</td><td>groceries</td></tr>
+          <tr><td>調味料</td><td>ちょうみりょう</td><td>seasonings</td></tr>
+          <tr><td>加工食品</td><td>かこうしょくひん</td><td>processed foods</td></tr>
+          <tr><td>お米</td><td>おこめ</td><td>rice, natural everyday phrasing</td></tr>
+          <tr><td>前より</td><td>まえより</td><td>compared with before</td></tr>
+          <tr><td>節約する</td><td>せつやくする</td><td>to save money</td></tr>
+          <tr><td>セール</td><td>セール</td><td>sale</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>1. 前より + adjective / verb</h3>
+      <ul>
+        <li class="jp">前より高いです。<br><span class="muted">It is more expensive than before.</span></li>
+        <li class="jp">前より量が少ない気がします。<br><span class="muted">I feel like there is less than before.</span></li>
+        <li class="jp">前より買い物にお金がかかります。<br><span class="muted">Shopping costs more than before.</span></li>
+      </ul>
+      <h3>2. 気がします for softening</h3>
+      <p><span class="jp">高いです</span> is clear, but <span class="jp">高い気がします</span> sounds softer and more conversational. It leaves room for the other person to agree.</p>
+      <h3>3. Spaced review: 〜たほうがよさそう</h3>
+      <p>From the heatstroke lesson, reuse this softer advice pattern:</p>
+      <div class="shadow-line jp">最近いろいろ高いので、セールのものを買ったほうがよさそうですね。</div>
+      <p class="muted">Since lots of things are expensive lately, it seems better to buy things on sale.</p>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <div class="two-col">
+        <div>
+          <h3>Polite / safe</h3>
+          <ul>
+            <li class="jp">最近、食料品がけっこう高くなりましたね。</li>
+            <li class="jp">前より高い気がします。</li>
+            <li class="jp">これはセールになっていますか。</li>
+            <li class="jp">少し安いものはありますか。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Casual</h3>
+          <ul>
+            <li class="jp">また値上げかあ。</li>
+            <li class="jp">前より高くない？</li>
+            <li class="jp">最近、買い物するだけでけっこうかかるね。</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Naturalness contrast</summary>
+        <div class="watch">
+          <p><strong>A bit blunt:</strong></p>
+          <p class="jp">これは高いです。</p>
+        </div>
+        <div class="correction">
+          <p><strong>More natural:</strong></p>
+          <p class="jp">これ、前より高くなりましたね。</p>
+          <p class="jp">これ、前よりちょっと高くなった気がしますね。</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p><strong>Scenario:</strong> You are at a supermarket with a coworker after work.</p>
+      <div class="shadow-line jp">同僚: 納豆もカップ麺も、前より高くなりましたね。</div>
+      <p><strong>Your goal:</strong> Say, "Yeah, I feel like groceries have gotten expensive lately. We should probably buy things on sale."</p>
+      <details>
+        <summary>Suggested answer</summary>
+        <p class="jp">そうですね。最近、食料品が高くなった気がします。セールのものを買ったほうがよさそうですね。</p>
+      </details>
+      <div class="shadow-line jp">同僚: 本当ですね。前はもう少し安かった気がします。</div>
+      <p><strong>Next practice prompt:</strong> Reply: "Yeah. I think I'll buy it when it's on sale."</p>
+      <details>
+        <summary>One possible reply</summary>
+        <p class="jp">そうですね。セールのときに買おうと思います。</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p><strong>Learner answer:</strong></p>
+      <div class="shadow-line jp">そうですね、米も高くなりました</div>
+      <div class="correction">
+        <p><strong>Corrected natural version:</strong></p>
+        <p class="jp">そうですね。お米も高くなりましたよね。</p>
+      </div>
+      <p><strong>Even more natural:</strong></p>
+      <p class="jp">そうですね。最近、お米もかなり高くなりましたよね。</p>
+      <p><strong>Why:</strong> <span class="jp">米</span> is understandable, but <span class="jp">お米</span> sounds more natural in everyday conversation. Adding <span class="jp">よね</span> makes it feel like shared small talk.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <div class="watch">
+        <p><strong>Pattern to watch:</strong> understandable but slightly plain or abrupt wording.</p>
+        <p class="jp">米も高くなりました。</p>
+      </div>
+      <div class="correction">
+        <p><strong>Upgrade:</strong> use natural noun choice + shared-feeling ending.</p>
+        <p class="jp">お米も高くなりましたよね。</p>
+      </div>
+      <p><strong>Correction tags:</strong> <span class="tag">word choice</span><span class="tag">missing nuance</span><span class="tag">natural phrasing</span></p>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Read each line aloud once slowly, then once at normal speed.</p>
+      <div class="shadow-line jp">最近、いろいろ高くなりましたね。</div>
+      <div class="shadow-line jp">前より高い気がします。</div>
+      <div class="shadow-line jp">お米も高くなりましたよね。</div>
+      <div class="shadow-line jp">セールのものを買ったほうがよさそうですね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <p class="jp"><strong>値上げ</strong></p>
+        <button onclick="toggleById('fc1')">Reveal meaning</button>
+        <p id="fc1" class="reveal" hidden>ねあげ - price increase</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp"><strong>食料品</strong></p>
+        <button onclick="toggleById('fc2')">Reveal meaning</button>
+        <p id="fc2" class="reveal" hidden>しょくりょうひん - groceries</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp"><strong>前より高い気がします。</strong></p>
+        <button onclick="toggleById('fc3')">Reveal meaning</button>
+        <p id="fc3" class="reveal" hidden>I feel like it is more expensive than before.</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp"><strong>お米も高くなりましたよね。</strong></p>
+        <button onclick="toggleById('fc4')">Reveal meaning</button>
+        <p id="fc4" class="reveal" hidden>Rice has gotten expensive too, hasn't it?</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>Price complaints in Japanese small talk are often softened with <span class="jp">よね</span>, <span class="jp">気がします</span>, or <span class="jp">けっこう</span>.</li>
+        <li>At a shop, avoid sounding like you are blaming the staff. Ask neutrally: <span class="jp">これはセールになっていますか。</span></li>
+        <li>With coworkers, shared observations are safer than strong complaints: <span class="jp">最近、食料品がけっこう高くなりましたね。</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <ol>
+        <li>What does <span class="jp">値上げ</span> mean?</li>
+        <li>Which sounds more natural in everyday conversation: <span class="jp">米</span> or <span class="jp">お米</span>?</li>
+        <li>How do you say, "I feel like it is more expensive than before"?</li>
+        <li>What phrase softens the sentence and makes it feel like shared small talk?</li>
+      </ol>
+      <button onclick="toggleById('quizAnswers')">Reveal answers</button>
+      <div id="quizAnswers" class="quiz-answer" hidden>
+        <ol>
+          <li>Price increase.</li>
+          <li><span class="jp">お米</span>.</li>
+          <li><span class="jp">前より高い気がします。</span></li>
+          <li><span class="jp">よね</span>, as in <span class="jp">高くなりましたよね。</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Say in Japanese: "Groceries have gotten expensive lately, haven't they?"</li>
+        <li>Say: "Rice has gotten expensive too."</li>
+        <li>Say: "I think I'll buy it when it's on sale."</li>
+        <li>Make one sentence using <span class="jp">前より</span>.</li>
+      </ol>
+      <details>
+        <summary>Model answers</summary>
+        <ol>
+          <li class="jp">最近、食料品が高くなりましたよね。</li>
+          <li class="jp">お米も高くなりました。</li>
+          <li class="jp">セールのときに買おうと思います。</li>
+          <li class="jp">前より高い気がします。</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Practice making small observations sound natural and shared, especially with <span class="jp">よね</span>, <span class="jp">気がします</span>, and <span class="jp">〜たほうがよさそう</span>.</p>
+      <p class="muted">Recommended next scenario: asking a supermarket staff member whether an item is on sale or whether there is a cheaper option, while staying polite and natural.</p>
+    </section>
+  </main>
+</body>
+</html>

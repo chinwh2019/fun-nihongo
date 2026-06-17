@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayPay Rule Changes - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --accent-soft: #dff6f2;
+      --border: #d6d9dd;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --soft: #f8fafc;
+      --line: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.62;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { font-size: 1.9rem; margin-bottom: 8px; }
+    h2 { font-size: 1.25rem; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    h3 { font-size: 1.04rem; margin-bottom: 6px; }
+    p { margin: 8px 0; }
+    a { color: var(--accent-dark); }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+    }
+    .jp {
+      font-size: 1.08rem;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    }
+    .example {
+      background: var(--soft);
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f1f5f9; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      margin: 6px 0;
+    }
+    button:hover { background: var(--accent-dark); }
+    details {
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #fff;
+    }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden], .flash-answer[hidden] { display: none; }
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #ffffff;
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .mini {
+      font-size: 0.95rem;
+    }
+    ul, ol { padding-left: 1.2rem; }
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .card { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      table { font-size: 0.92rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>PayPayのルール変更と「改悪」</h1>
+      <p class="muted">Session date: 2026-06-08. Level: beginner to lower-intermediate. Focus: cashless payment, shop questions, coworker small talk, and soft uncertainty.</p>
+      <p>This file is a compact study version of the lesson, organized for offline review rather than copied from the chat transcript.</p>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p>In June 2026, Japanese users were discussing changes to PayPay reward rules. The discussion included identity verification, whether reward points apply, and a common internet reaction word: <span class="jp">改悪</span>, meaning a change that feels worse for users.</p>
+      <p>This is useful because cashless payment language appears in real shops, convenience stores, pharmacies, restaurants, and coworker small talk. The safest speaking goal is not to complain strongly, but to say that a rule became confusing or that you are unsure.</p>
+      <details>
+        <summary>Sources used</summary>
+        <ul class="mini">
+          <li><a href="https://www.itmedia.co.jp/news/articles/2606/05/news089.html">ITmedia NEWS: PayPay rule-change discussion</a></li>
+          <li><a href="https://www.itmedia.co.jp/mobile/articles/2606/05/news125.html">ITmedia Mobile: PayPay reward changes</a></li>
+          <li><a href="https://paypay.ne.jp/uploads/2026/04/pdf_notice_20260406_paypaystep.pdf">PayPay official rules PDF</a></li>
+          <li><a href="https://www.reddit.com/r/newsokunomoral/comments/1txl0mx/paypay%E6%94%B9%E6%82%AA%E8%A9%B1%E9%A1%8C_%E6%9C%AC%E4%BA%BA%E7%A2%BA%E8%AA%8D%E3%81%97%E3%81%AA%E3%81%84%E3%81%A8%E4%BB%98%E4%B8%8E%E3%82%BC%E3%83%AD%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E5%88%A9%E7%94%A8%E3%81%A7%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E4%BB%98%E4%B8%8E%E3%81%AF%E7%B5%82%E4%BA%86/">Public discussion example on Reddit</a></li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it like this</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="jp">本人確認</td><td>ほんにんかくにん</td><td>identity verification</td><td class="jp">本人確認は必要ですか。</td></tr>
+          <tr><td class="jp">ポイント還元</td><td>ポイントかんげん</td><td>point rewards / cashback</td><td class="jp">ポイント還元がありますか。</td></tr>
+          <tr><td class="jp">対象外</td><td>たいしょうがい</td><td>not eligible / excluded</td><td class="jp">これは対象外みたいです。</td></tr>
+          <tr><td class="jp">改悪</td><td>かいあく</td><td>change for the worse</td><td class="jp">SNSで「改悪」って言われています。</td></tr>
+          <tr><td class="jp">ルール変更</td><td>ルールへんこう</td><td>rule change</td><td class="jp">ルール変更があったみたいですね。</td></tr>
+          <tr><td class="jp">付く</td><td>つく</td><td>to be added, as in points</td><td class="jp">ポイントは付きますか。</td></tr>
+          <tr><td class="jp">使えるかどうか</td><td>つかえるかどうか</td><td>whether it can be used</td><td class="jp">使えるかどうか分からないんですが。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <h3>1. Soft uncertainty: 〜かどうか分からないんですが</h3>
+      <p>Use this when you are unsure and want to ask politely without sounding helpless or demanding.</p>
+      <div class="example jp">ポイントが付くかどうか分からないんですが、確認していただけますか。</div>
+      <div class="example jp">このクーポンが使えるかどうか分からないんですが、確認していただけますか。</div>
+
+      <h3>2. Reported change: 〜みたいですね</h3>
+      <p>This makes small talk softer: “It looks like...” or “Apparently...”</p>
+      <div class="example jp">PayPayのルール、変わったみたいですね。</div>
+      <div class="example jp">ポイントが前より付きにくくなったみたいです。</div>
+
+      <h3>3. Shared feeling: 〜気がします / 〜よね</h3>
+      <p>Good for coworker small talk because it sounds less absolute.</p>
+      <div class="example jp">前よりメリットが少なくなった気がします。</div>
+      <div class="example jp">ちょっと分かりにくくなりましたよね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <div class="grid">
+        <div class="flashcard">
+          <h3>At a shop</h3>
+          <p class="jp">PayPayで払えますか。</p>
+          <p class="muted">Can I pay with PayPay?</p>
+        </div>
+        <div class="flashcard">
+          <h3>Ask about points</h3>
+          <p class="jp">ポイントは付きますか。</p>
+          <p class="muted">Do points apply?</p>
+        </div>
+        <div class="flashcard">
+          <h3>Polite check</h3>
+          <p class="jp">確認していただけますか。</p>
+          <p class="muted">Could you check?</p>
+        </div>
+      </div>
+      <details>
+        <summary>Contrast: too blunt vs natural</summary>
+        <p><span class="warning-pill">Too blunt</span> <span class="jp">PayPay、最悪ですね。</span></p>
+        <p>This sounds emotional and strong.</p>
+        <p><span class="pill">Natural</span> <span class="jp">ちょっと分かりにくくなりましたね。</span></p>
+        <p><span class="pill">Natural</span> <span class="jp">前よりメリットが少なくなった気がします。</span></p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Role-Play and Dialogue</h2>
+      <p><strong>Scenario:</strong> You are at a convenience store. You want to pay with PayPay, but you are not sure whether points apply after the rule change.</p>
+      <div class="example">
+        <p><strong>Staff:</strong></p>
+        <p class="jp">お支払い方法はどうされますか。</p>
+      </div>
+      <p><strong>Your goal:</strong> Reply in Japanese: “I’ll pay with PayPay. I’m not sure whether points apply, though.”</p>
+      <button onclick="toggleById('roleplay-model')">Reveal model answer</button>
+      <div id="roleplay-model" class="reveal example" hidden>
+        <p class="jp">PayPayでお願いします。ポイントが付くかどうか分からないんですが、確認していただけますか。</p>
+        <p>This is polite, clear, and natural for staff interaction.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner answer had been submitted before this file was saved. Use the role-play above and compare your answer with the model.</p>
+      <details>
+        <summary>Self-check points</summary>
+        <ul>
+          <li>Did you say <span class="jp">PayPayでお願いします</span> instead of only <span class="jp">PayPay</span>?</li>
+          <li>Did you use <span class="jp">〜かどうか分からないんですが</span> for soft uncertainty?</li>
+          <li>Did you use <span class="jp">確認していただけますか</span> for a polite request?</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <span class="warning-pill">too direct</span>
+      <span class="warning-pill">unnatural phrasing</span>
+      <span class="warning-pill">register mismatch</span>
+      <p>For this topic, the main risk is sounding too blunt when discussing an annoying change. In Japanese small talk, it is often safer to soften the complaint with <span class="jp">ちょっと</span>, <span class="jp">〜みたいですね</span>, <span class="jp">〜気がします</span>, or <span class="jp">よね</span>.</p>
+      <div class="example">
+        <p><strong>Less safe:</strong> <span class="jp">PayPayは悪いです。</span></p>
+        <p><strong>Better:</strong> <span class="jp">PayPayのルール、ちょっと分かりにくくなりましたね。</span></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p>Read each line out loud 3 times. Aim for smooth, calm shop/coworker rhythm.</p>
+      <div class="shadow-line jp">PayPayでお願いします。</div>
+      <div class="shadow-line jp">ポイントが付くかどうか分からないんですが。</div>
+      <div class="shadow-line jp">確認していただけますか。</div>
+      <div class="shadow-line jp">ルールが変わったみたいですね。</div>
+      <div class="shadow-line jp">ちょっと分かりにくくなりましたよね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flashcard">
+        <p class="jp"><strong>本人確認</strong></p>
+        <button onclick="toggleById('fc1')">Reveal</button>
+        <p id="fc1" class="flash-answer" hidden>ほんにんかくにん - identity verification</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp"><strong>対象外</strong></p>
+        <button onclick="toggleById('fc2')">Reveal</button>
+        <p id="fc2" class="flash-answer" hidden>たいしょうがい - not eligible / excluded</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp"><strong>ポイントが付くかどうか分からないんですが</strong></p>
+        <button onclick="toggleById('fc3')">Reveal</button>
+        <p id="fc3" class="flash-answer" hidden>“I’m not sure whether points apply, but...” A soft way to ask for help.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <ul>
+        <li><span class="jp">改悪</span> is common online, but it can sound strong in polite conversation.</li>
+        <li>For coworker small talk, use softer wording like <span class="jp">分かりにくくなりましたね</span> or <span class="jp">メリットが少なくなった気がします</span>.</li>
+        <li>At a shop, staff may not know every reward rule. Asking <span class="jp">確認していただけますか</span> is safer than assuming they should know immediately.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>
+          What does <span class="jp">本人確認</span> mean?
+          <br /><button onclick="toggleById('q1')">Reveal answer</button>
+          <p id="q1" class="quiz-answer" hidden>Identity verification.</p>
+        </li>
+        <li>
+          How do you politely ask, “Could you check whether points apply?”
+          <br /><button onclick="toggleById('q2')">Reveal answer</button>
+          <p id="q2" class="quiz-answer jp" hidden>ポイントが付くかどうか分からないんですが、確認していただけますか。</p>
+        </li>
+        <li>
+          Which is softer for coworker small talk: <span class="jp">最悪ですね</span> or <span class="jp">ちょっと分かりにくくなりましたね</span>?
+          <br /><button onclick="toggleById('q3')">Reveal answer</button>
+          <p id="q3" class="quiz-answer" hidden><span class="jp">ちょっと分かりにくくなりましたね</span> is softer and more workplace-safe.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Write one shop sentence using <span class="jp">〜かどうか分からないんですが</span>.</li>
+        <li>Write one coworker small-talk sentence about PayPay using <span class="jp">〜みたいですね</span>.</li>
+        <li>Practice the model role-play answer out loud 5 times.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Next time, recycle this pattern in a different daily-life situation: coupons, train IC cards, pharmacy documents, or city-office forms.</p>
+      <p class="muted">Difficulty snapshot: practical lower-intermediate. Main correction target: soften direct reactions and use polite uncertainty.</p>
+    </section>
+  </main>
+</body>
+</html>
