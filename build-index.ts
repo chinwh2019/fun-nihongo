@@ -950,6 +950,13 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
     
     // Initialize LocalStorage and UI
     function init() {
+      // Parse serialized date strings back to Date objects
+      LESSONS.forEach(l => {
+        if (l.parsedDate && typeof l.parsedDate === 'string') {
+          l.parsedDate = new Date(l.parsedDate);
+        }
+      });
+
       // 1. Theme Configuration
       const savedTheme = localStorage.getItem('theme') || 'dark';
       setTheme(savedTheme);
@@ -1155,7 +1162,7 @@ function generateDashboardHtml(lessons: LessonMetadata[]): string {
         filtered = filtered.filter(l => 
           l.title.toLowerCase().includes(searchQuery) ||
           l.topic.toLowerCase().includes(searchQuery) ||
-          l.focus.toLowerCase().includes(searchQuery) ||
+          (l.focus || '').toLowerCase().includes(searchQuery) ||
           l.level.toLowerCase().includes(searchQuery) ||
           l.tags.some(t => t.toLowerCase().includes(searchQuery))
         );
