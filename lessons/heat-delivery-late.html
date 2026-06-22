@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking about Extreme Heat and Delivery Delays - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --panel: #ffffff;
+      --ink: #172026;
+      --muted: #60707a;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d8ded8;
+      --warn: #8a4b08;
+      --warn-soft: #fff1cf;
+      --line: #eef3f1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.65;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; font-size: 2rem; }
+    h2 { font-size: 1.35rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    p { margin: 0 0 10px; }
+    ul, ol { margin-top: 8px; padding-left: 1.25rem; }
+
+    .muted { color: var(--muted); }
+
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f9fbfa;
+      font-size: 0.85rem;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      background: #f8fffc;
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+
+    .warning {
+      border-left: 4px solid var(--warn);
+      background: var(--warn-soft);
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      overflow-wrap: anywhere;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: #f3f7f5; }
+
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+      margin: 4px 0;
+    }
+
+    button:hover { filter: brightness(0.96); }
+
+    details {
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: #fbfcfb;
+    }
+
+    summary { cursor: pointer; font-weight: 700; }
+
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+
+    .flash-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fbfcfb;
+      min-height: 120px;
+    }
+
+    .jp {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+
+    .dialogue {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .turn {
+      border: 1px solid var(--line);
+      background: #fcfdfc;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .speaker {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .contrast {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .bad, .good {
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .bad { background: #fff7f3; }
+    .good { background: #f3fff9; }
+
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      .card { padding: 14px; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>猛暑日の配達・外回り対応</h1>
+      <p class="muted">Session date: 2026-06-22. Level: beginner to lower-intermediate. Focus: natural workplace-safe Japanese for extreme heat, delivery delays, outdoor work, and kind concern.</p>
+      <span class="tag">workplace small talk</span>
+      <span class="tag">service interactions</span>
+      <span class="tag">soft phrasing</span>
+      <span class="tag">heat safety</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p>This lesson is about how people in Japan naturally talk about very hot days, delivery delays, and outdoor workers taking breaks. The recent context was Japanese news about companies supporting delivery workers during extreme heat, including drink tickets and operational changes during heat alerts.</p>
+      <div class="note">
+        The useful cultural frame: heat is not just "bad weather." In Japan it is increasingly treated as a work-safety issue, especially for delivery staff, postal workers, construction workers, and people doing <strong>外回り</strong>.
+      </div>
+      <p>For conversation, aim for shared concern rather than blame. Japanese small talk often softens the point with <strong>〜ですね</strong>, <strong>〜そうですね</strong>, and <strong>〜みたいですね</strong>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Japanese</th>
+            <th>Reading</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>猛暑日</td>
+            <td>もうしょび</td>
+            <td>extremely hot day, 35C+ day</td>
+            <td>今日は猛暑日になりそうですね。</td>
+          </tr>
+          <tr>
+            <td>熱中症</td>
+            <td>ねっちゅうしょう</td>
+            <td>heatstroke</td>
+            <td>熱中症に気をつけないといけませんね。</td>
+          </tr>
+          <tr>
+            <td>水分補給</td>
+            <td>すいぶんほきゅう</td>
+            <td>hydration</td>
+            <td>こまめに水分補給したほうがよさそうです。</td>
+          </tr>
+          <tr>
+            <td>配達員</td>
+            <td>はいたついん</td>
+            <td>delivery worker</td>
+            <td>配達員の方も大変そうですね。</td>
+          </tr>
+          <tr>
+            <td>外回り</td>
+            <td>そとまわり</td>
+            <td>outside sales / field work</td>
+            <td>今日は外回り、大変そうですね。</td>
+          </tr>
+          <tr>
+            <td>休憩を取る</td>
+            <td>きゅうけいをとる</td>
+            <td>to take a break</td>
+            <td>ちゃんと休憩を取ってほしいですね。</td>
+          </tr>
+          <tr>
+            <td>遅れる</td>
+            <td>おくれる</td>
+            <td>to be delayed</td>
+            <td>暑さの影響で少し遅れているみたいです。</td>
+          </tr>
+          <tr>
+            <td>影響</td>
+            <td>えいきょう</td>
+            <td>impact, influence</td>
+            <td>暑さの影響で、配達が遅れるかもしれません。</td>
+          </tr>
+          <tr>
+            <td>警戒アラート</td>
+            <td>けいかいアラート</td>
+            <td>warning alert</td>
+            <td>熱中症警戒アラートが出ているみたいですね。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <h3>1. 〜そうですね: "It seems / looks like..."</h3>
+      <p>Use this when you are making a soft observation. It sounds natural for workplace small talk.</p>
+      <ul>
+        <li><span class="jp">今日は外回り、大変そうですね。</span><br />Field work looks rough today.</li>
+        <li><span class="jp">午後はもっと暑くなりそうですね。</span><br />It looks like it will get even hotter this afternoon.</li>
+      </ul>
+
+      <h3>2. 〜みたいですね: "It seems like / I hear..."</h3>
+      <p>Good when you are not claiming certainty.</p>
+      <ul>
+        <li><span class="jp">暑さの影響で、少し遅れているみたいですね。</span><br />It seems like it is running a little late because of the heat.</li>
+        <li><span class="jp">熱中症警戒アラートが出ているみたいですね。</span><br />It seems a heatstroke warning alert has been issued.</li>
+      </ul>
+
+      <h3>3. 〜たほうがよさそう: "It seems better to..."</h3>
+      <p>This is useful for gentle advice without sounding bossy.</p>
+      <ul>
+        <li><span class="jp">こまめに水分補給したほうがよさそうですね。</span><br />It seems better to hydrate frequently.</li>
+        <li><span class="jp">今日は無理しないほうがよさそうですね。</span><br />It seems better not to push yourself today.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <div class="contrast">
+        <div class="bad">
+          <h3>Too Blunt</h3>
+          <p class="jp">配達が遅いです。</p>
+          <p class="muted">The delivery is slow.</p>
+          <p>This can sound like a direct complaint, especially when the delay may be due to dangerous heat.</p>
+        </div>
+        <div class="good">
+          <h3>More Natural</h3>
+          <p class="jp">暑さの影響で、少し遅れているみたいですね。</p>
+          <p class="muted">It seems like it is running a little late because of the heat.</p>
+          <p>This sounds softer and more aware of the situation.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Useful phrase bank</summary>
+        <ul>
+          <li><span class="jp">今日かなり暑いですね。</span> It is really hot today, isn't it?</li>
+          <li><span class="jp">配達の方も大変そうですね。</span> Delivery workers must have it tough.</li>
+          <li><span class="jp">無理しないでくださいね。</span> Please do not push yourself.</li>
+          <li><span class="jp">この暑さなら仕方ないですね。</span> With this heat, it cannot really be helped.</li>
+          <li><span class="jp">ちゃんと休憩を取ってほしいですね。</span> I hope they take proper breaks.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Role-Play and Dialogue</h2>
+      <p><strong>Scenario:</strong> You are at work. A coworker says a package is delayed because the delivery worker is dealing with the extreme heat.</p>
+      <div class="dialogue">
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">今日、荷物ちょっと遅れてるみたいですね。暑さの影響ですかね。</div>
+          <div class="muted">It looks like the package is running a little late today. Maybe because of the heat?</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">そうですね。今日かなり暑いですし、配達の方も大変そうですね。</div>
+          <div class="muted">Yes. It is really hot today, and delivery workers must have it tough.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">外で仕事する人は、本当に大変ですよね。</div>
+          <div class="muted">People who work outside really have it hard.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">こまめに水分補給して、ちゃんと休憩を取ってほしいですね。</div>
+          <div class="muted">I hope they hydrate frequently and take proper breaks.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">この暑さなら、少し遅れても仕方ないですね。</div>
+          <div class="muted">With this heat, a small delay cannot really be helped.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">そうですね。無理しないでほしいです。</div>
+          <div class="muted">Yes. I hope they do not push themselves.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner answer was submitted yet in this session. Use this model answer for practice:</p>
+      <div class="note">
+        <p class="jp">そうですね。今日かなり暑いですし、配達の方も大変そうですね。こまめに休憩を取ってほしいです。</p>
+        <p class="muted">Yes. It is really hot today, and delivery workers must have it tough. I hope they take frequent breaks.</p>
+      </div>
+      <p>Naturalness point: <strong>配達の方</strong> sounds a little warmer and more respectful than <strong>配達員</strong> in casual workplace conversation.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <div class="warning">
+        <p><strong>Target pattern:</strong> Avoid making a heat-related delay sound like blame.</p>
+        <p>Instead of a direct complaint, use <strong>暑さの影響で〜みたいですね</strong> or <strong>この暑さなら仕方ないですね</strong>.</p>
+      </div>
+      <ul>
+        <li><strong>Too direct:</strong> <span class="jp">配達が遅いです。</span></li>
+        <li><strong>Softer:</strong> <span class="jp">暑さの影響で、少し遅れているみたいですね。</span></li>
+        <li><strong>Kind reaction:</strong> <span class="jp">この暑さなら仕方ないですね。</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p>Read each line aloud 3 times. Keep the rhythm soft and conversational.</p>
+      <div class="shadow-line">今日かなり暑いですね。</div>
+      <div class="shadow-line">配達の方も大変そうですね。</div>
+      <div class="shadow-line">こまめに水分補給したほうがよさそうですね。</div>
+      <div class="shadow-line">暑さの影響で、少し遅れているみたいですね。</div>
+      <div class="shadow-line">この暑さなら仕方ないですね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flash-grid">
+        <div class="flashcard">
+          <p class="jp">猛暑日</p>
+          <button onclick="toggleById('fc1')">Reveal</button>
+          <p id="fc1" class="reveal" hidden>もうしょび: extremely hot day, 35C+ day</p>
+        </div>
+        <div class="flashcard">
+          <p class="jp">水分補給</p>
+          <button onclick="toggleById('fc2')">Reveal</button>
+          <p id="fc2" class="reveal" hidden>すいぶんほきゅう: hydration</p>
+        </div>
+        <div class="flashcard">
+          <p class="jp">外回り</p>
+          <button onclick="toggleById('fc3')">Reveal</button>
+          <p id="fc3" class="reveal" hidden>そとまわり: outside sales / field work</p>
+        </div>
+        <div class="flashcard">
+          <p class="jp">暑さの影響で、少し遅れているみたいですね。</p>
+          <button onclick="toggleById('fc4')">Reveal</button>
+          <p id="fc4" class="reveal" hidden>It seems like it is running a little late because of the heat.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <ul>
+        <li>On extremely hot days, delays or service changes may be discussed as safety measures, not just inconvenience.</li>
+        <li>When talking about workers, <strong>配達の方</strong> feels considerate and natural in everyday speech.</li>
+        <li><strong>仕方ないですね</strong> can be empathetic when used with context, such as <strong>この暑さなら</strong>. Without context, it can sometimes sound dismissive.</li>
+        <li>For workplace small talk, shared-feeling endings like <strong>ですね</strong> and <strong>よね</strong> help avoid sounding cold or overly direct.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>
+          How do you say "Delivery workers must have it tough" naturally?
+          <br /><button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer" hidden><span class="jp">配達の方も大変そうですね。</span></p>
+        </li>
+        <li>
+          Make this softer: <span class="jp">配達が遅いです。</span>
+          <br /><button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden><span class="jp">暑さの影響で、少し遅れているみたいですね。</span></p>
+        </li>
+        <li>
+          What does <span class="jp">こまめに水分補給</span> mean?
+          <br /><button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer" hidden>Hydrating frequently / little by little.</p>
+        </li>
+        <li>
+          Translate: "With this heat, it cannot really be helped."
+          <br /><button onclick="toggleById('q4')">Show answer</button>
+          <p id="q4" class="quiz-answer" hidden><span class="jp">この暑さなら仕方ないですね。</span></p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write one short reply to this coworker line:</p>
+      <div class="note">
+        <p class="jp">今日、荷物ちょっと遅れてるみたいですね。暑さの影響ですかね。</p>
+      </div>
+      <p>Try to include two ideas: it is very hot, and you hope the delivery worker takes breaks.</p>
+      <details>
+        <summary>Model answer</summary>
+        <p class="jp">そうですね。今日かなり暑いですし、配達の方も大変そうですね。ちゃんと休憩を取ってほしいです。</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Next time, practice one live response and get correction on naturalness. The main target is softening a complaint into a shared observation:</p>
+      <ul>
+        <li><span class="jp">〜みたいですね</span> for uncertainty</li>
+        <li><span class="jp">〜そうですね</span> for observation</li>
+        <li><span class="jp">この暑さなら仕方ないですね</span> for empathy</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking about World Cup 2026 - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #667085;
+      --accent: #0f766e;
+      --accent-soft: #e1f5f1;
+      --line: #d8dee4;
+      --soft: #f8fafc;
+      --warn: #8a4b12;
+      --warn-soft: #fff4d7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.25; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1rem; }
+    p { margin: 8px 0; }
+    ul, ol { margin: 8px 0 0 1.2rem; padding: 0; }
+    li { margin: 4px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      font-size: 0.85rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f3f7f6; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+    button:focus { outline: 3px solid #99f6e4; outline-offset: 2px; }
+    details { margin-top: 10px; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--soft); }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      background: var(--soft);
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+    .contrast {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-top: 10px;
+    }
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: var(--soft);
+    }
+    .warn { background: var(--warn-soft); color: var(--warn); }
+    .jp { font-size: 1.05rem; font-weight: 700; }
+    .dialogue { display: grid; gap: 8px; }
+    .turn { padding: 10px; border-radius: 8px; background: var(--soft); border: 1px solid var(--line); }
+    @media (max-width: 640px) {
+      body { padding: 12px; }
+      .card { padding: 14px; }
+      table, thead, tbody, th, td, tr { display: block; }
+      th { display: none; }
+      td { border-top: none; }
+      td:first-child { border-top: 1px solid var(--line); font-weight: 700; background: #f3f7f6; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>ワールドカップ2026の話し方</h1>
+      <p class="muted">Session date: 2026-06-22. Level: beginner to lower-intermediate. Focus: natural workplace small talk about Japan's World Cup group-stage situation, modest optimism, and the next Sweden match.</p>
+      <span class="tag">sports small talk</span>
+      <span class="tag">workplace conversation</span>
+      <span class="tag">soft predictions</span>
+      <span class="tag">current event</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p>Japan are in the 2026 FIFA World Cup group stage. As of this lesson, Japan had drawn 2-2 with the Netherlands and beaten Tunisia 4-0. The next match is Japan vs Sweden on June 26 at 8:00 JST.</p>
+      <p>The study goal is not deep sports analysis. The goal is to talk naturally with coworkers or friends in Japan: show excitement, ask whether someone watched the match, and avoid sounding too overconfident.</p>
+      <details>
+        <summary>Quick context in Japanese</summary>
+        <p class="jp">日本はチュニジアに4対0で勝って、次はスウェーデン戦です。決勝トーナメント進出に向けて、かなりいい流れですね。</p>
+        <p class="muted">Japan beat Tunisia 4-0, and next is the Sweden match. They have pretty good momentum toward advancing to the knockout stage.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Natural example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ワールドカップ / W杯</td><td>ダブリューハイ</td><td>World Cup</td><td>W杯、見てますか。</td></tr>
+          <tr><td>日本代表</td><td>にほんだいひょう</td><td>Japan national team</td><td>日本代表、いい感じですね。</td></tr>
+          <tr><td>グループリーグ</td><td></td><td>group stage</td><td>グループリーグ突破できそうですね。</td></tr>
+          <tr><td>決勝トーナメント</td><td>けっしょうトーナメント</td><td>knockout stage</td><td>決勝トーナメントに進んでほしいですね。</td></tr>
+          <tr><td>突破する</td><td>とっぱする</td><td>to advance</td><td>このまま突破してほしいですね。</td></tr>
+          <tr><td>勝ち点</td><td>かちてん</td><td>points</td><td>今、勝ち点4みたいですね。</td></tr>
+          <tr><td>得失点差</td><td>とくしってんさ</td><td>goal difference</td><td>得失点差も大事ですね。</td></tr>
+          <tr><td>快勝</td><td>かいしょう</td><td>convincing win</td><td>チュニジア戦は快勝でしたね。</td></tr>
+          <tr><td>引き分け</td><td>ひきわけ</td><td>draw</td><td>オランダ戦は引き分けでした。</td></tr>
+          <tr><td>次の試合</td><td>つぎのしあい</td><td>next match</td><td>次の試合も楽しみですね。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <h3>1. 〜そうですね: soft observation</h3>
+      <p class="jp">突破できそうですね。</p>
+      <p>It looks like they can advance.</p>
+      <p class="jp">次の試合は難しくなりそうですね。</p>
+      <p>The next match looks like it might be tough.</p>
+      <h3>2. 〜みたいですね: based on something you heard or read</h3>
+      <p class="jp">日本は今、勝ち点4みたいですね。</p>
+      <p>It looks like Japan has 4 points now.</p>
+      <p class="jp">次はスウェーデン戦みたいですね。</p>
+      <p>Looks like the next match is against Sweden.</p>
+      <h3>3. まだ分からないですけど: modest optimism</h3>
+      <p class="jp">まだ分からないですけど、かなりチャンスはありそうですね。</p>
+      <p>We still do not know, but it seems like they have a pretty good chance.</p>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <ul>
+        <li><span class="jp">昨日の試合、見ました？</span> Did you watch yesterday's match?</li>
+        <li><span class="jp">4対0はすごかったですね。</span> 4-0 was amazing, wasn't it?</li>
+        <li><span class="jp">日本、かなりいい感じですね。</span> Japan is looking really good.</li>
+        <li><span class="jp">次のスウェーデン戦、大事ですね。</span> The next Sweden match is important.</li>
+        <li><span class="jp">このまま行ってほしいですね。</span> I hope they keep going like this.</li>
+      </ul>
+      <div class="contrast">
+        <div class="box warn">
+          <h3>Too Strong</h3>
+          <p class="jp">日本は絶対勝ちます。</p>
+          <p>This sounds very confident. It can be okay with close friends, but it may feel too certain for workplace small talk.</p>
+        </div>
+        <div class="box">
+          <h3>More Natural</h3>
+          <p class="jp">勝ってほしいですね。</p>
+          <p>I hope they win.</p>
+          <p class="jp">かなりチャンスはありそうですね。</p>
+          <p>It seems like they have a pretty good chance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and Dialogue</h2>
+      <p class="muted">Scenario: workplace small talk before starting work. Keep it friendly and not too intense.</p>
+      <div class="dialogue">
+        <div class="turn"><strong>A:</strong> 昨日のチュニジア戦、見ました？</div>
+        <div class="turn"><strong>B:</strong> 見ました！4対0はすごかったですね。</div>
+        <div class="turn"><strong>A:</strong> 日本代表、かなりいい流れですね。</div>
+        <div class="turn"><strong>B:</strong> そうですね。でも次のスウェーデン戦も大事ですね。</div>
+        <div class="turn"><strong>A:</strong> 勝ったら突破できそうですか。</div>
+        <div class="turn"><strong>B:</strong> まだ分からないですけど、かなりチャンスはありそうですね。</div>
+        <div class="turn"><strong>A:</strong> 朝8時なら、見やすい時間ですね。</div>
+        <div class="turn"><strong>B:</strong> そうですね。このまま行ってほしいですね。</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner answer was submitted before this save. Use this practice prompt later:</p>
+      <div class="box">
+        <p><strong>Prompt:</strong> A: 昨日の日本代表の試合、見ました？</p>
+        <p><strong>Target answer:</strong> はい、見ました。4対0はすごかったですね。このまま行ってほしいです。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <p>Main correction target: avoid sounding too direct or overconfident when predicting sports results.</p>
+      <table>
+        <thead><tr><th>Less natural</th><th>Better</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>日本は絶対勝ちます。</td>
+            <td>勝ってほしいですね。</td>
+            <td>Sounds more modest and conversation-safe.</td>
+          </tr>
+          <tr>
+            <td>日本はスウェーデンより強いです。</td>
+            <td>スウェーデン戦も大事ですね。</td>
+            <td>Avoids sounding dismissive of the opponent.</td>
+          </tr>
+          <tr>
+            <td>突破します。</td>
+            <td>突破できそうですね。</td>
+            <td>Softens a firm claim into a natural observation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p>Read each line out loud twice. First slowly, then at natural speed.</p>
+      <div class="shadow-line">昨日の試合、見ました？</div>
+      <div class="shadow-line">日本、かなりいい流れですね。</div>
+      <div class="shadow-line">まだ分からないですけど、突破できそうですね。</div>
+      <div class="shadow-line">このまま行ってほしいですね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flashcard">
+        <p class="jp">勝ち点</p>
+        <button onclick="toggleById('fc1')">Reveal meaning</button>
+        <p id="fc1" class="reveal" hidden>points in a group table</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">得失点差</p>
+        <button onclick="toggleById('fc2')">Reveal meaning</button>
+        <p id="fc2" class="reveal" hidden>goal difference</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">決勝トーナメント</p>
+        <button onclick="toggleById('fc3')">Reveal meaning</button>
+        <p id="fc3" class="reveal" hidden>knockout stage</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">突破できそうですね。</p>
+        <button onclick="toggleById('fc4')">Reveal meaning</button>
+        <p id="fc4" class="reveal" hidden>It looks like they can advance.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <p>In Japanese sports small talk, enthusiasm is natural, but modest phrasing is often safer. A good pattern is excitement plus caution:</p>
+      <ul>
+        <li><span class="jp">期待しちゃいますね。</span> I am getting my hopes up.</li>
+        <li><span class="jp">でも、油断はできないですね。</span> But they cannot let their guard down.</li>
+      </ul>
+      <p>This balance sounds friendly, realistic, and workplace-safe.</p>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>
+          How do you say "Did you watch yesterday's match?"
+          <br /><button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer" hidden>昨日の試合、見ました？</p>
+        </li>
+        <li>
+          Translate: "Japan is looking really good."
+          <br /><button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden>日本、かなりいい感じですね。</p>
+        </li>
+        <li>
+          Which is softer: 日本は絶対勝ちます or 勝ってほしいですね?
+          <br /><button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer" hidden>勝ってほしいですね is softer and more natural for workplace small talk.</p>
+        </li>
+        <li>
+          Fill in the blank: まだ分からないですけど、突破____ですね。
+          <br /><button onclick="toggleById('q4')">Show answer</button>
+          <p id="q4" class="quiz-answer" hidden>できそう</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Write one short Japanese answer to: <span class="jp">昨日の日本代表の試合、見ました？</span></li>
+        <li>Use one soft prediction phrase: <span class="jp">〜そうですね</span>, <span class="jp">〜みたいですね</span>, or <span class="jp">まだ分からないですけど</span>.</li>
+        <li>Try one workplace-safe sentence about the Sweden match.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Next time, practice responding in Japanese and getting a natural correction. Good target sentence:</p>
+      <p class="jp">はい、見ました。4対0はすごかったですね。このまま行ってほしいです。</p>
+      <p class="muted">Focus for later review: modest sports predictions and shared-feeling endings like ですね and よね.</p>
+    </section>
+  </main>
+</body>
+</html>

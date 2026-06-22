@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heatstroke Prevention - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d1d5db;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --ok-soft: #ecfdf5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-bottom: 10px; }
+    p { margin: 8px 0; }
+    ul, ol { padding-left: 1.3rem; }
+    li { margin: 6px 0; }
+
+    .muted { color: var(--muted); }
+    .jp { font-size: 1.05rem; }
+    .small { font-size: 0.92rem; }
+
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 0.85rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: #f8fafc; }
+
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+      margin-top: 8px;
+    }
+
+    button:hover { filter: brightness(0.95); }
+
+    details {
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: #fbfbfb;
+    }
+
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fbfbfb;
+    }
+
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+
+    .dialogue {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .turn {
+      border-left: 4px solid var(--border);
+      padding: 8px 10px;
+      background: #fbfbfb;
+    }
+
+    .turn strong { display: inline-block; min-width: 6.5rem; }
+    .correction { background: var(--warn-soft); border-radius: 10px; padding: 12px; }
+    .better { background: var(--ok-soft); border-radius: 10px; padding: 12px; margin-top: 8px; }
+
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .card { padding: 14px; }
+      table, thead, tbody, th, td, tr { display: block; }
+      th { display: none; }
+      td { border-top: none; }
+      tr { border-top: 1px solid var(--border); }
+      td::before {
+        content: attr(data-label);
+        display: block;
+        color: var(--muted);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>熱中症対策 during early summer in Japan</h1>
+      <p class="muted">Session date: 2026-06-07. Level: beginner to lower-intermediate. Focus: natural workplace and daily-life phrases for heatstroke prevention, softer advice with 〜たほうがよさそう, and practical summer safety conversation.</p>
+      <span class="tag">summer in Japan</span>
+      <span class="tag">workplace small talk</span>
+      <span class="tag">daily-life safety</span>
+      <span class="tag">soft advice</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>Japan talks about <span class="jp">熱中症対策</span> every early summer because humidity rises quickly, <span class="jp">梅雨</span> begins in many regions, and hot days can arrive before people feel fully adjusted to summer weather.</p>
+      <p>Public safety language often focuses on simple actions: use air conditioning, drink water regularly, replace salt, check on older people, and avoid pushing yourself when going outside.</p>
+      <span class="warning-pill">Real-life phrase</span>
+      <span class="warning-pill">Weather and health</span>
+      <span class="warning-pill">Workplace-safe</span>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Japanese" class="jp">熱中症</td><td data-label="Reading">ねっちゅうしょう</td><td data-label="Meaning">heatstroke / heat illness</td></tr>
+          <tr><td data-label="Japanese" class="jp">熱中症対策</td><td data-label="Reading">ねっちゅうしょうたいさく</td><td data-label="Meaning">heatstroke prevention measures</td></tr>
+          <tr><td data-label="Japanese" class="jp">水分補給</td><td data-label="Reading">すいぶんほきゅう</td><td data-label="Meaning">hydration</td></tr>
+          <tr><td data-label="Japanese" class="jp">塩分</td><td data-label="Reading">えんぶん</td><td data-label="Meaning">salt</td></tr>
+          <tr><td data-label="Japanese" class="jp">こまめに</td><td data-label="Reading">こまめに</td><td data-label="Meaning">frequently, regularly, little by little</td></tr>
+          <tr><td data-label="Japanese" class="jp">蒸し暑い</td><td data-label="Reading">むしあつい</td><td data-label="Meaning">humid and hot</td></tr>
+          <tr><td data-label="Japanese" class="jp">猛暑日</td><td data-label="Reading">もうしょび</td><td data-label="Meaning">day over 35 C</td></tr>
+          <tr><td data-label="Japanese" class="jp">警戒アラート</td><td data-label="Reading">けいかいアラート</td><td data-label="Meaning">warning alert</td></tr>
+          <tr><td data-label="Japanese" class="jp">体調</td><td data-label="Reading">たいちょう</td><td data-label="Meaning">physical condition</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>Vたほうがいい / Vたほうがよさそう</h3>
+      <p><span class="jp">〜たほうがいいです</span> means “you should...” and can be useful, but it may sound a little direct depending on the situation.</p>
+      <p><span class="jp">〜たほうがよさそうですね</span> sounds softer: “it looks like it would be better to...” This is very natural for workplace small talk and gentle suggestions.</p>
+      <details>
+        <summary>Examples</summary>
+        <ul>
+          <li><span class="jp">水を飲んだほうがいいです。</span> You should drink water.</li>
+          <li><span class="jp">今日は外に出ないほうがよさそうです。</span> It looks better not to go outside today.</li>
+          <li><span class="jp">こまめに水分補給したほうがよさそうですね。</span> Looks like we should hydrate regularly.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <h3>Workplace-safe</h3>
+      <ul>
+        <li><span class="jp">今日、かなり蒸し暑いですね。</span> It is really humid today, isn't it?</li>
+        <li><span class="jp">こまめに水分補給したほうがよさそうですね。</span> Looks like we should hydrate regularly.</li>
+        <li><span class="jp">外回り、大丈夫ですか？無理しないでくださいね。</span> Are you okay going out for client visits? Please don't push yourself.</li>
+      </ul>
+      <h3>Casual with friends</h3>
+      <ul>
+        <li><span class="jp">今日やばい暑さだね。</span> It is insanely hot today.</li>
+        <li><span class="jp">ちょっとコンビニで飲み物買ってくる。</span> I am going to grab a drink at the convenience store.</li>
+        <li><span class="jp">無理すると熱中症になりそう。</span> If we push it, we might get heatstroke.</li>
+      </ul>
+      <h3>At a shop or station</h3>
+      <ul>
+        <li><span class="jp">少し休める場所はありますか。</span> Is there somewhere I can rest for a bit?</li>
+        <li><span class="jp">気分が悪いです。水をいただけますか。</span> I feel unwell. Could I have some water?</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p><strong>Scenario:</strong> You are at work. A coworker has just come back from outside and comments on the heat.</p>
+      <div class="dialogue">
+        <div class="turn"><strong>同僚:</strong> <span class="jp">今日、外めちゃくちゃ暑いですね。</span></div>
+        <div class="turn"><strong>あなた:</strong> <span class="jp">そうですね。かなり蒸し暑いですね。</span></div>
+        <div class="turn"><strong>同僚:</strong> <span class="jp">駅から歩いただけで汗だくになりました。</span></div>
+        <div class="turn"><strong>あなた:</strong> <span class="jp">こまめに水分補給したほうがよさそうですね。</span></div>
+        <div class="turn"><strong>同僚:</strong> <span class="jp">そうですね。午後の外回り、ちょっと心配です。</span></div>
+        <div class="turn"><strong>あなた:</strong> <span class="jp">無理しないでくださいね。飲み物、買っておきましょうか。</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>The lesson summary did not include a learner-written answer, so use this model answer as the correction target for review.</p>
+      <div class="better">
+        <strong>Good answer:</strong>
+        <p class="jp">そうですね。かなり蒸し暑いですね。こまめに水分補給したほうがよさそうです。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <div class="correction">
+        <strong>Understandable but a bit blunt:</strong>
+        <p class="jp">暑いですから、水を飲んでください。</p>
+      </div>
+      <div class="better">
+        <strong>More natural and softer:</strong>
+        <p class="jp">暑いので、こまめに水分とったほうがよさそうですね。</p>
+      </div>
+      <p class="small muted">Correction category: too direct. In workplace small talk, softer shared advice often sounds more natural than a direct instruction.</p>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Repeat these aloud. Aim for smooth rhythm rather than speed.</p>
+      <div class="shadow-line jp">今日、かなり蒸し暑いですね。</div>
+      <div class="shadow-line jp">こまめに水分補給したほうがよさそうですね。</div>
+      <div class="shadow-line jp">外回り、大丈夫ですか？無理しないでくださいね。</div>
+      <div class="shadow-line jp">気分が悪いです。水をいただけますか。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <strong class="jp">こまめに</strong>
+        <br />
+        <button type="button" onclick="toggleById('fc1')">Reveal meaning</button>
+        <p id="fc1" class="reveal" hidden>frequently / regularly / little by little</p>
+      </div>
+      <div class="flashcard">
+        <strong class="jp">蒸し暑い</strong>
+        <br />
+        <button type="button" onclick="toggleById('fc2')">Reveal meaning</button>
+        <p id="fc2" class="reveal" hidden>humid and hot</p>
+      </div>
+      <div class="flashcard">
+        <strong>How do you soften “You should hydrate”?</strong>
+        <br />
+        <button type="button" onclick="toggleById('fc3')">Reveal answer</button>
+        <p id="fc3" class="reveal jp" hidden>こまめに水分補給したほうがよさそうですね。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>In Japan, heatstroke prevention is a common seasonal topic in weather reports, workplaces, schools, and public notices.</li>
+        <li><span class="jp">水分</span> plus <span class="jp">塩分</span> is a common pairing in public safety messaging because sweating means losing both fluid and salt.</li>
+        <li><span class="jp">無理しないでくださいね</span> is a warm, safe phrase. It can be used with coworkers, friends, and service situations where someone seems unwell.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <ol>
+        <li>What does <span class="jp">こまめに</span> mean here?</li>
+        <li>Which sounds softer at work: <span class="jp">飲んでください</span> or <span class="jp">飲んだほうがよさそうですね</span>?</li>
+        <li>Say “It is humid today, isn't it?” in Japanese.</li>
+      </ol>
+      <button type="button" onclick="toggleById('quizAnswers')">Show answers</button>
+      <div id="quizAnswers" class="quiz-answer" hidden>
+        <ol>
+          <li>Frequently / regularly / little by little.</li>
+          <li><span class="jp">飲んだほうがよさそうですね</span> sounds softer.</li>
+          <li><span class="jp">今日、蒸し暑いですね。</span> or <span class="jp">今日、かなり蒸し暑いですね。</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Say in Japanese: “It is humid today, isn't it?”</li>
+        <li>Say: “Please don't push yourself.”</li>
+        <li>Say: “I am going to buy a drink.”</li>
+        <li>Make one sentence using <span class="jp">〜たほうがよさそうです</span>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Practice softer workplace suggestions with <span class="jp">〜たほうがよさそうですね</span>, then reuse the same pattern in other daily-life situations like rain, crowded trains, clinic visits, or city-office errands.</p>
+    </section>
+  </main>
+</body>
+</html>
