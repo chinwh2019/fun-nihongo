@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking about Battery Safety on Trains - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-soft: #ddf7f1;
+      --border: #d7ddd8;
+      --warn: #8a4b10;
+      --warn-soft: #fff3d6;
+      --line: #f8fbf9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 { font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    h3 { font-size: 1rem; margin-bottom: 6px; }
+    p { margin: 8px 0; }
+    ul, ol { padding-left: 22px; }
+    li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+    .pill { display: inline-block; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 999px; font-size: 0.9rem; margin-bottom: 8px; font-weight: 700; }
+    .tag { display: inline-block; margin: 6px 8px 0 0; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); background: #f8fafc; font-size: 0.85rem; }
+    .warning-pill { display: inline-block; background: var(--warn-soft); color: var(--warn); padding: 4px 10px; border-radius: 999px; font-size: 0.85rem; margin: 4px 6px 0 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f3f6f4; }
+    button { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 8px 12px; cursor: pointer; font-weight: 700; }
+    button:hover { filter: brightness(0.95); }
+    details { margin-top: 10px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: #fbfdfc; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard { border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin: 10px 0; background: #fbfdfc; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: var(--line); margin: 10px 0; }
+    .dialogue { display: grid; gap: 8px; }
+    .turn { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: #fbfdfc; }
+    .speaker { font-weight: 700; color: var(--accent); display: block; margin-bottom: 4px; }
+    .contrast { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bad, .good { padding: 12px; border-radius: 8px; border: 1px solid var(--border); }
+    .bad { background: #fff7ed; }
+    .good { background: #f0fdf4; }
+    .jp { font-size: 1.05rem; }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      .contrast { grid-template-columns: 1fr; }
+      table { font-size: 0.92rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>新幹線のモバイルバッテリー発火対策</h1>
+      <p class="muted">Session date: 2026-06-27. Level: beginner to lower-intermediate. Focus: asking train staff about battery safety, softening concern with みたいです and 念のため, and using workplace/travel-safe phrasing.</p>
+      <span class="tag">travel Japanese</span>
+      <span class="tag">Shinkansen</span>
+      <span class="tag">polite questions</span>
+      <span class="tag">soft concern</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p><strong>Topic:</strong> Japanese train companies are adding fire blankets and other safety items to Shinkansen trains after incidents where mobile batteries produced smoke or caught fire inside train cars.</p>
+      <p>This is useful because portable batteries are common when traveling in Japan. The practical Japanese is not about sounding dramatic. It is about calmly explaining what you noticed, asking staff what to do, and using soft uncertainty.</p>
+      <span class="warning-pill">Real-life tone: calm</span>
+      <span class="warning-pill">Useful setting: train travel</span>
+      <span class="warning-pill">Key pattern: 念のため</span>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it like this</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>モバイルバッテリー</td><td>-</td><td>portable battery / power bank</td><td>モバイルバッテリーを使っても大丈夫ですか。</td></tr>
+          <tr><td>発煙</td><td>はつえん</td><td>smoke coming out</td><td>発煙した場合は、乗務員さんに知らせます。</td></tr>
+          <tr><td>発火</td><td>はっか</td><td>catching fire</td><td>発火する事案があったみたいです。</td></tr>
+          <tr><td>車内</td><td>しゃない</td><td>inside the train/car</td><td>車内で充電してもいいですか。</td></tr>
+          <tr><td>新幹線</td><td>しんかんせん</td><td>bullet train</td><td>新幹線で移動します。</td></tr>
+          <tr><td>防火ブランケット</td><td>ぼうかブランケット</td><td>fire blanket</td><td>防火ブランケットを配備するそうです。</td></tr>
+          <tr><td>消火器</td><td>しょうかき</td><td>fire extinguisher</td><td>消火器はどこにありますか。</td></tr>
+          <tr><td>乗務員</td><td>じょうむいん</td><td>train crew</td><td>乗務員さんに伝えたほうがいいですか。</td></tr>
+          <tr><td>念のため</td><td>ねんのため</td><td>just in case</td><td>念のため、確認したいんですが。</td></tr>
+          <tr><td>確認する</td><td>かくにんする</td><td>to check / confirm</td><td>使えるかどうか確認したいです。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <details open>
+        <summary>1. 〜みたいです: "It seems like..."</summary>
+        <p class="jp">バッテリーが少し熱くなっているみたいです。</p>
+        <p>This sounds calmer than declaring something as a fact. It is useful when you are reporting what you noticed.</p>
+      </details>
+      <details>
+        <summary>2. 念のため、〜たいんですが: "Just to be safe, I would like to..."</summary>
+        <p class="jp">念のため、確認したいんですが、充電してもいいですか。</p>
+        <p><strong>〜んですが</strong> softens the request and invites the staff member to respond.</p>
+      </details>
+      <details>
+        <summary>3. 〜たほうがいいですか: "Should I...?"</summary>
+        <p class="jp">乗務員さんに伝えたほうがいいですか。</p>
+        <p>A practical way to ask for the recommended action without sounding demanding.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <ul>
+        <li class="jp">すみません、モバイルバッテリーは車内で使っても大丈夫ですか。</li>
+        <li class="jp">念のため、確認したいんですが、充電してもいいですか。</li>
+        <li class="jp">ちょっと熱くなっているみたいなんですが、どうしたらいいですか。</li>
+        <li class="jp">乗務員さんに伝えたほうがいいですか。</li>
+      </ul>
+      <div class="contrast">
+        <div class="bad">
+          <h3>Too direct / alarming</h3>
+          <p class="jp">バッテリーが危ないです。</p>
+          <p>This can sound like you are making a strong claim or causing alarm.</p>
+        </div>
+        <div class="good">
+          <h3>More natural</h3>
+          <p class="jp">バッテリーが少し熱くなっているみたいです。</p>
+          <p>This reports what you noticed and leaves room for staff to judge the situation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and Dialogue</h2>
+      <p><strong>Scenario:</strong> You are on the Shinkansen. Your mobile battery feels warm, and you ask a train attendant what to do.</p>
+      <div class="dialogue">
+        <div class="turn"><span class="speaker">乗務員</span><span class="jp">どうされましたか。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">すみません。モバイルバッテリーが少し熱くなっているみたいなんですが、どうしたらいいですか。</span></div>
+        <div class="turn"><span class="speaker">乗務員</span><span class="jp">ありがとうございます。念のため、こちらで確認しますね。今は充電中ですか。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">はい、さっきまで充電していました。今は外しました。</span></div>
+        <div class="turn"><span class="speaker">乗務員</span><span class="jp">分かりました。少し冷めるまで、そのまま触らずにお待ちください。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">はい。念のため、使わないほうがいいですか。</span></div>
+        <div class="turn"><span class="speaker">乗務員</span><span class="jp">はい、今日は使用を控えてください。何かあればすぐお知らせください。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">分かりました。ありがとうございます。</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner response was submitted yet in this session. Use this model answer for practice:</p>
+      <div class="shadow-line jp">モバイルバッテリーが少し熱くなっているみたいなんですが、どうしたらいいですか。</div>
+      <p><strong>Why it works:</strong> It uses a soft observation, explains the issue clearly, and asks for guidance without overclaiming danger.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <p><strong>Correction focus:</strong> avoid sounding too direct when reporting a possible problem.</p>
+      <table>
+        <thead><tr><th>Instead of...</th><th>Use...</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="jp">危ないです。</td>
+            <td class="jp">少し熱くなっているみたいです。</td>
+            <td>More specific, calmer, and easier for staff to respond to.</td>
+          </tr>
+          <tr>
+            <td class="jp">どうすればいい？</td>
+            <td class="jp">どうしたらいいですか。</td>
+            <td>Polite and natural for staff interactions.</td>
+          </tr>
+          <tr>
+            <td class="jp">確認してください。</td>
+            <td class="jp">確認していただけますか。</td>
+            <td>More polite and suitable for service staff.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p>Read each line out loud. Aim for calm, practical delivery.</p>
+      <div class="shadow-line jp">念のため、確認したいんですが。</div>
+      <div class="shadow-line jp">車内で充電しても大丈夫ですか。</div>
+      <div class="shadow-line jp">少し熱くなっているみたいなんですが。</div>
+      <div class="shadow-line jp">乗務員さんに伝えたほうがいいですか。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flashcard">
+        <strong>モバイルバッテリー</strong>
+        <p><button onclick="toggleById('fc1')">Reveal</button></p>
+        <p id="fc1" class="reveal" hidden>portable battery / power bank</p>
+      </div>
+      <div class="flashcard">
+        <strong>念のため</strong>
+        <p><button onclick="toggleById('fc2')">Reveal</button></p>
+        <p id="fc2" class="reveal" hidden>just in case; a soft phrase before asking or checking</p>
+      </div>
+      <div class="flashcard">
+        <strong>発煙・発火</strong>
+        <p><button onclick="toggleById('fc3')">Reveal</button></p>
+        <p id="fc3" class="reveal" hidden>smoking / catching fire. Useful for understanding news, but usually too formal for your first sentence to staff.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <ul>
+        <li>In a train setting, describe what you noticed first, then ask what to do.</li>
+        <li><strong>念のため</strong> is a very useful phrase because it signals that you are being careful, not panicking.</li>
+        <li>For staff, <strong>乗務員さん</strong> sounds natural and respectful in conversation.</li>
+        <li>Use <strong>〜みたいです</strong> when you are not completely sure, especially for safety or procedure questions.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>
+          How do you say "Just to be safe, I would like to check"?
+          <p><button onclick="toggleById('q1')">Show answer</button></p>
+          <p id="q1" class="quiz-answer jp" hidden>念のため、確認したいんですが。</p>
+        </li>
+        <li>
+          Fill in the blank: モバイルバッテリーが少し熱くなっている＿＿＿です。
+          <p><button onclick="toggleById('q2')">Show answer</button></p>
+          <p id="q2" class="quiz-answer jp" hidden>みたい</p>
+        </li>
+        <li>
+          Make this softer: バッテリーが危ないです。
+          <p><button onclick="toggleById('q3')">Show answer</button></p>
+          <p id="q3" class="quiz-answer jp" hidden>バッテリーが少し熱くなっているみたいです。</p>
+        </li>
+        <li>
+          How do you ask "Should I tell a train crew member?"
+          <p><button onclick="toggleById('q4')">Show answer</button></p>
+          <p id="q4" class="quiz-answer jp" hidden>乗務員さんに伝えたほうがいいですか。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write one polite sentence for each situation:</p>
+      <ol>
+        <li>Your battery feels hot.</li>
+        <li>You want to ask whether charging is okay.</li>
+        <li>You want to ask whether you should tell staff.</li>
+      </ol>
+      <p>Try to use at least two of these: <strong>念のため</strong>, <strong>〜みたいです</strong>, <strong>〜たほうがいいですか</strong>, <strong>確認したいんですが</strong>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Next time, recycle this soft-reporting pattern in another travel or service setting:</p>
+      <div class="shadow-line jp">〜みたいなんですが、どうしたらいいですか。</div>
+      <p class="muted">Mastery note: this lesson continued the recent focus on soft observation and calm uncertainty, especially avoiding blunt problem statements in public/service contexts.</p>
+    </section>
+  </main>
+</body>
+</html>
