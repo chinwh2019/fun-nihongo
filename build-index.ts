@@ -113,12 +113,114 @@ function extractVocabulary(content: string, filename: string, lessonTitle: strin
   return vocabList;
 }
 
+const FALLBACK_SENTENCE_TRANSLATIONS: Record<string, string> = {
+  "最近、いろいろ高くなりましたね。": "Lately, lots of things have gotten expensive, haven't they?",
+  "前より高い気がします。": "I feel like it is more expensive than before.",
+  "お米も高くなりましたよね。": "Rice has gotten expensive too, hasn't it?",
+  "セールのものを買ったほうがよさそうですね。": "It seems better to buy things on sale.",
+  "今日、かなり蒸し暑いですね。": "It is really humid today, isn't it?",
+  "こまめに水分補給したほうがよさそうですね。": "Looks like we should hydrate regularly.",
+  "外回り、大丈夫ですか？無理しないでくださいね。": "Are you okay going out for client visits? Please don't push yourself.",
+  "気分が悪いです。水をいただけますか。": "I feel unwell. Could I have some water?",
+  "昨日の試合、見ました？": "Did you watch yesterday's match?",
+  "日本、かなりいい流れですね。": "Japan has pretty good momentum.",
+  "まだ分からないですけど、突破できそうですね。": "We don't know yet, but it looks like they can advance.",
+  "このまま行ってほしいですね。": "I hope they keep going like this.",
+  "この表示、ちょっと分かりにくいですね。": "This display is a bit confusing, isn't it?",
+  "途中で解約できるかどうか確認したいんですが。": "I'd like to check whether I can cancel mid-contract.",
+  "総額を確認したほうがよさそうです。": "It seems better to check the total amount.",
+  "思ったより高くなりそうですね。": "It looks like it will be more expensive than I thought.",
+  "最近、自転車のルールが厳しくなりましたね。": "Recently, bicycle rules got stricter, didn't they?",
+  "反則金がけっこう高いみたいですね。": "It seems like the fine is quite expensive.",
+  "雨の日は、傘差し運転に気をつけないといけませんね。": "On rainy days, we must be careful about riding with an umbrella.",
+  "対象になるかどうか、ちょっと分からないんですが。": "I don't really know whether I'm subject to it.",
+  "PayPayでお願いします。": "PayPay, please.",
+  "ポイントが付くかどうか分からないんですが。": "I don't know whether points apply, though.",
+  "確認していただけますか。": "Could you check it for me?",
+  "ルールが変わったみたいですね。": "It seems like the rules changed.",
+  "ちょっと分かりにくくなりましたよね。": "It's gotten a bit confusing, hasn't it?",
+  "ATMの引き出し上限額について確認したいんですが。": "I'd like to check about the ATM withdrawal limit.",
+  "私のカードも対象になりますか。": "Is my card subject to this as well?",
+  "どの手続きが必要ですか。": "Which procedure is required?",
+  "もう一度ゆっくり説明していただけますか。": "Could you explain it slowly one more time?",
+  "今日かなり暑いですね。": "It is really hot today, isn't it?",
+  "配達の方も大変そうですね。": "Delivery workers must have it tough.",
+  "こまめに水分補給したほうがよさそうですね。": "It seems better to hydrate frequently.",
+  "暑さの影響で、少し遅れているみたいですね。": "It seems like it is running a little late because of the heat.",
+  "この暑さなら仕方ないですね。": "With this heat, it cannot really be helped.",
+  "念のため、確認したいんですが。": "I'd like to check just in case.",
+  "車内で充電しても大丈夫ですか。": "Is it okay to charge on board the train?",
+  "少し熱くなっているみたいなんですが。": "It seems like it is getting a bit hot.",
+  "乗務員さんに伝えたほうがいいですか。": "Should I tell the train crew?",
+  "指定ごみ袋が品薄みたいですね。": "It seems like the designated garbage bags are in short supply.",
+  "透明の袋でも出せるかどうか確認したいんですが。": "I'd like to check whether I can put trash out in transparent bags.",
+  "必要以上に買わないほうがよさそうですね。": "It seems better not to buy more than necessary.",
+  "うちの地域では、ルールが少し違うみたいです。": "It seems like the rules are a bit different in our area."
+};
+
+function extractSentences(content: string, filename: string, lessonTitle: string): { id: string; ja: string; en: string; lessonTitle: string; lessonUrl: string; }[] {
+  const sentenceList: { id: string; ja: string; en: string; lessonTitle: string; lessonUrl: string; }[] = [];
+  
+  const shadowSectionRegex = /<h2>Shadowing\s+Practice<\/h2>([\s\S]*?)(?:<h2>|<section|$)/i;
+  const shadowMatch = shadowSectionRegex.exec(content);
+  if (!shadowMatch) {
+    return [];
+  }
+  
+  const sectionHtml = shadowMatch[1];
+  
+  const lineRegex = /<div[^>]*class="[^"]*shadow-line[^"]*"[^>]*>([\s\S]*?)<\/div>/gi;
+  let lineMatch;
+  
+  while ((lineMatch = lineRegex.exec(sectionHtml)) !== null) {
+    const tagContent = lineMatch[1];
+    
+    let en = "";
+    const parentTagMatch = /<div[^>]*data-translation="([^"]*)"/i.exec(lineMatch[0]);
+    if (parentTagMatch) {
+      en = parentTagMatch[1].trim();
+    }
+    
+    const ja = tagContent.replace(/<[^>]*>/g, "").trim();
+    if (!ja || ja.length < 3) continue;
+    
+    if (!en) {
+      en = FALLBACK_SENTENCE_TRANSLATIONS[ja] || "";
+    }
+    
+    if (!en) {
+      const idx = sectionHtml.indexOf(tagContent);
+      if (idx !== -1) {
+        const after = sectionHtml.substring(idx + tagContent.length, idx + tagContent.length + 150);
+        const mutedMatch = /<p[^>]*class="[^"]*muted[^"]*"[^>]*>([\s\S]*?)<\/p>/i.exec(after) ||
+                           /<span[^>]*class="[^"]*muted[^"]*"[^>]*>([\s\S]*?)<\/span>/i.exec(after);
+        if (mutedMatch) {
+          en = mutedMatch[1].replace(/<[^>]*>/g, "").replace(/^["']|["']$/g, "").trim();
+        }
+      }
+    }
+    
+    if (ja) {
+      sentenceList.push({
+        id: `${filename}:${ja}`,
+        ja,
+        en: en || "Practice sentence",
+        lessonTitle,
+        lessonUrl: filename
+      });
+    }
+  }
+  
+  return sentenceList;
+}
+
 async function buildDashboard() {
   console.log("Starting Japanese Learning Hub dashboard compilation...");
   
   const glob = new Glob("lessons/*.html");
   const lessons: LessonMetadata[] = [];
   const vocabularies: any[] = [];
+  const sentences: any[] = [];
   
   // Scan directory for audio files
   const audioGlob = new Glob("voice_lessons/*.wav");
@@ -234,7 +336,11 @@ async function buildDashboard() {
       const lessonVocabs = extractVocabulary(content, file, topic);
       vocabularies.push(...lessonVocabs);
       
-      console.log(`Parsed successfully: ${file} ("${topic}") - found ${lessonVocabs.length} vocab words`);
+      // Extract sentences from lesson content
+      const lessonSentences = extractSentences(content, file, topic);
+      sentences.push(...lessonSentences);
+      
+      console.log(`Parsed successfully: ${file} ("${topic}") - found ${lessonVocabs.length} vocab words and ${lessonSentences.length} sentences`);
     } catch (err) {
       console.error(`Error parsing file ${file}:`, err);
     }
@@ -250,16 +356,16 @@ async function buildDashboard() {
     return a.topic.localeCompare(b.topic);
   });
   
-  console.log(`Extracted ${vocabularies.length} total vocabulary items across all lessons.`);
+  console.log(`Extracted ${vocabularies.length} total vocabulary items and ${sentences.length} sentences across all lessons.`);
   
   // Generate the index.html contents
-  const dashboardHtml = generateDashboardHtml(lessons, vocabularies);
+  const dashboardHtml = generateDashboardHtml(lessons, vocabularies, sentences);
   
   await Bun.write("index.html", dashboardHtml);
   console.log(`\nSuccessfully compiled dashboard. index.html updated with ${lessons.length} lessons.`);
 }
 
-function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): string {
+function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[], sentenceBank: any[]): string {
   const allTags = Array.from(new Set(lessons.flatMap(l => l.tags))).sort();
   
   return `<!DOCTYPE html>
@@ -877,6 +983,29 @@ function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): str
       opacity: 0.95;
     }
     
+    .drill-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    
+    .drill-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+    
     /* Empty State */
     .empty-state {
       background: var(--card);
@@ -933,11 +1062,208 @@ function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): str
       }
     }
     
-    /* SRS stat card hover */
-    #srsCard:hover {
+    /* SRS and Grammar stat card hovers */
+    #srsCard:hover, #grammarArenaCard:hover {
       transform: translateY(-4px);
       border-color: var(--primary);
       box-shadow: var(--shadow-hover);
+    }
+    
+    /* Grammar Arena Modal Overlay */
+    .grammar-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(11, 15, 25, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .grammar-modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .grammar-modal-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      width: 95%;
+      max-width: 540px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 1010;
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .grammar-modal-backdrop.active .grammar-modal-content {
+      transform: translateY(0) scale(1);
+    }
+    
+    /* Sentence Arena Slot Zones */
+    .arena-prompt-card {
+      background: var(--card-hover);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-align: center;
+      color: var(--text);
+    }
+    
+    .arena-drop-zone {
+      min-height: 80px;
+      border: 2px dashed var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-content: flex-start;
+      align-items: center;
+      transition: all 0.2s ease;
+      background: rgba(var(--primary-rgb), 0.02);
+    }
+    
+    .arena-drop-zone.correct-flash {
+      border-color: rgba(16, 185, 129, 0.6);
+      background: rgba(16, 185, 129, 0.05);
+    }
+    
+    .arena-drop-zone.incorrect-shake {
+      border-color: rgba(239, 68, 68, 0.6);
+      background: rgba(239, 68, 68, 0.05);
+      animation: shake 0.4s ease;
+    }
+    
+    /* Chip pool */
+    .chip-pool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      padding: 12px 0;
+      border-top: 1px dashed var(--border);
+    }
+    
+    /* Styled word chip buttons */
+    .word-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .word-chip:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .word-chip:active {
+      transform: translateY(1px);
+    }
+    
+    .word-chip.selected {
+      opacity: 0.3;
+      pointer-events: none;
+      border-style: dashed;
+    }
+    
+    .arena-placed-chip {
+      background: linear-gradient(135deg, var(--card), var(--card-hover));
+      border: 1px solid var(--primary);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      animation: popIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .arena-placed-chip:hover {
+      border-color: rgba(239, 68, 68, 0.6);
+      color: rgba(239, 68, 68, 0.9);
+    }
+    
+    /* Controls row */
+    .arena-controls-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+    }
+    
+    .arena-secondary-btn {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .arena-secondary-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+    
+    /* Success notification */
+    .arena-success-alert {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 16px;
+      padding: 14px 18px;
+      color: rgba(16, 185, 129, 1);
+      font-weight: 600;
+      font-size: 0.95rem;
+      animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    /* Animation keyframes */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      0% { transform: translateY(10px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
     
     /* SRS Modal Overlay */
@@ -1258,12 +1584,16 @@ function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): str
         <span class="stat-label">Lessons Completed</span>
         <span class="stat-value" id="statCompleted">0</span>
       </div>
-      <div class="stat-card">
+      <div class="stat-card" id="grammarArenaCard" style="cursor: pointer; transition: all 0.3s ease;" onclick="openGrammarArena(null)">
         <span class="stat-label">Overall Progress</span>
         <span class="stat-value" id="statPercent">0%</span>
         <div class="progress-bar-container">
           <div class="progress-bar" id="progressBar"></div>
         </div>
+        <span class="stat-label" id="grammarActionText" style="color: var(--primary); font-size: 0.8rem; font-weight: 700; margin-top: 4px; display: flex; align-items: center; gap: 4px;">
+          Drill Grammar
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </span>
       </div>
       <div class="stat-card" id="srsCard" style="cursor: pointer; transition: all 0.3s ease;" onclick="openSrsSession()">
         <span class="stat-label">SRS Review Due</span>
@@ -1428,16 +1758,82 @@ function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): str
     </div>
   </div>
   
+  <!-- Grammar Arena Modal -->
+  <div class="grammar-modal-backdrop" id="grammarModal">
+    <div class="grammar-modal-content">
+      <div id="arenaPracticeScreen" style="display: flex; flex-direction: column; gap: 20px; width: 100%;">
+        <div class="srs-progress-header">
+          <span id="arenaProgressText">Sentence 1 of 5</span>
+          <button class="srs-close-btn" onclick="closeGrammarArena()" title="Exit drills">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        
+        <div class="srs-progress-track">
+          <div class="srs-progress-fill" id="arenaProgressFill"></div>
+        </div>
+        
+        <!-- English prompt card -->
+        <div class="arena-prompt-card">
+          <div style="font-size: 0.75rem; color: var(--primary); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em;">Translate this Sentence</div>
+          <div id="arenaPromptText" style="line-height: 1.4; font-weight: 600;">English translation goes here</div>
+        </div>
+        
+        <!-- Answer Construction Zone -->
+        <div class="arena-drop-zone" id="arenaDropZone">
+          <!-- Placed chips go here -->
+        </div>
+        
+        <!-- Available Word Chips pool -->
+        <div class="chip-pool" id="arenaChipPool">
+          <!-- Clickable chips go here -->
+        </div>
+        
+        <!-- Controls row -->
+        <div class="arena-controls-row" id="arenaControlsRow">
+          <button class="arena-secondary-btn" onclick="resetSentenceChips()">Reset</button>
+          <button class="arena-secondary-btn" onclick="undoLastSentenceChip()">Undo</button>
+        </div>
+        
+        <!-- Correct Answer feedback badge -->
+        <div class="arena-success-alert" id="arenaSuccessAlert">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span>🎉 Correct!</span>
+            <button class="card-speak-btn" onclick="speakArenaTarget()" style="position: static; transform: none; background: transparent; color: inherit; border: none; cursor: pointer; width: auto; height: auto;" title="Listen">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            </button>
+          </div>
+          <button class="finished-btn" onclick="nextSentenceDrill()" style="margin: 0; padding: 6px 16px; font-size: 0.85rem;">Next</button>
+        </div>
+      </div>
+      
+      <!-- Completed screen -->
+      <div id="arenaFinishedScreen" class="srs-finished-screen">
+        <div style="font-size: 3rem;">🏆</div>
+        <h4>Grammar Drill Complete!</h4>
+        <p>Excellent work! You constructed all target sentences perfectly and reinforced your grammar.</p>
+        <button class="finished-btn" onclick="closeGrammarArena()">Back to Dashboard</button>
+      </div>
+    </div>
+  </div>
+  
   <script>
     // Embedded Data from Server Scan
     const LESSONS = ${JSON.stringify(lessons)};
     const VOCAB_BANK = ${JSON.stringify(vocabBank)};
+    const SENTENCE_BANK = ${JSON.stringify(sentenceBank)};
     
     // UI State Management
     let userProgress = {}; // filename -> 'unstarted' | 'progress' | 'completed'
     let activeTag = null;
     let activeStatus = null;
     let searchQuery = '';
+    
+    // Grammar Arena State Management
+    let currentArenaQueue = [];
+    let currentArenaIndex = 0;
+    let arenaPlacedChips = []; // indices of shuffled chips placed in target zone
+    let arenaShuffledChips = []; // { text, idx, selected }
     
     // SRS State Management
     let srsProgress = {}; // vocabId -> { interval, repetition, efactor, nextReviewDate, lastReviewed }
@@ -1676,6 +2072,281 @@ function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): str
       updateSrsCardStats();
     }
     
+    // ==========================================
+    // GRAMMAR ARENA (SCRAMBLED SENTENCE BUILDER)
+    // ==========================================
+
+    const grammarModal = document.getElementById('grammarModal');
+    const arenaPracticeScreen = document.getElementById('arenaPracticeScreen');
+    const arenaFinishedScreen = document.getElementById('arenaFinishedScreen');
+    const arenaPromptText = document.getElementById('arenaPromptText');
+    const arenaDropZone = document.getElementById('arenaDropZone');
+    const arenaChipPool = document.getElementById('arenaChipPool');
+    const arenaProgressText = document.getElementById('arenaProgressText');
+    const arenaProgressFill = document.getElementById('arenaProgressFill');
+    const arenaSuccessAlert = document.getElementById('arenaSuccessAlert');
+    const arenaControlsRow = document.getElementById('arenaControlsRow');
+
+    // Synth Audio context helper for sound chimes
+    let audioCtx = null;
+    function playChime(freqs, duration) {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        let time = audioCtx.currentTime;
+        freqs.forEach(freq => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          
+          osc.type = freq.type || 'sine';
+          osc.frequency.setValueAtTime(freq.hz, time);
+          
+          gain.gain.setValueAtTime(0.08, time);
+          gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+          
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          
+          osc.start(time);
+          osc.stop(time + duration);
+          
+          time += freq.delay || 0;
+        });
+      } catch (e) {
+        console.error("Web Audio fail", e);
+      }
+    }
+
+    function playSuccessChime() {
+      playChime([
+        { hz: 523.25, delay: 0.1 }, // C5
+        { hz: 659.25, delay: 0 }    // E5
+      ], 0.25);
+    }
+
+    function playFailureChime() {
+      playChime([
+        { hz: 180, type: 'sawtooth' }
+      ], 0.3);
+    }
+
+    // Open grammar review modal
+    function openGrammarArena(lessonFilename, event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      
+      // Target queue: if lessonFilename is provided, filter for that lesson. Else all.
+      if (lessonFilename) {
+        currentArenaQueue = SENTENCE_BANK.filter(s => s.lessonUrl === lessonFilename);
+      } else {
+        currentArenaQueue = [...SENTENCE_BANK];
+      }
+      
+      // Shuffle queue to randomize sentences
+      currentArenaQueue.sort(() => Math.random() - 0.5);
+      
+      if (currentArenaQueue.length === 0) {
+        alert("This lesson does not contain any shadowing practice sentences!");
+        return;
+      }
+      
+      currentArenaIndex = 0;
+      arenaFinishedScreen.style.display = 'none';
+      arenaPracticeScreen.style.display = 'flex';
+      grammarModal.classList.add('active');
+      
+      loadSentenceDrill();
+    }
+
+    function closeGrammarArena() {
+      grammarModal.classList.remove('active');
+    }
+
+    // Load active sentence and build chips
+    function loadSentenceDrill() {
+      const sentence = currentArenaQueue[currentArenaIndex];
+      
+      // Update progress headers
+      arenaProgressText.textContent = 'Sentence ' + (currentArenaIndex + 1) + ' of ' + currentArenaQueue.length;
+      arenaProgressFill.style.width = ((currentArenaIndex / currentArenaQueue.length) * 100) + '%';
+      
+      // Set target prompt text
+      arenaPromptText.textContent = sentence.en;
+      
+      // Segment the target Japanese sentence using Intl.Segmenter
+      let rawChips = [];
+      try {
+        if (window.Intl && window.Intl.Segmenter) {
+          const segmenter = new Intl.Segmenter('ja', { granularity: 'word' });
+          const segments = Array.from(segmenter.segment(sentence.ja));
+          rawChips = segments.map(s => s.segment.trim()).filter(s => s !== '' && !/^[、。！？\s]+$/.test(s));
+        } else {
+          throw new Error();
+        }
+      } catch (e) {
+        // Character fallback for old environments
+        rawChips = sentence.ja.split('').filter(s => !/^[、。！？\s]+$/.test(s));
+      }
+      
+      // Map and shuffle
+      arenaShuffledChips = rawChips.map((text, idx) => ({ text, idx, selected: false }));
+      // Ensure we don't accidentally get exact order
+      let shuffleCount = 0;
+      do {
+        arenaShuffledChips.sort(() => Math.random() - 0.5);
+        shuffleCount++;
+      } while (
+        arenaShuffledChips.map(c => c.text).join('') === sentence.ja.replace(/[、。！？\s]/g, '') && 
+        arenaShuffledChips.length > 1 && 
+        shuffleCount < 5
+      );
+      
+      arenaPlacedChips = [];
+      arenaDropZone.classList.remove('correct-flash', 'incorrect-shake');
+      
+      // Hide success notification, show controls
+      arenaSuccessAlert.style.display = 'none';
+      arenaControlsRow.style.display = 'flex';
+      
+      renderArenaUI();
+    }
+
+    // Re-renders both the answer arena drop-zone and available chip pool
+    function renderArenaUI() {
+      // 1. Render Drop Zone
+      arenaDropZone.innerHTML = '';
+      if (arenaPlacedChips.length === 0) {
+        const placeholder = document.createElement('span');
+        placeholder.style.color = 'var(--text-muted)';
+        placeholder.style.fontSize = '0.9rem';
+        placeholder.style.padding = '8px 0';
+        placeholder.textContent = 'Click chips below to arrange...';
+        arenaDropZone.appendChild(placeholder);
+      } else {
+        arenaPlacedChips.forEach((shuffledIdx, placedIdx) => {
+          const chip = arenaShuffledChips[shuffledIdx];
+          const btn = document.createElement('button');
+          btn.className = 'arena-placed-chip';
+          btn.textContent = chip.text;
+          btn.onclick = () => removePlacedChip(placedIdx);
+          arenaDropZone.appendChild(btn);
+        });
+      }
+      
+      // 2. Render Chip Pool
+      arenaChipPool.innerHTML = '';
+      arenaShuffledChips.forEach((chip, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'word-chip' + (chip.selected ? ' selected' : '');
+        btn.textContent = chip.text;
+        btn.onclick = () => selectPoolChip(idx);
+        arenaChipPool.appendChild(btn);
+      });
+    }
+
+    // User clicks a chip from the pool
+    function selectPoolChip(idx) {
+      if (arenaShuffledChips[idx].selected) return;
+      
+      arenaShuffledChips[idx].selected = true;
+      arenaPlacedChips.push(idx);
+      renderArenaUI();
+      
+      // If all chips placed, validate answer immediately
+      if (arenaPlacedChips.length === arenaShuffledChips.length) {
+        checkSentenceAnswer();
+      }
+    }
+
+    // User clicks a chip in the drop zone to remove it
+    function removePlacedChip(placedIdx) {
+      const shuffledIdx = arenaPlacedChips[placedIdx];
+      arenaShuffledChips[shuffledIdx].selected = false;
+      arenaPlacedChips.splice(placedIdx, 1);
+      renderArenaUI();
+    }
+
+    // Undo last chip placement
+    function undoLastSentenceChip() {
+      if (arenaPlacedChips.length === 0) return;
+      const lastShuffledIdx = arenaPlacedChips.pop();
+      arenaShuffledChips[lastShuffledIdx].selected = false;
+      renderArenaUI();
+    }
+
+    // Reset sentence chips
+    function resetSentenceChips() {
+      arenaPlacedChips = [];
+      arenaShuffledChips.forEach(c => c.selected = false);
+      renderArenaUI();
+    }
+
+    // Check sentence correctness
+    function checkSentenceAnswer() {
+      const sentence = currentArenaQueue[currentArenaIndex];
+      const userAnswer = arenaPlacedChips.map(idx => arenaShuffledChips[idx].text).join('');
+      
+      const cleanTarget = sentence.ja.replace(/[、。！？\s]/g, '');
+      const cleanUser = userAnswer.replace(/[、。！？\s]/g, '');
+      
+      if (cleanUser === cleanTarget) {
+        // Correct!
+        arenaDropZone.classList.add('correct-flash');
+        playSuccessChime();
+        
+        // Hide standard controls, show success notification
+        arenaControlsRow.style.display = 'none';
+        arenaSuccessAlert.style.display = 'flex';
+        
+        // Read sentence aloud using TTS
+        speakArenaTarget();
+      } else {
+        // Incorrect!
+        arenaDropZone.classList.add('incorrect-shake');
+        playFailureChime();
+        
+        setTimeout(() => {
+          arenaDropZone.classList.remove('incorrect-shake');
+          resetSentenceChips();
+        }, 800);
+      }
+    }
+
+    // TTS speaker pronunciation
+    function speakArenaTarget() {
+      const sentence = currentArenaQueue[currentArenaIndex];
+      if (!window.speechSynthesis) return;
+      
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(sentence.ja);
+      utterance.lang = 'ja-JP';
+      
+      const voices = window.speechSynthesis.getVoices();
+      const jaVoice = voices.find(v => v.lang === 'ja-JP' || v.lang.startsWith('ja'));
+      if (jaVoice) {
+        utterance.voice = jaVoice;
+      }
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Move to next sentence
+    function nextSentenceDrill() {
+      currentArenaIndex++;
+      if (currentArenaIndex < currentArenaQueue.length) {
+        loadSentenceDrill();
+      } else {
+        arenaProgressFill.style.width = '100%';
+        arenaPracticeScreen.style.display = 'none';
+        arenaFinishedScreen.style.display = 'flex';
+      }
+    }
+
     // Initialize LocalStorage and UI
     function init() {
       // Parse serialized date strings back to Date objects
@@ -1986,10 +2657,15 @@ function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): str
                   </div>
                 </div>
                 
-                <a href="\${l.filename}" class="study-btn">
-                  Study
-                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                </a>
+                <div class="action-buttons" style="display: flex; gap: 8px; align-items: center;">
+                  <button class="drill-btn" onclick="openGrammarArena('\${l.filename}', event)" title="Drill Grammar Sentences">
+                    Drill
+                  </button>
+                  <a href="\${l.filename}" class="study-btn">
+                    Study
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  </a>
+                </div>
               </div>
             </article>
           \`;
