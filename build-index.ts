@@ -12,16 +12,71 @@ interface LessonMetadata {
   tags: string[];
 }
 
+function findMatchingAudio(lessonFilename: string, audioFiles: string[]): string | null {
+  const cleanName = lessonFilename.toLowerCase();
+  for (const audio of audioFiles) {
+    const base = audio.split("/").pop()?.replace(".wav", "").toLowerCase();
+    if (!base) continue;
+    
+    // Direct match: if base audio name matches or is part of the lesson file name
+    if (cleanName.includes(base)) {
+      return `../${audio}`;
+    }
+    // Heuristics for variations (e.g. hot-weather.wav mapping to heat lessons)
+    if (base === "hot-weather" && (cleanName.includes("heat") || cleanName.includes("hot"))) {
+      return `../${audio}`;
+    }
+    // Heuristics for vocab-1.wav mapping to inflation lesson
+    if (base === "vocab-1" && cleanName.includes("inflation")) {
+      return `../${audio}`;
+    }
+  }
+  return null;
+}
+
 async function buildDashboard() {
   console.log("Starting Japanese Learning Hub dashboard compilation...");
   
   const glob = new Glob("lessons/*.html");
   const lessons: LessonMetadata[] = [];
   
+  // Scan directory for audio files
+  const audioGlob = new Glob("voice_lessons/*.wav");
+  const audioFiles: string[] = [];
+  for await (const audioFile of audioGlob.scan(".")) {
+    audioFiles.push(audioFile);
+  }
+  
   // Scan directory for HTML files
   for await (const file of glob.scan(".")) {
     try {
-      const content = await Bun.file(file).text();
+      const rawContent = await Bun.file(file).text();
+      let content = rawContent;
+
+      // Automatically inject/update CSS, JS, and window.LESSON_AUDIO config
+      const audioFile = findMatchingAudio(file, audioFiles);
+      
+      const audioConfigRegex = /<script>\s*window\.LESSON_AUDIO\s*=[\s\S]*?<\/script>/i;
+      const audioScript = audioFile ? `<script>window.LESSON_AUDIO = "${audioFile}";</script>` : '';
+      
+      if (audioConfigRegex.test(content)) {
+        content = content.replace(audioConfigRegex, audioScript);
+      } else if (audioScript) {
+        content = content.replace("</head>", `  ${audioScript}\n</head>`);
+      }
+      
+      if (!content.includes("lesson-common.css")) {
+        content = content.replace("</head>", '  <link rel="stylesheet" href="../lesson-common.css">\n</head>');
+      }
+      
+      if (!content.includes("lesson-common.js")) {
+        content = content.replace("</body>", '  <script src="../lesson-common.js"></script>\n</body>');
+      }
+      
+      if (content !== rawContent) {
+        await Bun.write(file, content);
+        console.log(`Instrumented lesson with helper files and configs: ${file}`);
+      }
       
       // 1. Extract HTML Title
       const titleMatch = content.match(/<title>([\s\S]*?)<\/title>/i);

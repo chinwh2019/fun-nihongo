@@ -9,8 +9,18 @@ All lessons are dynamically compiled into a modern study dashboard hosted on **G
 ## 🚀 How It Works
 
 1. **Write Lessons:** You write standard HTML study pages inside the `lessons/` directory (e.g., `lessons/inflation.html`).
-2. **Build Automatically:** A TypeScript script runs on push to extract metadata from your HTML pages (such as topics, level, study focus, session date, and tags).
-3. **Deploy Dashboard:** GitHub Actions runs the compiler and deploys a glassmorphic dashboard homepage containing live search, category tagging, theme toggles, and study progress tracking.
+2. **Build & Auto-Instrument:** A TypeScript script runs on push (or locally) to extract metadata from your HTML pages. In addition to updating the dashboard, it **automatically instruments** the new HTML files with CSS & JS helpers for interactive study (Text-to-Speech, Speech Recognition, and Furigana/Reading masking).
+3. **Deploy Dashboard:** GitHub Actions runs the compiler automatically on push and deploys the updated glassmorphic dashboard homepage and instrumented lessons to **GitHub Pages**.
+
+---
+
+## 🎧 Interactive Study Features
+
+Every compiled lesson is automatically equipped with these features in the browser:
+* **Furigana & Reading Masking:** A toggle button in the floating panel masks readings in vocabulary tables (blurs them). Hovering or tapping reveals them—ideal for active recall.
+* **Text-To-Speech (TTS):** Elegant audio play buttons are injected next to Japanese text (`class="jp"`). Click to hear the natural pronunciation.
+* **Voice Coach (Speech-to-Text):** Click the mic icon next to any Japanese text to speak. The helper transcribes your speech and displays a visual diff showing exactly what characters you matched (green), mismatched (red), or added.
+* **Audio Wave Player Integration:** If a matching `.wav` file is present in `voice_lessons/`, a custom player card is injected at the top of the lesson with playback speed controls (`0.75x`, `1.0x`, `1.25x`) for shadowing.
 
 ---
 
@@ -76,6 +86,9 @@ git push origin main
 
 The GitHub Actions pipeline will pick up your push, build the dashboard automatically, and deploy the updated site in about 30 seconds.
 
+> [!NOTE]
+> Because GitHub Actions rebuilds the site on push, you do **not** need to run `bun run build-index.ts` locally unless you want to preview the dashboard and interactive tools in your browser before committing.
+
 ---
 
 ## 🛠️ Local Development Setup
@@ -96,3 +109,10 @@ curl -fsSL https://bun.sh/install | bash
 ```bash
 bun run build-index.ts
 ```
+
+### ⚓ Git Hooks (Auto-build on commit)
+To automatically compile and stage your manual lesson additions every time you commit, install the pre-commit hook:
+```bash
+sh scripts/setup-hooks.sh
+```
+This hook will run the compiler, auto-inject the interactive features (TTS, Voice Coach) into your manual HTML lessons, and stage them automatically before committing.
