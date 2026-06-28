@@ -1224,7 +1224,6 @@ function generateDashboardHtml(lessons: LessonMetadata[], vocabBank: any[]): str
       opacity: 0.95;
     }
   </style>
-  <style>
 </head>
 <body>
   
