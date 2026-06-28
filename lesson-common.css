@@ -135,6 +135,7 @@ body.hide-readings ruby:hover rt {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+.jp:hover .jp-actions-wrapper,
 .jp-container:hover .jp-actions-wrapper {
   opacity: 1;
   transform: translateX(0);

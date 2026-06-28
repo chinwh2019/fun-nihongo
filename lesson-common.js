@@ -85,10 +85,14 @@
     const jpElements = document.querySelectorAll('.jp');
     jpElements.forEach(el => {
       // Avoid processing nested elements or already wrapped ones
-      if (el.querySelector('.jp') || el.closest('.jp-container') || el.classList.contains('jp-container')) return;
+      if (el.querySelector('.jp-container') || el.classList.contains('jp-container')) return;
 
       const originalHtml = el.innerHTML;
       el.innerHTML = '';
+
+      // Create the inner container wrapper to keep the parent's block/inline display intact
+      const container = document.createElement('span');
+      container.className = 'jp-container';
 
       const textSpan = document.createElement('span');
       textSpan.className = 'jp-text';
@@ -120,9 +124,9 @@
       actionsWrapper.appendChild(playBtn);
       actionsWrapper.appendChild(micBtn);
 
-      el.classList.add('jp-container');
-      el.appendChild(textSpan);
-      el.appendChild(actionsWrapper);
+      container.appendChild(textSpan);
+      container.appendChild(actionsWrapper);
+      el.appendChild(container);
     });
   }
 
