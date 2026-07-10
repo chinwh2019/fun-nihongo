@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cashless Payment Trouble at Restaurants - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f7f3;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #65717f;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d5d9df;
+      --warn: #8a4b10;
+      --warn-soft: #fff2cf;
+      --good: #166534;
+      --good-soft: #dcfce7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; font-size: 1.75rem; }
+    h2 { font-size: 1.25rem; margin-bottom: 10px; }
+    h3 { font-size: 1rem; margin-bottom: 6px; }
+    p { margin: 8px 0; }
+    ul, ol { padding-left: 1.3rem; }
+    li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 0.85rem;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    .ok-pill {
+      display: inline-block;
+      background: var(--good-soft);
+      color: var(--good);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      margin: 6px 8px 6px 0;
+    }
+    button:hover { filter: brightness(0.95); }
+    details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fbfcfd;
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+    .dialogue {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .turn {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: #fcfcfd;
+    }
+    .speaker { font-weight: 700; color: var(--accent); }
+    .jp { font-size: 1.05rem; }
+    .en { color: var(--muted); font-size: 0.95rem; }
+    .contrast-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .contrast-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fbfcfd;
+    }
+    code {
+      background: #eef2f7;
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .card { padding: 14px; }
+      table { font-size: 0.94rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/cashless.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>カードが使えないんですが...</h1>
+      <p class="muted">Session date: 2026-07-09. Level: beginner to lower-intermediate. Focus: restaurant and shop payment trouble, cash-only notices, soft checking phrases, and calm staff-facing Japanese.</p>
+      <span class="tag">daily life</span>
+      <span class="tag">restaurants</span>
+      <span class="tag">cashless payment</span>
+      <span class="tag">soft uncertainty</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>This lesson came from a current Japan-side discussion on July 9, 2026: after the bankruptcy of the payment processor <strong>全東信（ぜんとうしん）</strong>, some restaurants and shops had card terminals become unusable and temporarily switched to <strong>現金のみ</strong>.</p>
+      <p>For real life in Japan, this is useful because you may need to ask what payment methods work, explain that you do not have cash, or understand a staff member's polite explanation at the register.</p>
+      <span class="warning-pill">Culture note</span>
+      <p>When payment trouble happens, Japanese staff often apologize even when the problem is not personally their fault. As a customer, using <strong>すみません</strong>, <strong>念のため</strong>, and <strong>確認したいんですが</strong> keeps your question calm and cooperative.</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Japanese</th>
+            <th>Reading</th>
+            <th>Meaning</th>
+            <th>Use it like this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>現金のみ</td>
+            <td>げんきんのみ</td>
+            <td>cash only</td>
+            <td>本日は現金のみです。</td>
+          </tr>
+          <tr>
+            <td>クレジットカード</td>
+            <td>-</td>
+            <td>credit card</td>
+            <td>カードは使えますか。</td>
+          </tr>
+          <tr>
+            <td>決済端末</td>
+            <td>けっさいたんまつ</td>
+            <td>payment terminal</td>
+            <td>決済端末の不具合です。</td>
+          </tr>
+          <tr>
+            <td>使えない</td>
+            <td>つかえない</td>
+            <td>cannot be used</td>
+            <td>カードが使えないみたいです。</td>
+          </tr>
+          <tr>
+            <td>不具合</td>
+            <td>ふぐあい</td>
+            <td>malfunction / issue</td>
+            <td>アプリの不具合かもしれません。</td>
+          </tr>
+          <tr>
+            <td>代替手段</td>
+            <td>だいたいしゅだん</td>
+            <td>alternative method</td>
+            <td>代替手段はありますか。</td>
+          </tr>
+          <tr>
+            <td>交通系IC</td>
+            <td>こうつうけいアイシー</td>
+            <td>transit IC card, such as Suica or PASMO</td>
+            <td>交通系ICは使えますか。</td>
+          </tr>
+          <tr>
+            <td>QRコード決済</td>
+            <td>キューアールコードけっさい</td>
+            <td>QR code payment</td>
+            <td>QRコード決済はできますか。</td>
+          </tr>
+          <tr>
+            <td>念のため</td>
+            <td>ねんのため</td>
+            <td>just in case</td>
+            <td>念のため確認したいんですが...</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>1. <code>〜は使えますか</code>: asking if something can be used</h3>
+      <p><strong>カードは使えますか。</strong><br />Can I use a card?</p>
+      <p><strong>交通系ICは使えますか。</strong><br />Can I use transit IC?</p>
+
+      <h3>2. <code>〜以外だと、何が使えますか</code>: asking for alternatives</h3>
+      <p><strong>現金以外だと、何が使えますか。</strong><br />Besides cash, what can I use?</p>
+
+      <h3>3. <code>〜ていなくて...</code>: soft reason, leaving space</h3>
+      <p><strong>今、現金を持っていなくて...</strong><br />I do not have cash with me right now...</p>
+      <p>This ending is useful because it explains your situation without sounding like a demand.</p>
+
+      <h3>4. <code>念のため確認したいんですが</code>: calm checking</h3>
+      <p><strong>念のため確認したいんですが、カードは使えますか。</strong><br />I would like to check just in case: can I use a card?</p>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <div class="contrast-grid">
+        <div class="contrast-box">
+          <span class="warning-pill">Too blunt</span>
+          <p class="jp">カード使えない？</p>
+          <p class="en">Card does not work?</p>
+          <p>This is understandable, but it can sound abrupt at a register.</p>
+        </div>
+        <div class="contrast-box">
+          <span class="ok-pill">Natural customer version</span>
+          <p class="jp">すみません、カードは今使えますか。</p>
+          <p class="en">Excuse me, can I use a card right now?</p>
+        </div>
+        <div class="contrast-box">
+          <span class="ok-pill">Careful and soft</span>
+          <p class="jp">念のため確認したいんですが、カードは使えますか。</p>
+          <p class="en">I would like to check just in case: can I use a card?</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Customer phrases</summary>
+        <ul>
+          <li><strong>カードは使えますか。</strong> - Can I use a card?</li>
+          <li><strong>現金以外だと、何が使えますか。</strong> - Besides cash, what can I use?</li>
+          <li><strong>交通系ICかPayPayは使えますか。</strong> - Can I use transit IC or PayPay?</li>
+          <li><strong>すみません、今現金を持っていなくて...</strong> - Sorry, I do not have cash right now...</li>
+          <li><strong>近くにATMはありますか。</strong> - Is there an ATM nearby?</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Staff-style polite phrases</summary>
+        <ul>
+          <li><strong>申し訳ございません。ただいま現金のみとなっております。</strong> - We are sorry. At the moment, it is cash only.</li>
+          <li><strong>決済端末の不具合で、カードが使えない状況です。</strong> - Due to an issue with the payment terminal, cards cannot be used.</li>
+          <li><strong>ご不便をおかけして申し訳ございません。</strong> - We apologize for the inconvenience.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p><strong>Scenario:</strong> You are paying at a small restaurant. There is a handwritten sign near the register:</p>
+      <div class="shadow-line">本日、カード決済がご利用いただけません。現金のみでお願いいたします。</div>
+      <p>Study this cleaned-up mock conversation. It expands the role-play prompt into a realistic register exchange.</p>
+      <div class="dialogue">
+        <div class="turn">
+          <div class="speaker">店員</div>
+          <div class="jp">お会計、1,480円です。申し訳ありませんが、本日は現金のみとなっております。</div>
+          <div class="en">Your total is 1,480 yen. We are sorry, but today it is cash only.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">客</div>
+          <div class="jp">すみません、今現金を持っていなくて...。近くにATMはありますか。</div>
+          <div class="en">Sorry, I do not have cash with me right now... Is there an ATM nearby?</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">店員</div>
+          <div class="jp">はい。この先のコンビニにATMがあります。</div>
+          <div class="en">Yes. There is an ATM at the convenience store just ahead.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">客</div>
+          <div class="jp">ありがとうございます。念のため確認したいんですが、交通系ICも使えませんか。</div>
+          <div class="en">Thank you. I would like to check just in case: transit IC cannot be used either?</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">店員</div>
+          <div class="jp">申し訳ございません。決済端末の不具合で、今は現金のみです。</div>
+          <div class="en">We are very sorry. Because of an issue with the payment terminal, it is cash only for now.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">客</div>
+          <div class="jp">分かりました。すぐ下ろしてきます。</div>
+          <div class="en">Understood. I will go withdraw cash right away.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner answer was submitted yet in the live role-play. The target response for the prompt was:</p>
+      <div class="shadow-line">すみません、今現金を持っていなくて...。近くにATMはありますか。</div>
+      <p>This sounds natural because it gives a soft reason first, then asks for a practical next step.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <ul>
+        <li><strong>Too direct:</strong> Avoid starting with only <strong>カード使えない？</strong> at a register. Add <strong>すみません</strong> and use <strong>使えますか</strong>.</li>
+        <li><strong>Register mismatch:</strong> Staff-facing explanations often use <strong>申し訳ございません</strong> and <strong>〜となっております</strong>. As a customer, you usually do not need to be that formal.</li>
+        <li><strong>Missing nuance:</strong> <strong>念のため</strong> makes a repeated or careful question sound cooperative, not suspicious.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Repeat these out loud. Keep the rhythm gentle and leave a small pause at <strong>...</strong>.</p>
+      <div class="shadow-line">すみません、カードは今使えますか。</div>
+      <div class="shadow-line">現金以外だと、何が使えますか。</div>
+      <div class="shadow-line">すみません、今現金を持っていなくて...。</div>
+      <div class="shadow-line">念のため確認したいんですが、交通系ICは使えますか。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <strong>現金のみ</strong>
+        <button onclick="toggleById('fc1')">Reveal</button>
+        <p id="fc1" class="reveal" hidden>げんきんのみ - cash only</p>
+      </div>
+      <div class="flashcard">
+        <strong>決済端末</strong>
+        <button onclick="toggleById('fc2')">Reveal</button>
+        <p id="fc2" class="reveal" hidden>けっさいたんまつ - payment terminal</p>
+      </div>
+      <div class="flashcard">
+        <strong>念のため</strong>
+        <button onclick="toggleById('fc3')">Reveal</button>
+        <p id="fc3" class="reveal" hidden>ねんのため - just in case; useful for soft checking</p>
+      </div>
+      <div class="flashcard">
+        <strong>不具合</strong>
+        <button onclick="toggleById('fc4')">Reveal</button>
+        <p id="fc4" class="reveal" hidden>ふぐあい - malfunction, issue, something not working properly</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li><strong>現金のみ</strong> may appear on handwritten signs during temporary payment trouble.</li>
+        <li><strong>ご利用いただけません</strong> is a common polite notice phrase meaning "cannot be used."</li>
+        <li>When you need an alternative, <strong>現金以外だと、何が使えますか</strong> is practical and not confrontational.</li>
+        <li>If staff apologize, a simple <strong>分かりました</strong> or <strong>大丈夫です</strong> keeps the interaction smooth.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <ol>
+        <li>
+          How do you say "cash only"?
+          <button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer" hidden><strong>現金のみ</strong>（げんきんのみ）</p>
+        </li>
+        <li>
+          Make this more natural: <strong>カード使えない？</strong>
+          <button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden><strong>すみません、カードは今使えますか。</strong></p>
+        </li>
+        <li>
+          Say: "Besides cash, what can I use?"
+          <button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer" hidden><strong>現金以外だと、何が使えますか。</strong></p>
+        </li>
+        <li>
+          Say: "Sorry, I do not have cash right now. Is there an ATM nearby?"
+          <button onclick="toggleById('q4')">Show answer</button>
+          <p id="q4" class="quiz-answer" hidden><strong>すみません、今現金を持っていなくて...。近くにATMはありますか。</strong></p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Practice saying the target response three times: <strong>すみません、今現金を持っていなくて...。近くにATMはありますか。</strong></li>
+        <li>Write one version asking whether <strong>PayPay</strong> can be used.</li>
+        <li>Write one calmer version using <strong>念のため確認したいんですが</strong>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next time, practice answering the staff prompt out loud and then add one follow-up question. The main fluency target is soft problem explanation with <strong>〜ていなくて...</strong> plus a practical request.</p>
+    </section>
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
