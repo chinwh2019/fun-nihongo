@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speaking With Bank Staff - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f5f6f1;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d1d5db;
+      --soft: #f8fafc;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 18px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    p { margin: 8px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      font-size: 0.85rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: var(--soft); }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      margin: 6px 0;
+      font-weight: 700;
+    }
+    button.secondary { background: #334155; }
+    details { margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: #fbfcfd; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden], .flash-answer[hidden] { display: none; }
+    .flashcard { border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin: 10px 0; background: #fbfcfd; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: #f9fffd; margin: 10px 0; }
+    .dialogue { display: grid; gap: 8px; margin-top: 10px; }
+    .turn { border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: #fbfcfd; }
+    .speaker { font-weight: 700; color: var(--accent); display: block; margin-bottom: 4px; }
+    .jp { font-size: 1.05rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .mini { font-size: 0.95rem; }
+    ul { padding-left: 20px; }
+    @media (max-width: 640px) {
+      body { padding: 12px; }
+      h1 { font-size: 1.55rem; }
+      th, td { padding: 8px; }
+      table { font-size: 0.92rem; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/bank-counter.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>銀行窓口で話す日本語</h1>
+      <p class="muted">Session date: 2026-07-11. Level: beginner to lower-intermediate. Focus: polite bank-counter phrases for opening an account, card/PIN trouble, transfers, withdrawal limits, and lost cards.</p>
+      <span class="tag">bank counter</span>
+      <span class="tag">official polite Japanese</span>
+      <span class="tag">scenario practice</span>
+      <span class="tag">soft uncertainty</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>This lesson practices how to speak with bank staff in Japan in several common situations: opening an account, asking what documents are needed, handling an ATM card or PIN problem, making a transfer, changing a withdrawal limit, and reporting a lost card.</p>
+      <p>At a Japanese bank, the safest speaking style is polite, calm, and a little indirect. You do not need complicated business Japanese. The most useful pattern is:</p>
+      <div class="shadow-line jp">〜したいんですが、手続きを教えていただけますか。</div>
+      <p class="muted">I would like to do ..., could you tell me the procedure?</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it when...</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>口座</td><td>こうざ</td><td>bank account</td><td>Opening, closing, or asking about an account</td></tr>
+          <tr><td>普通預金</td><td>ふつうよきん</td><td>ordinary savings account</td><td>Opening a standard personal bank account</td></tr>
+          <tr><td>キャッシュカード</td><td>キャッシュカード</td><td>ATM/cash card</td><td>ATM card, PIN, lost card, reissue</td></tr>
+          <tr><td>通帳</td><td>つうちょう</td><td>bank passbook</td><td>Passbook questions or updates</td></tr>
+          <tr><td>印鑑</td><td>いんかん</td><td>personal seal</td><td>When a bank asks for a registered seal</td></tr>
+          <tr><td>本人確認</td><td>ほんにんかくにん</td><td>identity verification</td><td>Showing ID documents</td></tr>
+          <tr><td>在留カード</td><td>ざいりゅうカード</td><td>residence card</td><td>Foreign resident identity document</td></tr>
+          <tr><td>暗証番号</td><td>あんしょうばんごう</td><td>PIN</td><td>PIN problems or resetting</td></tr>
+          <tr><td>振込</td><td>ふりこみ</td><td>bank transfer</td><td>Sending money to another account</td></tr>
+          <tr><td>引き出し</td><td>ひきだし</td><td>withdrawal</td><td>Taking out money</td></tr>
+          <tr><td>預け入れ</td><td>あずけいれ</td><td>deposit</td><td>Putting money into an account</td></tr>
+          <tr><td>手数料</td><td>てすうりょう</td><td>fee</td><td>Asking transfer or service fees</td></tr>
+          <tr><td>限度額</td><td>げんどがく</td><td>limit</td><td>ATM withdrawal or transfer limits</td></tr>
+          <tr><td>残高</td><td>ざんだか</td><td>balance</td><td>Account balance questions</td></tr>
+        </tbody>
+      </table>
+      <button type="button" onclick="toggleById('vocab-tip')">Show study tip</button>
+      <p id="vocab-tip" class="reveal muted" hidden>For speaking practice, prioritize 口座, 本人確認, 暗証番号, 振込, 手数料, and 限度額 first. These are the words most likely to come up at the counter.</p>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <details open>
+        <summary>1. Soft request: 〜したいんですが</summary>
+        <p class="jp">口座を開設したいんですが。</p>
+        <p>This means “I’d like to open an account.” The ending <strong>んですが</strong> sounds softer and naturally invites the bank staff to explain the next step.</p>
+      </details>
+      <details>
+        <summary>2. Polite help request: 〜ていただけますか</summary>
+        <p class="jp">必要なものを教えていただけますか。</p>
+        <p>Use this when asking staff to explain, check, write, or confirm something. It is polite but still normal for daily official situations.</p>
+      </details>
+      <details>
+        <summary>3. Calm uncertainty: 〜みたいなんですが</summary>
+        <p class="jp">キャッシュカードが使えないみたいなんですが。</p>
+        <p>This reports a problem without sounding accusatory. It means “It seems like my cash card is not working.”</p>
+      </details>
+      <details>
+        <summary>4. Procedure checking: どの手続きが必要ですか</summary>
+        <p class="jp">どの手続きが必要か確認したいんですが。</p>
+        <p>Use this when rules are unclear and you want staff guidance.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <div class="grid">
+        <div>
+          <h3>Opening the conversation</h3>
+          <p class="jp">すみません、普通預金の口座を開設したいんですが。</p>
+          <p class="muted">Excuse me, I’d like to open an ordinary savings account.</p>
+        </div>
+        <div>
+          <h3>Ask what you need</h3>
+          <p class="jp">必要なものを教えていただけますか。</p>
+          <p class="muted">Could you tell me what I need?</p>
+        </div>
+        <div>
+          <h3>Confirm gently</h3>
+          <p class="jp">これで合っていますか。</p>
+          <p class="muted">Is this correct?</p>
+        </div>
+        <div>
+          <h3>Ask for next action</h3>
+          <p class="jp">この場合、どうしたらいいですか。</p>
+          <p class="muted">What should I do in this case?</p>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Too blunt / casual</th><th>Natural at a bank</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="jp">口座作りたい。</td><td class="jp">口座を開設したいんですが。</td><td>More polite and more bank-like. 開設 is the natural word for opening an account.</td></tr>
+          <tr><td class="jp">何が必要？</td><td class="jp">必要なものを教えていただけますか。</td><td>Turns a direct question into a respectful staff-facing request.</td></tr>
+          <tr><td class="jp">カード使えません。</td><td class="jp">キャッシュカードが使えないみたいなんですが。</td><td>Sounds calmer and less like blaming the bank.</td></tr>
+          <tr><td class="jp">もう一回言って。</td><td class="jp">すみません、もう一度ゆっくりお願いします。</td><td>Good when you need repetition in an official setting.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p>This is a cleaned-up study version of the bank-counter scenario from the lesson. Practice the customer lines aloud.</p>
+      <div class="dialogue">
+        <div class="turn">
+          <span class="speaker">銀行員</span>
+          <span class="jp">いらっしゃいませ。本日はどのようなご用件でしょうか。</span>
+          <p class="muted">Welcome. What can we help you with today?</p>
+        </div>
+        <div class="turn">
+          <span class="speaker">あなた</span>
+          <span class="jp">すみません、普通預金の口座を開設したいんですが。</span>
+          <p class="muted">Excuse me, I’d like to open an ordinary savings account.</p>
+        </div>
+        <div class="turn">
+          <span class="speaker">銀行員</span>
+          <span class="jp">かしこまりました。本人確認書類はお持ちですか。</span>
+          <p class="muted">Certainly. Do you have identity verification documents?</p>
+        </div>
+        <div class="turn">
+          <span class="speaker">あなた</span>
+          <span class="jp">はい、在留カードとパスポートを持っています。これで合っていますか。</span>
+          <p class="muted">Yes, I have my residence card and passport. Is this correct?</p>
+        </div>
+        <div class="turn">
+          <span class="speaker">銀行員</span>
+          <span class="jp">ありがとうございます。ほかにご住所が確認できるものはありますか。</span>
+          <p class="muted">Thank you. Do you have anything else that can confirm your address?</p>
+        </div>
+        <div class="turn">
+          <span class="speaker">あなた</span>
+          <span class="jp">すみません、必要なものをもう一度ゆっくり教えていただけますか。</span>
+          <p class="muted">Sorry, could you tell me what I need again slowly?</p>
+        </div>
+        <div class="turn">
+          <span class="speaker">銀行員</span>
+          <span class="jp">はい。在留カード、印鑑、住所確認書類が必要です。</span>
+          <p class="muted">Yes. You need your residence card, personal seal, and address verification document.</p>
+        </div>
+        <div class="turn">
+          <span class="speaker">あなた</span>
+          <span class="jp">ありがとうございます。念のため、書いていただけますか。</span>
+          <p class="muted">Thank you. Just to be safe, could you write it down?</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Extra scenario: card/PIN trouble</summary>
+        <p class="jp">キャッシュカードが使えないみたいなんですが。</p>
+        <p class="jp">暗証番号を何回か間違えてしまいました。</p>
+        <p class="jp">再発行の手続きが必要ですか。</p>
+      </details>
+      <details>
+        <summary>Extra scenario: transfer and fee</summary>
+        <p class="jp">振込をしたいんですが、手続きを教えていただけますか。</p>
+        <p class="jp">手数料はいくらかかりますか。</p>
+        <p class="jp">今日中に相手の口座に入りますか。</p>
+      </details>
+      <details>
+        <summary>Extra scenario: lost card</summary>
+        <p class="jp">キャッシュカードをなくしてしまいました。</p>
+        <p class="jp">利用停止をお願いできますか。</p>
+        <p class="jp">再発行にはどのくらい時間がかかりますか。</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner response was recorded before this export. The first role-play prompt prepared for practice was:</p>
+      <div class="shadow-line jp">いらっしゃいませ。本日はどのようなご用件でしょうか。</div>
+      <p>A strong answer would be:</p>
+      <div class="shadow-line jp">すみません、普通預金の口座を開設したいんですが。</div>
+      <p class="muted">Correction focus for the next practice: use a full polite request instead of a short fragment like 口座作りたい.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <span class="warning-pill">too direct</span>
+      <span class="warning-pill">register mismatch</span>
+      <span class="warning-pill">unnatural phrasing</span>
+      <p>At a bank, short casual Japanese can be understandable but may sound abrupt. Use these repairs:</p>
+      <ul>
+        <li><span class="jp">口座作りたい</span> → <span class="jp">口座を開設したいんですが。</span></li>
+        <li><span class="jp">何が必要？</span> → <span class="jp">必要なものを教えていただけますか。</span></li>
+        <li><span class="jp">分からない</span> → <span class="jp">すみません、もう一度ゆっくりお願いします。</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Repeat each line slowly, then again at natural speed.</p>
+      <div class="shadow-line jp">すみません、普通預金の口座を開設したいんですが。</div>
+      <div class="shadow-line jp">必要なものを教えていただけますか。</div>
+      <div class="shadow-line jp">念のため確認したいんですが、手数料はいくらかかりますか。</div>
+      <div class="shadow-line jp">キャッシュカードが使えないみたいなんですが。</div>
+      <div class="shadow-line jp">この場合、どうしたらいいですか。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <h3>How do you say “I’d like to open an account”?</h3>
+        <button type="button" onclick="toggleById('flash1')">Reveal</button>
+        <p id="flash1" class="flash-answer jp" hidden>口座を開設したいんですが。</p>
+      </div>
+      <div class="flashcard">
+        <h3>What does 本人確認 mean?</h3>
+        <button type="button" onclick="toggleById('flash2')">Reveal</button>
+        <p id="flash2" class="flash-answer" hidden>Identity verification.</p>
+      </div>
+      <div class="flashcard">
+        <h3>How do you politely ask staff to write something down?</h3>
+        <button type="button" onclick="toggleById('flash3')">Reveal</button>
+        <p id="flash3" class="flash-answer jp" hidden>書いていただけますか。</p>
+      </div>
+      <div class="flashcard">
+        <h3>How do you report that your cash card seems not to work?</h3>
+        <button type="button" onclick="toggleById('flash4')">Reveal</button>
+        <p id="flash4" class="flash-answer jp" hidden>キャッシュカードが使えないみたいなんですが。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>Bank staff may speak in set phrases such as <span class="jp">本日はどのようなご用件でしょうか</span>. You can answer with a simple polite purpose sentence.</li>
+        <li><span class="jp">〜したいんですが</span> is useful because it sounds polite and lets the staff guide the procedure.</li>
+        <li>If you do not understand, it is normal to ask for repetition: <span class="jp">もう一度ゆっくりお願いします</span>.</li>
+        <li>Procedures and required documents can differ by bank and branch, so use confirmation language instead of assuming the rule.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <div class="flashcard">
+        <h3>1. Make this bank-polite: 口座作りたい。</h3>
+        <button type="button" onclick="toggleById('quiz1')">Show answer</button>
+        <p id="quiz1" class="quiz-answer jp" hidden>口座を開設したいんですが。</p>
+      </div>
+      <div class="flashcard">
+        <h3>2. Ask “Could you tell me what I need?”</h3>
+        <button type="button" onclick="toggleById('quiz2')">Show answer</button>
+        <p id="quiz2" class="quiz-answer jp" hidden>必要なものを教えていただけますか。</p>
+      </div>
+      <div class="flashcard">
+        <h3>3. What is 手数料?</h3>
+        <button type="button" onclick="toggleById('quiz3')">Show answer</button>
+        <p id="quiz3" class="quiz-answer" hidden>A fee or service charge.</p>
+      </div>
+      <div class="flashcard">
+        <h3>4. Ask “What should I do in this case?”</h3>
+        <button type="button" onclick="toggleById('quiz4')">Show answer</button>
+        <p id="quiz4" class="quiz-answer jp" hidden>この場合、どうしたらいいですか。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Practice the opening line three times: <span class="jp">普通預金の口座を開設したいんですが。</span></li>
+        <li>Choose one situation: account opening, transfer, lost card, or PIN trouble. Say a three-line customer script aloud.</li>
+        <li>Rewrite one blunt phrase into polite counter Japanese using <span class="jp">〜したいんですが</span> or <span class="jp">〜ていただけますか</span>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next recommended practice: do a step-by-step bank role-play where the staff asks follow-up questions about identity documents, address confirmation, and whether you need a cash card or passbook.</p>
+      <p class="muted">Difficulty snapshot: beginner to lower-intermediate; practical vocabulary with polite official-counter patterns. Continue reviewing soft uncertainty patterns such as <span class="jp">〜みたいなんですが</span>, <span class="jp">念のため確認したいんですが</span>, and <span class="jp">どうしたらいいですか</span>.</p>
+    </section>
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
