@@ -155,7 +155,18 @@ const FALLBACK_SENTENCE_TRANSLATIONS: Record<string, string> = {
   "指定ごみ袋が品薄みたいですね。": "It seems like the designated garbage bags are in short supply.",
   "透明の袋でも出せるかどうか確認したいんですが。": "I'd like to check whether I can put trash out in transparent bags.",
   "必要以上に買わないほうがよさそうですね。": "It seems better not to buy more than necessary.",
-  "うちの地域では、ルールが少し違うみたいです。": "It seems like the rules are a bit different in our area."
+  "うちの地域では、ルールが少し違うみたいです。": "It seems like the rules are a bit different in our area.",
+  // Additional translations
+  "念のため確認したいんですが、交通系ICは使えますか。": "I'd like to check just in case: can I use a transit IC card?",
+  "念のため確認したいんですが、手数料はいくらかかりますか。": "Just to be safe, I'd like to check: how much is the fee?",
+  "キャッシュカードが使えないみたいなんですが。": "It seems like my cash card is not working.",
+  "上大岡駅の表示器、見ました？": "Did you see the display board at Kamiooka Station?",
+  "昔のパタパタを再現してるみたいですね。": "It looks like they recreated the old flip-board style.",
+  "ちょっと懐かしい感じがしますね。": "It feels kind of nostalgic.",
+  "機能だけじゃなくて、遊び心がありますね。": "It’s not just functional; it has a playful touch.",
+  "すみません、カードは今使えますか。": "Excuse me, can I use a card right now?",
+  "現金以外だと、何が使えますか。": "Besides cash, what can I use?",
+  "すみません、今現金を持っていなくて...。": "Sorry, I do not have cash right now..."
 };
 
 function extractSentences(content: string, filename: string, lessonTitle: string): { id: string; ja: string; en: string; lessonTitle: string; lessonUrl: string; }[] {
@@ -189,13 +200,48 @@ function extractSentences(content: string, filename: string, lessonTitle: string
     }
     
     if (!en) {
-      const idx = sectionHtml.indexOf(tagContent);
-      if (idx !== -1) {
-        const after = sectionHtml.substring(idx + tagContent.length, idx + tagContent.length + 150);
-        const mutedMatch = /<p[^>]*class="[^"]*muted[^"]*"[^>]*>([\s\S]*?)<\/p>/i.exec(after) ||
-                           /<span[^>]*class="[^"]*muted[^"]*"[^>]*>([\s\S]*?)<\/span>/i.exec(after);
-        if (mutedMatch) {
-          en = mutedMatch[1].replace(/<[^>]*>/g, "").replace(/^["']|["']$/g, "").trim();
+      // Find occurrences of the normalized Japanese sentence in the entire page content
+      const cleanJa = ja.replace(/[。？！.?!\s…]+$/, "").trim();
+      if (cleanJa.length >= 3) {
+        let searchIdx = 0;
+        while (true) {
+          const idx = content.indexOf(cleanJa, searchIdx);
+          if (idx === -1) break;
+          
+          // Look ahead 300 characters
+          const after = content.substring(idx + cleanJa.length, idx + cleanJa.length + 300);
+          
+          // 1. Try to find class="en" or class="muted" tags
+          const enClassMatch = /<(?:span|div|p|td)[^>]*class="(?:en|muted)"[^>]*>([\s\S]*?)<\/(?:span|div|p|td)>/i.exec(after);
+          if (enClassMatch) {
+            const possibleEn = enClassMatch[1].replace(/<[^>]*>/g, "").replace(/^["']|["']$/g, "").trim();
+            if (possibleEn && possibleEn.toLowerCase() !== "practice sentence") {
+              en = possibleEn;
+              break;
+            }
+          }
+          
+          // 2. Try to find quotes enclosing an English explanation/translation
+          const quoteMatch = /["'“‘]([^"'”“‘’]{10,})["'”’]/i.exec(after);
+          if (quoteMatch) {
+            const possibleEn = quoteMatch[1].trim();
+            if (possibleEn && !/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf]/.test(possibleEn)) {
+              en = possibleEn;
+              break;
+            }
+          }
+          
+          // 3. Try to find plain text translation after <br> or '-' separators (e.g. <li><strong>JA</strong> - EN</li>)
+          const tagMatch = /^[^<]*(?:<\/strong>|<\/span>)?\s*(?:<br\s*\/?>|[-–—])\s*([^<]+)/i.exec(after);
+          if (tagMatch) {
+            const possibleEn = tagMatch[1].replace(/^["'“”‘]|["'“”‘]$/g, "").trim();
+            if (possibleEn && /[a-zA-Z]/.test(possibleEn) && !/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf]/.test(possibleEn)) {
+              en = possibleEn;
+              break;
+            }
+          }
+          
+          searchIdx = idx + cleanJa.length;
         }
       }
     }
