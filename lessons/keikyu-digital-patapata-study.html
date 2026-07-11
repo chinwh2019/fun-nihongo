@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking About Keikyu's Digital Patapata - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f4f6f3;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d4d9d0;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --soft: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 { font-size: 1.3rem; margin-bottom: 12px; }
+    h3 { font-size: 1rem; margin-bottom: 6px; }
+    p { margin: 0 0 10px; }
+    ul, ol { margin-top: 8px; padding-left: 22px; }
+    li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      font-size: 0.85rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #eef5f2; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+      margin: 4px 0;
+    }
+    button:focus { outline: 3px solid #99f6e4; outline-offset: 2px; }
+    details { margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: #fbfdfc; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden], .card-back[hidden] { display: none; }
+    .note { background: #f8fafc; border-left: 4px solid var(--accent); padding: 10px 12px; margin: 10px 0; }
+    .dialogue { display: grid; gap: 8px; margin-top: 8px; }
+    .turn { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: #fbfdfc; }
+    .speaker { font-weight: 700; color: var(--accent); display: block; margin-bottom: 2px; }
+    .jp { font-size: 1.05rem; }
+    .en { color: var(--muted); font-size: 0.92rem; margin-top: 3px; }
+    .flash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 8px; }
+    .flashcard { border: 1px solid var(--border); border-radius: 8px; padding: 12px; background: #fbfdfc; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: #f9fffd; margin: 10px 0; }
+    .contrast { display: grid; gap: 8px; margin-top: 8px; }
+    .bad, .good { border-radius: 8px; padding: 10px 12px; border: 1px solid var(--border); }
+    .bad { background: #fff7ed; }
+    .good { background: #ecfdf5; }
+    @media (max-width: 680px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      table { font-size: 0.92rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/keikyu-digital-patapata.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>京急の「デジタルパタパタ」</h1>
+      <p class="muted">Session date: 2026-07-11. Level: beginner to lower-intermediate. Focus: natural workplace small talk about a current train-station topic, nostalgia, and soft hearsay with 〜みたいですね.</p>
+      <span class="tag">current Japan topic</span>
+      <span class="tag">workplace small talk</span>
+      <span class="tag">trains and stations</span>
+      <span class="tag">〜みたいですね</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p>京急・上大岡駅で、昔の駅の発車案内板のように「パタパタ」動くデジタル表示器が話題になりました。昔の機械式表示をそのまま戻したのではなく、液晶ディスプレイで動きを再現したものです。</p>
+      <p>This is useful because it is light, safe conversation material: you can mention it at work, with train-loving friends, or as a small comment about Japanese station design and nostalgia.</p>
+      <div class="note">
+        <strong>Speaking goal:</strong> Mention something you saw online, react gently, and invite the other person to respond.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Useful note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>発車案内</td><td>はっしゃあんない</td><td>departure information</td><td>Often seen in stations: 発車案内表示器.</td></tr>
+          <tr><td>表示器</td><td>ひょうじき</td><td>display board/device</td><td>Technical but common in transport contexts.</td></tr>
+          <tr><td>パタパタ</td><td>ぱたぱた</td><td>flip-flap sound or movement</td><td>Onomatopoeia; here it refers to old flip-board displays.</td></tr>
+          <tr><td>懐かしい</td><td>なつかしい</td><td>nostalgic</td><td>Use carefully if you did not personally experience the old thing.</td></tr>
+          <tr><td>再現する</td><td>さいげんする</td><td>to recreate</td><td>Good for talking about design, flavors, old styles, or memories.</td></tr>
+          <tr><td>あえて</td><td>あえて</td><td>intentionally, even though not necessary</td><td>Useful for design choices: あえて古い感じにする.</td></tr>
+          <tr><td>京急らしさ</td><td>けいきゅうらしさ</td><td>that Keikyu-like character</td><td>〜らしさ means the recognizable quality of someone/something.</td></tr>
+          <tr><td>遊び心</td><td>あそびごころ</td><td>playful touch</td><td>Positive word for small charming design choices.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <details open>
+        <summary>Pattern 1: 〜みたいですね</summary>
+        <p><strong>Meaning:</strong> “It looks like...” / “Apparently...” / “I heard...”</p>
+        <p class="jp">京急の上大岡駅で、デジタルパタパタが始まったみたいですね。</p>
+        <p class="en">It looks like Keikyu started a digital patapata display at Kamiooka Station.</p>
+        <p>This is softer and more conversational than stating the news too firmly.</p>
+      </details>
+      <details>
+        <summary>Pattern 2: 〜感じがします</summary>
+        <p><strong>Meaning:</strong> “It has a feeling of...” / “It kind of feels...”</p>
+        <p class="jp">ちょっと懐かしい感じがしますね。</p>
+        <p class="en">It feels kind of nostalgic.</p>
+        <p>This is useful when you want to react gently without overclaiming your personal experience.</p>
+      </details>
+      <details>
+        <summary>Pattern 3: 機能だけじゃなくて、〜</summary>
+        <p><strong>Meaning:</strong> “Not just functional, but...”</p>
+        <p class="jp">機能だけじゃなくて、遊び心がありますね。</p>
+        <p class="en">It’s not just functional; it has a playful touch.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <ul>
+        <li><span class="jp">上大岡駅の表示器、見ました？</span><br><span class="en">Did you see the display board at Kamiooka Station?</span></li>
+        <li><span class="jp">昔のパタパタを再現してるみたいですね。</span><br><span class="en">It looks like they recreated the old flip-board style.</span></li>
+        <li><span class="jp">ちょっと懐かしい感じがしますね。</span><br><span class="en">It feels kind of nostalgic.</span></li>
+        <li><span class="jp">機能だけじゃなくて、遊び心がありますね。</span><br><span class="en">It’s not just functional; it has a playful touch.</span></li>
+      </ul>
+      <div class="contrast">
+        <div class="bad">
+          <strong>A little too strong if you did not personally know the old displays:</strong>
+          <p class="jp">すごく懐かしいです。</p>
+        </div>
+        <div class="good">
+          <strong>Softer and more natural:</strong>
+          <p class="jp">ちょっと懐かしい感じがしますね。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-Play and Dialogue</h2>
+      <p><strong>Scenario:</strong> You are chatting with a coworker. They mention the topic after seeing it on social media.</p>
+      <div class="dialogue">
+        <div class="turn">
+          <span class="speaker">同僚</span>
+          <div class="jp">上大岡駅のデジタルパタパタ、SNSで見ました？ちょっと面白いですよね。</div>
+          <div class="en">Did you see the digital patapata at Kamiooka Station on social media? It’s kind of interesting, isn’t it?</div>
+        </div>
+        <div class="turn">
+          <span class="speaker">あなた</span>
+          <div class="jp">はい、見ました。昔のパタパタを再現してるみたいですね。</div>
+          <div class="en">Yes, I saw it. It looks like they recreated the old flip-board style.</div>
+        </div>
+        <div class="turn">
+          <span class="speaker">同僚</span>
+          <div class="jp">そうそう。わざわざデジタルであの動きを作るのがいいですよね。</div>
+          <div class="en">Exactly. It’s nice that they intentionally made that motion digitally.</div>
+        </div>
+        <div class="turn">
+          <span class="speaker">あなた</span>
+          <div class="jp">ちょっと懐かしい感じがしますし、遊び心がありますね。</div>
+          <div class="en">It feels kind of nostalgic, and it has a playful touch.</div>
+        </div>
+        <div class="turn">
+          <span class="speaker">同僚</span>
+          <div class="jp">京急らしいですよね。今度、近くに行ったら見てみたいです。</div>
+          <div class="en">It feels very Keikyu, doesn’t it? I’d like to see it next time I’m nearby.</div>
+        </div>
+        <div class="turn">
+          <span class="speaker">あなた</span>
+          <div class="jp">私も実際に見てみたいです。</div>
+          <div class="en">I’d like to see it in person too.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner answer was submitted before saving. Use this model answer for the original prompt:</p>
+      <div class="note">
+        <p class="jp">はい、見ました。ちょっと懐かしい感じがしますし、遊び心がありますね。</p>
+        <p class="en">Yes, I saw it. It feels kind of nostalgic, and it has a playful touch.</p>
+      </div>
+      <span class="warning-pill">target: soft reaction</span>
+      <span class="warning-pill">target: shared-feeling よね</span>
+      <span class="warning-pill">target: 〜みたいですね</span>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <p><strong>Likely learner issue:</strong> sounding too absolute or too direct when giving a reaction.</p>
+      <table>
+        <thead>
+          <tr><th>Less natural</th><th>More natural</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>これは懐かしいです。</td>
+            <td>ちょっと懐かしい感じがしますね。</td>
+            <td>The second version is softer and works even if you did not personally use old station displays.</td>
+          </tr>
+          <tr>
+            <td>京急は面白いです。</td>
+            <td>京急らしくて、面白いですね。</td>
+            <td>〜らしくて makes the comment more specific and natural.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p>Read each line aloud 3 times. Keep the rhythm light and conversational.</p>
+      <div class="shadow-line jp">上大岡駅の表示器、見ました？</div>
+      <div class="shadow-line jp">昔のパタパタを再現してるみたいですね。</div>
+      <div class="shadow-line jp">ちょっと懐かしい感じがしますね。</div>
+      <div class="shadow-line jp">機能だけじゃなくて、遊び心がありますね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flash-grid">
+        <div class="flashcard">
+          <h3>発車案内</h3>
+          <button onclick="toggleById('fc1')">Reveal</button>
+          <div id="fc1" class="card-back" hidden>はっしゃあんない - departure information</div>
+        </div>
+        <div class="flashcard">
+          <h3>懐かしい</h3>
+          <button onclick="toggleById('fc2')">Reveal</button>
+          <div id="fc2" class="card-back" hidden>なつかしい - nostalgic</div>
+        </div>
+        <div class="flashcard">
+          <h3>再現する</h3>
+          <button onclick="toggleById('fc3')">Reveal</button>
+          <div id="fc3" class="card-back" hidden>さいげんする - to recreate</div>
+        </div>
+        <div class="flashcard">
+          <h3>遊び心</h3>
+          <button onclick="toggleById('fc4')">Reveal</button>
+          <div id="fc4" class="card-back" hidden>あそびごころ - playful touch</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <ul>
+        <li>Japanese station design often has strong local identity. Saying <span class="jp">京急らしいですね</span> is a compact way to praise that brand or railway character.</li>
+        <li><span class="jp">遊び心</span> is a useful positive word for small design details that are not strictly necessary but make something more charming.</li>
+        <li>For workplace small talk, avoid sounding like you are making a big claim. Soft phrases like <span class="jp">〜みたいですね</span>, <span class="jp">ちょっと〜感じがしますね</span>, and <span class="jp">面白いですよね</span> invite agreement.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>
+          How do you say “It looks like they recreated the old patapata”?
+          <br><button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer jp" hidden>昔のパタパタを再現してるみたいですね。</p>
+        </li>
+        <li>
+          Which is softer: <span class="jp">懐かしいです</span> or <span class="jp">懐かしい感じがします</span>?
+          <br><button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden><span class="jp">懐かしい感じがします</span> is softer, especially when you are not claiming direct personal nostalgia.</p>
+        </li>
+        <li>
+          Translate: “It’s not just functional; it has a playful touch.”
+          <br><button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer jp" hidden>機能だけじゃなくて、遊び心がありますね。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write one short workplace-safe comment about this topic. Use at least one of these patterns:</p>
+      <ul>
+        <li><span class="jp">〜みたいですね</span></li>
+        <li><span class="jp">ちょっと〜感じがしますね</span></li>
+        <li><span class="jp">〜らしくて、面白いですね</span></li>
+      </ul>
+      <p><strong>Example:</strong> <span class="jp">京急らしくて、ちょっと面白いですね。</span></p>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Next time, practice answering the coworker prompt in your own words. Useful focus: combine a soft observation with a shared-feeling ending like <span class="jp">〜ですよね</span>.</p>
+      <p class="muted">Export-ready summary: current Japan topic, transport/workplace small talk, vocabulary for station displays, pattern practice with 〜みたいですね and 〜感じがします, no learner corrections yet.</p>
+    </section>
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
