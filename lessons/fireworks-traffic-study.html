@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fireworks Crowds and Traffic Restrictions - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d1d5db;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: var(--bg); color: var(--ink); font-family: Arial, sans-serif; line-height: 1.6; }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; }
+    h2 { border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .muted { color: var(--muted); }
+    .pill { display: inline-block; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 999px; font-size: 0.9rem; margin-bottom: 8px; }
+    .warning-pill { display: inline-block; background: var(--warn-soft); color: var(--warn); padding: 4px 10px; border-radius: 999px; font-size: 0.85rem; margin: 4px 6px 0 0; }
+    .tag { display: inline-block; margin: 6px 8px 0 0; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); background: #f8fafc; font-size: 0.85rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    button { background: var(--accent); color: white; border: none; border-radius: 10px; padding: 8px 12px; cursor: pointer; margin: 4px 0; }
+    button:hover { filter: brightness(0.94); }
+    details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    ul, ol { padding-left: 1.3rem; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard { border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin: 10px 0; background: #fbfbfb; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: #f9fffd; margin: 10px 0; }
+    .dialogue { display: grid; gap: 8px; }
+    .turn { border-left: 3px solid var(--border); padding: 8px 10px; background: #fcfcfc; }
+    .speaker { font-weight: 700; color: var(--accent); }
+    .contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .bad, .good { border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+    .bad { background: #fff7ed; }
+    .good { background: #ecfdf5; }
+    code { background: #f3f4f6; padding: 2px 5px; border-radius: 6px; }
+    @media (max-width: 700px) {
+      body { padding: 14px; }
+      .contrast { grid-template-columns: 1fr; }
+      table { font-size: 0.94rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/fireworks-traffic.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>花火大会の混雑と交通規制</h1>
+      <p class="muted">Session date: 2026-07-11 JST. Level: beginner to lower-intermediate. Focus: natural small talk and practical staff-facing phrases for fireworks crowds, traffic restrictions, and meeting up safely.</p>
+      <span class="tag">summer events</span>
+      <span class="tag">travel and local logistics</span>
+      <span class="tag">soft checking phrases</span>
+      <span class="tag">workplace small talk</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>This lesson focused on current summer fireworks season in Japan, especially how people talk about event crowds, traffic restrictions, station crowding, and meeting plans. The practical goal is to move beyond simply saying <strong>花火、きれいですね</strong> and handle the real-life logistics around a major event.</p>
+      <p>Research context from the session: on July 11, 2026, WalkerPlus listed same-day weekend fireworks events around Japan, and major upcoming events such as the Sumida River Fireworks Festival had official notices about viewing rules, traffic restrictions, road closures, and transport impacts.</p>
+      <span class="warning-pill">Check official info before going</span>
+      <span class="warning-pill">Crowds can change plans</span>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it like this</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>花火大会</td><td>はなびたいかい</td><td>fireworks festival</td><td>今度の花火大会、行きますか。</td></tr>
+          <tr><td>混雑</td><td>こんざつ</td><td>crowding, congestion</td><td>駅がかなり混雑しそうです。</td></tr>
+          <tr><td>交通規制</td><td>こうつうきせい</td><td>traffic restrictions</td><td>交通規制があるみたいです。</td></tr>
+          <tr><td>通行止め</td><td>つうこうどめ</td><td>road closure</td><td>この道は通行止めですか。</td></tr>
+          <tr><td>屋台</td><td>やたい</td><td>food stall</td><td>屋台も出るみたいですね。</td></tr>
+          <tr><td>待ち合わせ</td><td>まちあわせ</td><td>meeting up</td><td>どこで待ち合わせしますか。</td></tr>
+          <tr><td>開催</td><td>かいさい</td><td>holding an event</td><td>予定通り開催されますか。</td></tr>
+          <tr><td>中止</td><td>ちゅうし</td><td>cancellation</td><td>荒天の場合は中止になるかもしれません。</td></tr>
+          <tr><td>荒天</td><td>こうてん</td><td>stormy weather</td><td>荒天の場合は公式サイトを確認します。</td></tr>
+          <tr><td>公共交通機関</td><td>こうきょうこうつうきかん</td><td>public transportation</td><td>公共交通機関で行ったほうがよさそうです。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>1. 〜みたいです / 〜みたいですね</h3>
+      <p>Use this for soft hearsay or an impression from something you saw online. It sounds lighter and safer than stating everything as a hard fact.</p>
+      <div class="shadow-line">交通規制があるみたいです。</div>
+      <div class="shadow-line">花火大会、かなり混みそうですね。</div>
+
+      <h3>2. 〜たほうがよさそうです</h3>
+      <p>Use this for soft advice or planning. It avoids sounding bossy.</p>
+      <div class="shadow-line">駅も混みそうなので、早めに行ったほうがよさそうですね。</div>
+
+      <h3>3. 念のため、〜ておきます</h3>
+      <p>Use this when you want to say you will do something in advance, just in case.</p>
+      <div class="shadow-line">念のため、帰りのルートも確認しておきます。</div>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <ul>
+        <li><strong>花火大会、かなり混みそうですね。</strong><br />The fireworks festival looks like it will be really crowded.</li>
+        <li><strong>交通規制があるみたいです。</strong><br />It seems there will be traffic restrictions.</li>
+        <li><strong>このあたりで待ち合わせしても大丈夫ですか。</strong><br />Is it okay if we meet around here?</li>
+        <li><strong>この場合、どうしたらいいですか。</strong><br />What should I do in this situation?</li>
+      </ul>
+
+      <div class="contrast">
+        <div class="bad">
+          <h3>Too direct</h3>
+          <p><strong>車で行ってもいい？</strong></p>
+          <p class="muted">Understandable with close friends, but too blunt for staff and not careful enough for an event with restrictions.</p>
+        </div>
+        <div class="good">
+          <h3>More natural</h3>
+          <p><strong>交通規制があるみたいなんですが、車で行くのは避けたほうがいいですか。</strong></p>
+          <p class="muted">Softly gives context, then asks for practical advice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p><strong>Scenario:</strong> You are chatting with a coworker about going to a fireworks festival, then you ask station or event staff for practical help.</p>
+      <div class="dialogue">
+        <div class="turn"><span class="speaker">Coworker:</span> 今度の花火大会、行く予定ですか。かなり混みそうですよね。</div>
+        <div class="turn"><span class="speaker">You:</span> そうですね。混みそうなので、早めに行こうかなと思っています。</div>
+        <div class="turn"><span class="speaker">Coworker:</span> 帰りの駅も大変そうですよね。</div>
+        <div class="turn"><span class="speaker">You:</span> はい。念のため、帰りのルートも確認しておきます。</div>
+        <div class="turn"><span class="speaker">Coworker:</span> 車で行くんですか。</div>
+        <div class="turn"><span class="speaker">You:</span> 交通規制があるみたいなので、公共交通機関で行ったほうがよさそうです。</div>
+        <div class="turn"><span class="speaker">Staff:</span> こちらは通行止めです。駅のほうへお進みください。</div>
+        <div class="turn"><span class="speaker">You:</span> ありがとうございます。この場合、どの駅から帰るのがよさそうですか。</div>
+        <div class="turn"><span class="speaker">Staff:</span> 浅草駅は混雑していますので、少し歩いて別の駅を使う方も多いです。</div>
+        <div class="turn"><span class="speaker">You:</span> 分かりました。念のため、そちらのルートを確認してみます。</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner answer was submitted before this export. Use this model answer for the prompt from the lesson:</p>
+      <div class="flashcard">
+        <p><strong>Prompt:</strong> "Yeah, it looks crowded, so I think I'll go early. I'll also check the route home just in case."</p>
+        <button onclick="toggleById('model-answer')">Reveal model answer</button>
+        <p id="model-answer" class="reveal" hidden><strong>そうですね。混みそうなので、早めに行こうかなと思っています。念のため、帰りのルートも確認しておきます。</strong></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <p>Correction target from this lesson: avoid blunt event-logistics questions when speaking to staff or people you do not know well.</p>
+      <ul>
+        <li><strong>Too blunt:</strong> 車で行ってもいい？</li>
+        <li><strong>Better:</strong> 車で行くのは難しそうですか。</li>
+        <li><strong>Best for staff:</strong> 交通規制があるみたいなんですが、車で行くのは避けたほうがいいですか。</li>
+      </ul>
+      <p class="muted">Taxonomy: too direct, register mismatch, missing nuance.</p>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Read each line aloud two or three times. Aim for smooth, calm delivery.</p>
+      <div class="shadow-line">花火大会、かなり混みそうですね。</div>
+      <div class="shadow-line">交通規制があるみたいです。</div>
+      <div class="shadow-line">駅も混みそうなので、早めに行ったほうがよさそうですね。</div>
+      <div class="shadow-line">念のため、帰りのルートも確認しておきます。</div>
+      <div class="shadow-line">この場合、どうしたらいいですか。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <p><strong>花火大会</strong></p>
+        <button onclick="toggleById('fc1')">Reveal</button>
+        <p id="fc1" class="reveal" hidden>はなびたいかい - fireworks festival</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>交通規制</strong></p>
+        <button onclick="toggleById('fc2')">Reveal</button>
+        <p id="fc2" class="reveal" hidden>こうつうきせい - traffic restrictions</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>混雑</strong></p>
+        <button onclick="toggleById('fc3')">Reveal</button>
+        <p id="fc3" class="reveal" hidden>こんざつ - crowding or congestion</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>念のため</strong></p>
+        <button onclick="toggleById('fc4')">Reveal</button>
+        <p id="fc4" class="reveal" hidden>just in case</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>For large fireworks festivals, people often plan around crowds as much as the event itself.</li>
+        <li>Official notices may mention <strong>交通規制</strong>, <strong>通行止め</strong>, <strong>立入禁止</strong>, or recommendations to use <strong>公共交通機関</strong>.</li>
+        <li>With staff, phrase your question as a soft situation check: <strong>〜みたいなんですが、この場合どうしたらいいですか。</strong></li>
+        <li>For friends or coworkers, <strong>混みそうですね</strong> and <strong>早めに行ったほうがよさそうですね</strong> are natural, safe small-talk phrases.</li>
+      </ul>
+      <details>
+        <summary>Session source notes</summary>
+        <p>This study sheet was based on a current-topic search that checked WalkerPlus fireworks listings, the Sumida River Fireworks official site, Tokyo Metropolitan Police traffic information, Tokyo Metropolitan Bureau of Transportation bus notices, Atami official fireworks information, and Okinawa Ocean Expo fireworks information.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <ol>
+        <li>
+          How do you say "It looks like there will be traffic restrictions"?
+          <br /><button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer" hidden>交通規制があるみたいです。</p>
+        </li>
+        <li>
+          Fill in the blank: 駅も混みそうなので、早めに行ったほうが____ですね。
+          <br /><button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden>よさそう</p>
+        </li>
+        <li>
+          Which sounds softer for staff: <strong>車で行ってもいい？</strong> or <strong>車で行くのは避けたほうがいいですか。</strong>?
+          <br /><button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer" hidden>車で行くのは避けたほうがいいですか。</p>
+        </li>
+        <li>
+          Translate: "Just in case, I'll check the route home."
+          <br /><button onclick="toggleById('q4')">Show answer</button>
+          <p id="q4" class="quiz-answer" hidden>念のため、帰りのルートも確認しておきます。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write two short messages in Japanese:</p>
+      <ol>
+        <li>To a coworker: "The fireworks festival looks crowded, so I think I'll go early."</li>
+        <li>To event staff: "It seems there are traffic restrictions. What should I do in this situation?"</li>
+      </ol>
+      <p>Try using <strong>〜みたいです</strong>, <strong>〜たほうがよさそうです</strong>, and <strong>念のため</strong>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next time, practice one live response to the coworker prompt, then polish it for naturalness. Good review targets are <strong>よさそうですね</strong>, <strong>〜みたいなんですが</strong>, and staff-safe questions with <strong>どうしたらいいですか</strong>.</p>
+    </section>
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
