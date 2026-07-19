@@ -847,6 +847,36 @@
     document.addEventListener('touchstart', hideTooltip);
   }
 
+  // Handle MCQ option checks locally
+  window.checkOption = function(btn, isCorrect) {
+    if (isCorrect) {
+      btn.style.background = 'rgba(16, 185, 129, 0.15)'; // soft green
+      btn.style.color = '#059669';
+      btn.style.borderColor = '#10b981';
+      btn.style.fontWeight = '700';
+      if (!btn.innerHTML.includes('✓')) {
+        btn.innerHTML += ' <span style="float: right;">✓</span>';
+      }
+    } else {
+      btn.style.background = 'rgba(239, 68, 68, 0.15)'; // soft red
+      btn.style.color = '#dc2626';
+      btn.style.borderColor = '#ef4444';
+      btn.style.fontWeight = '700';
+      if (!btn.innerHTML.includes('✗')) {
+        btn.innerHTML += ' <span style="float: right;">✗</span>';
+      }
+    }
+    
+    // Disable all options in the same grid/parent to prevent re-clicks
+    const parent = btn.parentNode;
+    if (parent) {
+      Array.from(parent.querySelectorAll('.option-btn')).forEach(child => {
+        child.disabled = true;
+        child.style.cursor = 'not-allowed';
+      });
+    }
+  };
+
   // Launch on DOMContentLoaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

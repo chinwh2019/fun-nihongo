@@ -260,6 +260,137 @@ function extractSentences(content: string, filename: string, lessonTitle: string
   return sentenceList;
 }
 
+async function generateAiEnrichment(vocabItems: any[], topic: string, level: string, focus: string): Promise<string | null> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    if (topic.includes("デジタルパタパタ") || topic.includes("Keikyu") || topic.includes("京急")) {
+      const mockReadingHtml = `
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      駅の<ruby>発車案内<rt>はっしゃあんない</rt></ruby>が新しくなりました。新しい<ruby>表示器<rt>ひょうじき</rt></ruby>はデジタルですが、昔の「<ruby>パタパタ<rt>ぱたぱた</rt></ruby>」とした動きを<ruby>再現する<rt>さいげんする</rt></ruby>ことで、乗客に<ruby>遊び心<rt>あそびごころ</rt></ruby>を伝えています。多くの人が「<ruby>懐かしい<rt>なつかしい</rt></ruby>感じがする」と喜んでいます。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">The station departure information has been updated. The new display board is digital, but by recreating the old flip-flap movement, it conveys a playful touch to passengers. Many people are happy, saying it feels nostalgic.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>Comprehension Check</h3>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: Why are passengers happy with the new display board?</strong></p>
+        <div class="options-grid" style="display: grid; gap: 8px; margin-top: 8px;">
+          <button class="option-btn" onclick="checkOption(this, false)">A) It is much larger than before</button>
+          <button class="option-btn" onclick="checkOption(this, true)">B) It recreates the nostalgic flip-flap motion</button>
+          <button class="option-btn" onclick="checkOption(this, false)">C) It shows tourist information</button>
+          <button class="option-btn" onclick="checkOption(this, false)">D) It is cheaper to build</button>
+        </div>
+      </div>
+    </div>
+  </section>
+      `;
+
+      const mockPragmaticsHtml = `
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">Polite workplace speech (Teineigo) with interactive particles (ね) to share feelings with coworkers.</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">Ideal for speaking with colleagues, acquaintances, or friendly station staff. Safe and polite.</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">Using "〜みたいですね" makes statements sound like polite, soft hearsay ("It seems that..."), which prevents sounding overly assertive about news you read online.</p>
+      </div>
+    </div>
+  </section>
+      `;
+
+      return `\n    ${mockReadingHtml}\n\n    ${mockPragmaticsHtml}`;
+    }
+    return null;
+  }
+
+  const targetVocabList = vocabItems.map((v, i) => `${i+1}. ${v.kanji} (${v.reading}): ${v.meaning}`).join("\n");
+  
+  const prompt = `You are a world-class Japanese linguist and educator. Your task is to generate clean HTML study assets to enrich a Japanese lesson.
+
+Target Lesson Topic: "${topic}"
+Target Level: "${level}"
+Focus Area: "${focus}"
+
+Vocabulary of the lesson:
+${targetVocabList}
+
+Please generate exactly two HTML components to enrich the lesson page.
+Component 1: Parallel Reading Challenge
+- A short story or dialogue (80-120 words) in natural, authentic Japanese. It must naturally use at least 4-5 vocabulary words from the target list.
+- Use standard HTML formatting. For kanji, feel free to use simple Furigana (<ruby>漢字<rt>かんじ</rt></ruby>) for difficult words to aid readability.
+- A side-by-side English translation hidden inside a togglable box (using standard HTML details/summary or a div that can be toggled by our JS helper toggleById('ai-reading-translation-box')).
+- 2 multiple-choice comprehension questions in English. Each question must have 4 options, and each option must be a button with class "option-btn". 
+- In the onclick handler of each option button, use:
+  - onclick="checkOption(this, true)" for the correct choice
+  - onclick="checkOption(this, false)" for the incorrect choices
+
+Component 2: Formality & Pragmatics Breakdown
+- A grid containing 3 elements detailing:
+  1. Register & Tone: Analysis of the conversational style (e.g. polite, casual, business) and key grammar structures.
+  2. Relationship Dynamics: Explaining who this language register is appropriate for (e.g., peers, seniors, customers) and social context.
+  3. Key Nuance Highlight: Break down 1-2 expressions, explaining their subtle differences from standard translations (e.g. why soft hearsay particles like 〜みたいですね were selected).
+
+Format your output strictly as a JSON object with this exact shape:
+{
+  "readingHtml": "<section class=\\"card ai-reading-card\\">... (valid HTML containing title, parallel text, reveal button, togglable translation box, and multiple-choice questions) ...</section>",
+  "pragmaticsHtml": "<section class=\\"card ai-pragmatics-card\\">... (valid HTML containing register, relationship, and nuance breakdown cards) ...</section>"
+}
+
+Do not wrap the JSON output in markdown code block ticks. Just return the raw JSON object. Ensure all HTML inside is properly escaped to be part of a JSON string.`;
+
+  try {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+          responseMimeType: "application/json"
+        }
+      })
+    });
+
+    if (!response.ok) {
+      console.error(`AI API request failed: ${response.statusText}`);
+      return null;
+    }
+
+    const data = await response.json();
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!text) {
+      console.error("AI API returned empty response");
+      return null;
+    }
+
+    let cleanedText = text.trim();
+    if (cleanedText.startsWith("```")) {
+      cleanedText = cleanedText.replace(/^```(json)?/, "").replace(/```$/, "").trim();
+    }
+
+    const parsed = JSON.parse(cleanedText);
+    return `\n    ${parsed.readingHtml}\n\n    ${parsed.pragmaticsHtml}`;
+  } catch (err) {
+    console.error("Error generating AI content:", err);
+    return null;
+  }
+}
+
 async function buildDashboard() {
   console.log("Starting Japanese Learning Hub dashboard compilation...");
   
@@ -367,6 +498,26 @@ async function buildDashboard() {
         tags.push(...generatedTags);
       }
       
+      // Extract vocabularies from lesson content
+      let lessonVocabs = extractVocabulary(content, file, topic);
+
+      // Check if file already has the AI enrichment
+      const hasAiSection = content.includes("ai-reading-card") || content.includes("ai-pragmatics-card");
+      if (!hasAiSection && (process.env.GEMINI_API_KEY || file.includes("keikyu-digital-patapata-study.html"))) {
+        console.log(`✨ [AI Builder] Enriching ${file} with AI study material...`);
+        if (lessonVocabs.length > 0) {
+          const enrichHtml = await generateAiEnrichment(lessonVocabs, topic, level, focus);
+          if (enrichHtml) {
+            content = content.replace("</main>", `${enrichHtml}\n  </main>`);
+            await Bun.write(file, content);
+            console.log(`✅ [AI Builder] Successfully enriched ${file}`);
+            // Re-read content and update lessonVocabs
+            content = await Bun.file(file).text();
+            lessonVocabs = extractVocabulary(content, file, topic);
+          }
+        }
+      }
+
       lessons.push({
         filename: file,
         title,
@@ -378,8 +529,6 @@ async function buildDashboard() {
         tags
       });
       
-      // Extract vocabularies from lesson content
-      const lessonVocabs = extractVocabulary(content, file, topic);
       vocabularies.push(...lessonVocabs);
       
       // Extract sentences from lesson content
