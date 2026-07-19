@@ -298,14 +298,14 @@ async function generateAiEnrichment(vocabItems: any[], topic: string, level: str
       <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">The station departure information has been updated. The new display board is digital, but by recreating the old flip-flap movement, it conveys a playful touch to passengers. Many people are happy, saying it feels nostalgic.</p>
     </div>
     <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
-      <h3>Comprehension Check</h3>
+      <h3>理解度チェック (Comprehension Check)</h3>
       <div class="question-block" style="margin-bottom: 15px;">
-        <p><strong>Q1: Why are passengers happy with the new display board?</strong></p>
+        <p><strong>Q1: 乗客はなぜ新しい表示板を喜んでいますか？</strong></p>
         <div class="options-grid" style="display: grid; gap: 8px; margin-top: 8px;">
-          <button class="option-btn" onclick="checkOption(this, false)">A) It is much larger than before</button>
-          <button class="option-btn" onclick="checkOption(this, true)">B) It recreates the nostalgic flip-flap motion</button>
-          <button class="option-btn" onclick="checkOption(this, false)">C) It shows tourist information</button>
-          <button class="option-btn" onclick="checkOption(this, false)">D) It is cheaper to build</button>
+          <button class="option-btn" onclick="checkOption(this, false)">A) 以前より表示が大きくなったから</button>
+          <button class="option-btn" onclick="checkOption(this, true)">B) 懐かしい「パタパタ」の動きを再現しているから</button>
+          <button class="option-btn" onclick="checkOption(this, false)">C) 観光情報がたくさん表示されるから</button>
+          <button class="option-btn" onclick="checkOption(this, false)">D) 切符の購入がスムーズになったから</button>
         </div>
       </div>
     </div>
@@ -364,7 +364,7 @@ Component 1: Parallel Reading Challenge
 - A short story or dialogue (80-120 words) in natural, authentic Japanese. It must naturally use at least 4-5 vocabulary words from the target list.
 - Use standard HTML formatting. For kanji, feel free to use simple Furigana (<ruby>漢字<rt>かんじ</rt></ruby>) for difficult words to aid readability.
 - A side-by-side English translation hidden inside a togglable box (using standard HTML details/summary or a div that can be toggled by our JS helper toggleById('ai-reading-translation-box')).
-- 2 multiple-choice comprehension questions in English. Each question must have 4 options, and each option must be a button with class "option-btn". 
+- 2 multiple-choice comprehension questions in simple, natural Japanese (matching the target learner's level, do not write questions or options in English). Each question must have 4 options, and each option must be a button with class "option-btn". 
 - In the onclick handler of each option button, use:
   - onclick="checkOption(this, true)" for the correct choice
   - onclick="checkOption(this, false)" for the incorrect choices
@@ -559,6 +559,12 @@ async function buildDashboard() {
         tags.push(...generatedTags);
       }
       
+      if (process.env.AI_REGEN) {
+        content = content.replace(/<section class="card ai-reading-card">[\s\S]*?<\/section>/g, "");
+        content = content.replace(/<section class="card ai-pragmatics-card">[\s\S]*?<\/section>/g, "");
+        content = content.replace(/\n\s*\n\s*<\/main>/, "\n  </main>");
+      }
+
       // Extract vocabularies from lesson content
       let lessonVocabs = extractVocabulary(content, file, topic);
 
