@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking about Summer Travel Crowds - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d1d5db;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --good: #166534;
+      --good-soft: #dcfce7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.25; }
+    p { margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 0.85rem;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    ul, ol { margin-top: 8px; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button.secondary { background: #334155; }
+    details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard { border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin: 10px 0; background: #fff; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: #f9fffd; margin: 10px 0; }
+    .contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    .bad { background: var(--warn-soft); border: 1px solid #f59e0b; border-radius: 10px; padding: 12px; }
+    .good { background: var(--good-soft); border: 1px solid #86efac; border-radius: 10px; padding: 12px; }
+    .dialogue { display: grid; gap: 10px; margin-top: 10px; }
+    .turn { border: 1px solid var(--border); border-radius: 12px; padding: 12px; background: #fbfdff; }
+    .speaker { font-weight: 700; color: var(--accent); }
+    .jp { font-size: 1.08rem; margin-top: 4px; }
+    .en { color: var(--muted); margin-top: 2px; }
+    .note { font-size: 0.92rem; color: var(--muted); margin-top: 6px; }
+    .source-list a { color: var(--accent); }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .contrast { grid-template-columns: 1fr; }
+      table, thead, tbody, th, td, tr { display: block; }
+      th { display: none; }
+      td { border-top: 0; }
+      tr { border-top: 1px solid var(--border); }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/summer-travel-congestion.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>夏休みスタートの三連休：渋滞・混雑をやわらかく話す日本語</h1>
+      <p class="muted">Session date: 2026-07-19. Level: beginner to lower-intermediate. Focus: workplace-safe small talk and practical travel-help phrases for crowds, traffic jams, parking, and timing changes.</p>
+      <span class="tag">travel logistics</span>
+      <span class="tag">workplace small talk</span>
+      <span class="tag">softening complaints</span>
+      <span class="tag">〜みたいです</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>Today&apos;s topic is the start of Japan&apos;s summer vacation season and the July three-day weekend. News on July 18, 2026 reported crowded highways, busy stations, full service areas, and muggy weather. Highway operators and travel-related sites were also publishing congestion predictions and guidance about shifting travel times.</p>
+      <p>This is useful because Japanese small talk often softens negative topics. Instead of sounding like you are simply complaining, you can make a shared observation, mention what you heard, and suggest a practical action.</p>
+      <p class="muted">Main speaking goal: talk naturally about crowds, delays, and travel plans without sounding too blunt or too negative.</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it like this</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>三連休</td><td>さんれんきゅう</td><td>three-day weekend</td><td>三連休、どこも混みそうですね。</td></tr>
+          <tr><td>夏休み</td><td>なつやすみ</td><td>summer vacation</td><td>夏休みが始まったみたいですね。</td></tr>
+          <tr><td>渋滞</td><td>じゅうたい</td><td>traffic jam</td><td>高速、かなり渋滞してるみたいですね。</td></tr>
+          <tr><td>混雑</td><td>こんざつ</td><td>crowding, congestion</td><td>駅もかなり混雑しているみたいです。</td></tr>
+          <tr><td>満車</td><td>まんしゃ</td><td>parking lot full</td><td>駐車場が満車みたいなんですが...</td></tr>
+          <tr><td>迂回</td><td>うかい</td><td>detour</td><td>迂回したほうがいいですか。</td></tr>
+          <tr><td>交通規制</td><td>こうつうきせい</td><td>traffic restriction</td><td>交通規制があるみたいです。</td></tr>
+          <tr><td>分散利用</td><td>ぶんさんりよう</td><td>spreading out use or travel</td><td>混雑を避けるための分散利用です。</td></tr>
+          <tr><td>早めに出る</td><td>はやめにでる</td><td>leave early</td><td>早めに出たほうがよさそうですね。</td></tr>
+          <tr><td>時間をずらす</td><td>じかんをずらす</td><td>shift the timing</td><td>少し時間をずらしましょうか。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>1. 〜みたいです / 〜みたいですね</h3>
+      <p>Use this when you saw the news, heard something, or are not claiming full certainty. It sounds natural in small talk.</p>
+      <ul>
+        <li>今日は東京駅も混んでいるみたいです。<br /><span class="muted">It seems Tokyo Station is crowded today too.</span></li>
+        <li>水族館の周辺も交通規制があるみたいですね。<br /><span class="muted">It looks like there are traffic restrictions around the aquarium too.</span></li>
+        <li>帰りの高速も渋滞しそうです。<br /><span class="muted">The highway on the way back also looks like it might be backed up.</span></li>
+      </ul>
+      <h3>2. 〜たほうがよさそうです</h3>
+      <p>A soft way to suggest an action without sounding bossy.</p>
+      <ul>
+        <li>早めに出たほうがよさそうですね。<br /><span class="muted">It seems better to leave early.</span></li>
+        <li>帰りのルートも確認しておいたほうがよさそうです。<br /><span class="muted">It seems better to check the return route too.</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <ul>
+        <li>三連休、どこも混みそうですね。<br /><span class="muted">Looks like everywhere will be crowded this three-day weekend.</span></li>
+        <li>高速、かなり渋滞してるみたいですね。<br /><span class="muted">It seems the highways are pretty backed up.</span></li>
+        <li>念のため、帰りのルートも確認しておきます。<br /><span class="muted">Just in case, I&apos;ll check the return route too.</span></li>
+        <li>駐車場が満車みたいなんですが、この場合どうしたらいいですか。<br /><span class="muted">It looks like the parking lot is full. What should I do in this case?</span></li>
+      </ul>
+      <div class="contrast">
+        <div class="bad">
+          <span class="warning-pill">Too blunt</span>
+          <p>渋滞がひどいです。行きたくないです。</p>
+          <p class="muted">Understandable, but it can sound flat or negative.</p>
+        </div>
+        <div class="good">
+          <span class="warning-pill">More natural</span>
+          <p>渋滞、かなり大変そうですね。時間をずらしたほうがよさそうです。</p>
+          <p class="muted">This sounds softer and more practical: "Looks rough, maybe we should shift the timing."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p class="muted">Scenario: workplace small talk on Monday morning after the three-day weekend. The conversation stays light, practical, and colleague-safe.</p>
+      <div class="dialogue">
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">三連休、どこか行きました？けっこう混んでたみたいですね。</div>
+          <div class="en">Did you go anywhere during the three-day weekend? It seems like places were pretty crowded.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">少し出かけました。高速がかなり渋滞してるみたいだったので、早めに出ました。</div>
+          <div class="en">I went out a little. It looked like the highway was pretty backed up, so I left early.</div>
+          <div class="note">Natural pattern: observation with 〜みたい + practical action.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">それは正解ですね。帰りは大丈夫でした？</div>
+          <div class="en">That was a good call. Was the return trip okay?</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">帰りも少し混んでいましたが、時間をずらしたので思ったより大丈夫でした。</div>
+          <div class="en">It was a little crowded on the way back too, but since I shifted the timing, it was better than I expected.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">やっぱり夏休みが始まると、どこも混みますね。</div>
+          <div class="en">Once summer vacation starts, everywhere gets crowded, doesn&apos;t it?</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">そうですね。ニュースでも東京駅やサービスエリアが混んでいるみたいでした。</div>
+          <div class="en">Yes. The news also made it seem like Tokyo Station and service areas were crowded.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">お盆もすごそうですね。</div>
+          <div class="en">Obon is probably going to be intense too.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">そうですね。出かけるなら、念のためルートと時間を確認しておいたほうがよさそうです。</div>
+          <div class="en">Yes. If we go somewhere, it seems better to check the route and timing just in case.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">Coworker</div>
+          <div class="jp">たしかに。車より電車のほうがいい場合もありますね。</div>
+          <div class="en">True. Sometimes the train might be better than driving.</div>
+        </div>
+        <div class="turn">
+          <div class="speaker">You</div>
+          <div class="jp">はい、混雑しそうな日は、少し時間をずらすか、公共交通機関を使うのもよさそうですね。</div>
+          <div class="en">Yes, on days that look crowded, shifting the time a bit or using public transportation seems like a good idea too.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner response was submitted in this session yet. Use the role-play prompt below for your first answer:</p>
+      <div class="flashcard">
+        <p><strong>Prompt:</strong> 三連休、どこか行きました？けっこう混んでたみたいですね。</p>
+        <p><strong>Try answering with:</strong> 〜みたいですね, 混んで, 早めに, or 時間をずらす.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <p><span class="warning-pill">Correction focus</span> Soften direct complaints into shared observations plus practical next steps.</p>
+      <table>
+        <thead>
+          <tr><th>Common learner-style sentence</th><th>More natural version</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>人が多いです。いやです。</td>
+            <td>かなり混んでそうですね。時間をずらしたほうがよさそうです。</td>
+            <td>Less blunt; turns the complaint into a shared observation and plan.</td>
+          </tr>
+          <tr>
+            <td>駐車場は満車です。どうする？</td>
+            <td>駐車場が満車みたいなんですが、この場合どうしたらいいですか。</td>
+            <td>Polite and useful when asking staff for help.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p class="muted">Read each line out loud 3 times. Keep the tone calm and conversational.</p>
+      <div class="shadow-line">三連休、どこも混みそうですね。</div>
+      <div class="shadow-line">高速、かなり渋滞してるみたいですね。</div>
+      <div class="shadow-line">早めに出たほうがよさそうですね。</div>
+      <div class="shadow-line">念のため、帰りのルートも確認しておきます。</div>
+      <div class="shadow-line">この場合、どうしたらいいですか。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <p><strong>渋滞</strong></p>
+        <button onclick="toggleById('fc1')">Reveal</button>
+        <p id="fc1" class="reveal" hidden>じゅうたい = traffic jam. Example: 高速が渋滞しているみたいです。</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>満車</strong></p>
+        <button onclick="toggleById('fc2')">Reveal</button>
+        <p id="fc2" class="reveal" hidden>まんしゃ = parking lot full. Example: 駐車場が満車みたいなんですが...</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>時間をずらす</strong></p>
+        <button onclick="toggleById('fc3')">Reveal</button>
+        <p id="fc3" class="reveal" hidden>じかんをずらす = shift the timing. Example: 少し時間をずらしたほうがよさそうです。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>For coworker small talk, shared-feeling endings like ですね and よね help you sound less harsh.</li>
+        <li>For staff-facing situations, use soft problem reporting: 〜みたいなんですが + この場合どうしたらいいですか。</li>
+        <li>In Japan, travel advice often focuses on checking information ahead of time, shifting departure time, using public transportation, and following staff guidance at crowded venues.</li>
+      </ul>
+      <details>
+        <summary>Sources used for the topic context</summary>
+        <ul class="source-list">
+          <li><a href="https://news.tv-asahi.co.jp/news_society/articles/000520156.html">TV Asahi: summer vacation kickoff and congestion, July 18, 2026</a></li>
+          <li><a href="https://kuruma-news.jp/post/1084218">くるまのニュース: July three-day weekend highway congestion and holiday-discount exceptions</a></li>
+          <li><a href="https://corp.w-nexco.co.jp/corporate/release/kyushu/r8/0717a/">NEXCO West Japan: Obon congestion predictions and 分散利用 guidance</a></li>
+          <li><a href="https://www.aquaworld-oarai.com/2026/07/14/summer2026/">Aqua World Oarai: summer crowding and traffic-control guidance</a></li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <div class="flashcard">
+        <p>1. How do you say "It seems the highway is backed up"?</p>
+        <button onclick="toggleById('q1')">Show answer</button>
+        <p id="q1" class="quiz-answer" hidden>高速が渋滞しているみたいです。 / 高速、かなり渋滞してるみたいですね。</p>
+      </div>
+      <div class="flashcard">
+        <p>2. Make this softer: 渋滞がひどいです。行きたくないです。</p>
+        <button onclick="toggleById('q2')">Show answer</button>
+        <p id="q2" class="quiz-answer" hidden>渋滞、かなり大変そうですね。時間をずらしたほうがよさそうです。</p>
+      </div>
+      <div class="flashcard">
+        <p>3. Ask staff what to do when the parking lot seems full.</p>
+        <button onclick="toggleById('q3')">Show answer</button>
+        <p id="q3" class="quiz-answer" hidden>駐車場が満車みたいなんですが、この場合どうしたらいいですか。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Write one coworker-safe sentence about the three-day weekend using 〜みたいですね.</li>
+        <li>Write one practical suggestion using 〜たほうがよさそうです.</li>
+        <li>Practice the role-play answer out loud: say where you went, whether it was crowded, and what you did to avoid the worst crowding.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next time, continue practicing soft observation plus practical action: 〜みたいですね + 〜たほうがよさそうです. This connects well with travel, station help, event crowds, and service-counter questions.</p>
+      <p class="muted">Difficulty snapshot: beginner to lower-intermediate; light grammar load; focus on natural, reusable spoken phrases.</p>
+    </section>
+  
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      A: 今日は夏休みの三連休ですね。<ruby>高速<rt>こうそく</rt></ruby>が<ruby>渋滞<rt>じゅうたい</rt></ruby>しそうです。B: そうですね。私は<ruby>早<rt>はや</rt></ruby>めに<ruby>出<rt>で</rt></ruby>て、<ruby>混雑<rt>こんざつ</rt></ruby>をさけるつもりです。A: いいですね。駅の<ruby>駐車場<rt>ちゅうしゃじょう</rt></ruby>は<ruby>満車<rt>まんしゃ</rt></ruby>かもしれません。B: そのときは、少し<ruby>時間<rt>じかん</rt></ruby>をずらして、<ruby>迂回<rt>うかい</rt></ruby>するのもよさそうですね。A: はい、<ruby>無理<rt>むり</rt></ruby>せずに行きましょう。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">A: It’s the three-day weekend for summer vacation, isn’t it? The highway will probably be congested. B: Yes. I’m planning to leave early and avoid the crowds. A: That’s good. The station parking lot might be full. B: In that case, it might be good to shift the timing a little and take a detour. A: Yes, let’s go without pushing ourselves.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: Bさんはどうしますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">おそく出ます。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">早めに出ます。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">家にいません。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">電車に乗りません。</button>
+        </div>
+      </div>
+
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 駅の駐車場はどうなるかもしれませんか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">すいているかもしれません。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">工事中かもしれません。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">満車かもしれません。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">なくなるかもしれません。</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">全体はやさしい丁寧語で、職場でも使いやすい小さな会話です。文型は「〜ですね」「〜かもしれません」「〜つもりです」「〜のもよさそうですね」など、やわらかく提案・予測する表現が中心です。断定を避けて、相手に負担をかけない言い方になっています。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">同僚、先輩、取引先との軽い雑談や、家族・友人との旅行相談に向いています。強い命令やくだけすぎた表現がないので、あまり親しくない相手にも比較的安全です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「時間をずらす」は、予定を少し前後に動かして混雑を避ける言い方です。旅行や通勤でよく使います。「無理せず」は、相手に“がんばりすぎないでください”という気づかいをやわらかく伝える表現です。</p>
+      </div>
+    </div>
+  </section>
+    
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
