@@ -264,6 +264,25 @@ async function generateAiEnrichment(vocabItems: any[], topic: string, level: str
   const openAiKey = process.env.OPENAI_API_KEY;
   const geminiKey = process.env.GEMINI_API_KEY;
 
+  // Custom model selection from environment (with fallback defaults)
+  let model = process.env.AI_MODEL || "";
+  let provider = "";
+
+  if (model.startsWith("gpt-") || model.startsWith("o1-") || model.startsWith("o3-")) {
+    provider = "openai";
+  } else if (model.startsWith("gemini-")) {
+    provider = "gemini";
+  } else {
+    // Auto-detect based on key presence if no valid model is specified in environment
+    if (openAiKey) {
+      provider = "openai";
+      model = "gpt-4o-mini";
+    } else if (geminiKey) {
+      provider = "gemini";
+      model = "gemini-2.5-flash";
+    }
+  }
+
   if (!openAiKey && !geminiKey) {
     if (topic.includes("デジタルパタパタ") || topic.includes("Keikyu") || topic.includes("京急")) {
       const mockReadingHtml = `
@@ -320,6 +339,15 @@ async function generateAiEnrichment(vocabItems: any[], topic: string, level: str
     return null;
   }
 
+  if (provider === "openai" && !openAiKey) {
+    console.error(`AI_MODEL is set to "${model}", but OPENAI_API_KEY is not configured.`);
+    return null;
+  }
+  if (provider === "gemini" && !geminiKey) {
+    console.error(`AI_MODEL is set to "${model}", but GEMINI_API_KEY is not configured.`);
+    return null;
+  }
+
   const targetVocabList = vocabItems.map((v, i) => `${i+1}. ${v.kanji} (${v.reading}): ${v.meaning}`).join("\n");
   
   const prompt = `You are a world-class Japanese linguist and educator. Your task is to generate clean HTML study assets to enrich a Japanese lesson.
@@ -358,8 +386,9 @@ Ensure all HTML inside the JSON is properly escaped. Output only valid JSON.`;
   try {
     let responseText = "";
 
-    if (openAiKey) {
+    if (provider === "openai") {
       const url = "https://api.openai.com/v1/chat/completions";
+      console.log(`🤖 Sending OpenAI request using model: ${model}`);
       const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -367,7 +396,7 @@ Ensure all HTML inside the JSON is properly escaped. Output only valid JSON.`;
           "Authorization": `Bearer ${openAiKey}`
         },
         body: JSON.stringify({
-          model: "gpt-4o-mini",
+          model: model,
           messages: [{ role: "user", content: prompt }],
           response_format: { type: "json_object" }
         })
@@ -381,8 +410,9 @@ Ensure all HTML inside the JSON is properly escaped. Output only valid JSON.`;
 
       const data = await response.json();
       responseText = data.choices?.[0]?.message?.content || "";
-    } else if (geminiKey) {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`;
+    } else if (provider === "gemini") {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiKey}`;
+      console.log(`🤖 Sending Gemini request using model: ${model}`);
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
