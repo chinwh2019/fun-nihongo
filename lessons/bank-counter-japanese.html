@@ -384,9 +384,77 @@
       <p class="muted">Difficulty snapshot: beginner to lower-intermediate; practical vocabulary with polite official-counter patterns. Continue reviewing soft uncertainty patterns such as <span class="jp">〜みたいなんですが</span>, <span class="jp">念のため確認したいんですが</span>, and <span class="jp">どうしたらいいですか</span>.</p>
     </section>
   
-    <section class="card ai-reading-card"><h3>Parallel Reading Challenge</h3><div class="reading-passage"><p>佐藤さんは銀行<ruby>窓口<rt>まどぐち</rt></ruby>で、<ruby>口座<rt>こうざ</rt></ruby>を作りたいと伝えました。<ruby>普通預金<rt>ふつうよきん</rt></ruby>の<ruby>口座<rt>こうざ</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>くには、<ruby>在留カード<rt>ざいりゅうカード</rt></ruby>と<ruby>印鑑<rt>いんかん</rt></ruby>が必要だと言われました。<ruby>本人確認<rt>ほんにんかくにん</rt></ruby>のあと、<ruby>通帳<rt>つうちょう</rt></ruby>と<ruby>キャッシュカード</ruby>の申し込みもしました。さらに、<ruby>暗証番号<rt>あんしょうばんごう</rt></ruby>を忘れたときの手続きや、<ruby>振込<rt>ふりこみ</rt></ruby>の<ruby>手数料<rt>てすうりょう</rt></ruby>、<ruby>引き出し<rt>ひきだし</rt></ruby>の<ruby>限度額<rt>げんどがく</rt></ruby>についても、やさしく説明してもらいました。最後に、<ruby>残高<rt>ざんだか</rt></ruby>の確認方法を聞いて、安心しました。</p></div><button type="button" class="reveal-btn" onclick="toggleById('ai-reading-translation-box')">英訳を見る</button><div id="ai-reading-translation-box" class="translation-box" style="display:none;"><p>Mr. Sato went to the bank counter and said he wanted to open an account. He was told that to open an ordinary savings account, he would need his residence card and personal seal. After identity verification, he also applied for a passbook and a cash card. In addition, the staff kindly explained the procedure for when he forgets his PIN, the transfer fee, and the withdrawal limit. Finally, he asked how to check his balance and felt relieved.</p></div><div class="questions"><div class="question-block"><p><strong>1.</strong> 佐藤さんは何をしたかったですか。</p><button class="option-btn" onclick="checkOption(this, false)">旅行の予約をしたかったです。</button><button class="option-btn" onclick="checkOption(this, true)">口座を作りたかったです。</button><button class="option-btn" onclick="checkOption(this, false)">電車の切符を買いたかったです。</button><button class="option-btn" onclick="checkOption(this, false)">病院で診てもらいたかったです。</button></div><div class="question-block"><p><strong>2.</strong> 窓口で何を聞きましたか。</p><button class="option-btn" onclick="checkOption(this, false)">レストランのおすすめです。</button><button class="option-btn" onclick="checkOption(this, false)">部屋の掃除のしかたです。</button><button class="option-btn" onclick="checkOption(this, true)">暗証番号や手数料、限度額です。</button><button class="option-btn" onclick="checkOption(this, false)">映画のあらすじです。</button></div></div></section>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      お客様: すみません、<ruby>口座<rt>こうざ</rt></ruby>を作りたいです。
+窓口: かしこまりました。<ruby>普通預金<rt>ふつうよきん</rt></ruby>ですね。<ruby>本人確認<rt>ほんにんかくにん</rt></ruby>のため、<ruby>在留カード<rt>ざいりゅうカード</rt></ruby>と<ruby>印鑑<rt>いんかん</rt></ruby>をお願いします。
+お客様: はい。それから、<ruby>通帳<rt>つうちょう</rt></ruby>もほしいです。
+窓口: かしこまりました。こちらにお名前を書いてください。
+お客様: ありがとうございます。<ruby>振込<rt>ふりこみ</rt></ruby>もできますか。
+窓口: はい、できます。<ruby>手数料<rt>てすうりょう</rt></ruby>は条件によってちがいます。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Customer: Excuse me, I’d like to open an account.
+Bank clerk: Certainly. A regular savings account, right? For identity verification, please show your residence card and seal.
+Customer: Yes. Also, I’d like a passbook.
+Bank clerk: Certainly. Please write your name here.
+Customer: Thank you. Can I also make bank transfers?
+Bank clerk: Yes, you can. The fee depends on the conditions.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: お客様は何をしたいですか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">預金を全部引き出したいです。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">口座を作りたいです。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">キャッシュカードをなくしました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">暗証番号を変えたいです。</button>
+        </div>
+      </div>
 
-    <section class="card ai-pragmatics-card"><h3>Formality &amp; Pragmatics Breakdown</h3><div class="pragmatics-grid"><div class="pragmatics-card"><h4>Register &amp; Tone</h4><p>全体は<strong>丁寧語</strong>で、銀行窓口らしい落ち着いた「案内・説明」のトーンです。「〜たいと伝えました」「〜と言われました」「〜してもらいました」は、やわらかく事実を述べる形です。命令形はなく、<strong>〜が必要です</strong>、<strong>〜についても説明してもらいました</strong>のように、はっきりしつつも丁寧に情報をやりとりします。</p></div><div class="pragmatics-card"><h4>Relationship Dynamics</h4><p>この言い方は、<strong>客と銀行員</strong>の関係にぴったりです。話し手はお客さまとして敬意を保ち、銀行員は業務上の案内をする立場です。初対面でも使いやすく、<strong>窓口・受付・役所</strong>のような場面でも自然です。友だち同士には少しかたいですが、安心感のある実用的な表現です。</p></div><div class="pragmatics-card"><h4>Key Nuance Highlight</h4><p><strong>「口座を作る」</strong>は日常的で、銀行では自然に使われます。<strong>「開く」</strong>よりも会話で言いやすく、初心者向けの実用表現です。<strong>「確認方法を聞く」</strong>は「how to check」だけでなく、「手順を教えてもらう」という丁寧なニュアンスがあります。また、<strong>「やさしく説明してもらいました」</strong>は、単に「説明された」よりも、相手が配慮してくれた温かい感じを出します。</p></div></div></section>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 本人確認のために何を出しますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">パスポートだけです。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">通帳と残高です。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">在留カードと印鑑です。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">手数料と限度額です。</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">全体的にていねいで、銀行の窓口で使う標準的な敬語です。お客様は「〜たいです」「〜できますか」を使い、窓口の人は「かしこまりました」「お願いします」「〜ですね」のようにやわらかく対応しています。文の形は短く、初心者でも理解しやすいです。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">銀行の窓口では、客と銀行員のような初対面・立場のある相手に使う言い方です。友だちや家族には少しかたいですが、店員、役所、病院でも使いやすい丁寧さです。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「かしこまりました」は「わかりました」より丁寧で、相手の依頼をきちんと受けた感じがあります。「〜できますか」は「〜してもいいですか」よりも、相手に可能かどうかをたずねる自然な窓口表現です。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>

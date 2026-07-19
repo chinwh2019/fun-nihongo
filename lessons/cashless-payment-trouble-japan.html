@@ -448,53 +448,67 @@
       <p>Next time, practice answering the staff prompt out loud and then add one follow-up question. The main fluency target is soft problem explanation with <strong>〜ていなくて...</strong> plus a practical request.</p>
     </section>
   
-    <section class="card ai-reading-card">
-  <h3>Parallel Reading Challenge</h3>
-  <p><strong>日本語</strong></p>
-  <p>店でランチを食べたあと、会計<ruby>時<rt>じ</rt></ruby>にカードを出しました。でも、店員さんが「すみません、<ruby>現金<rt>げんきん</rt></ruby>のみなんです」と言いました。私は「そうですか。<ruby>交通系<rt>こうつうけい</rt></ruby>ICは使えますか」と<ruby>静<rt>しず</rt></ruby>かに<ruby>聞<rt>き</rt></ruby>きましたが、「<ruby>決済端末<rt>けっさいたんまつ</rt></ruby>に<ruby>不具合<rt>ふぐあい</rt></ruby>があって、今は使えないんです」とのことでした。<ruby>念<rt>ねん</rt></ruby>のためQRコード決済も試しましたが、だめでした。<ruby>結局<rt>けっきょく</rt></ruby>、<ruby>代替手段<rt>だいたいしゅだん</rt></ruby>として、近くの<ruby>ATM<rt>えーてぃーえむ</rt></ruby>でおろして支払いました。次は少し多めに現金を持ってこようと思いました。</p>
-
-  <p><strong>English</strong></p>
-  <div id="ai-reading-translation-box" style="display:none; border:1px solid #ddd; padding:12px; border-radius:8px; background:#fafafa;">
-    <p>After I ate lunch at a restaurant, I took out my card at the checkout. But the staff said, “Sorry, we’re cash only.” I asked calmly, “Can I use a transit IC card?” but they said, “There’s a problem with the payment terminal, so it can’t be used right now.” Just in case, I tried QR code payment too, but that didn’t work either. In the end, as an alternative method, I withdrew cash from a nearby ATM and paid. I decided to bring a little more cash next time.</p>
-  </div>
-  <p><button type="button" class="reveal-btn" onclick="toggleById('ai-reading-translation-box')">英訳を表示 / hide</button></p>
-
-  <div class="question-block">
-    <h4>問題 1</h4>
-    <p>この店は、最初に何を言いましたか。</p>
-    <button class="option-btn" onclick="checkOption(this, false)">クレジットカードはすぐ使えます。</button>
-    <button class="option-btn" onclick="checkOption(this, true)">現金のみです。</button>
-    <button class="option-btn" onclick="checkOption(this, false)">QRコード決済が一番おすすめです。</button>
-    <button class="option-btn" onclick="checkOption(this, false)">今日は無料です。</button>
-  </div>
-
-  <div class="question-block">
-    <h4>問題 2</h4>
-    <p>お金が足りないとき、話し手はどうしましたか。</p>
-    <button class="option-btn" onclick="checkOption(this, false)">そのまま帰りました。</button>
-    <button class="option-btn" onclick="checkOption(this, false)">店員さんに怒りました。</button>
-    <button class="option-btn" onclick="checkOption(this, true)">近くのATMでお金をおろしました。</button>
-    <button class="option-btn" onclick="checkOption(this, false)">友だちに払ってもらいました。</button>
-  </div>
-</section>
-
-    <section class="card ai-pragmatics-card">
-  <h3>Formality &amp; Pragmatics Breakdown</h3>
-  <div class="grid grid-3">
-    <div class="pragmatics-item">
-      <h4>1. Register &amp; Tone</h4>
-      <p>全体は<strong>ていねいで落ち着いた口調</strong>です。「〜なんですが」「〜できますか」「〜とのことでした」は、強く言いすぎず、<strong>確認</strong>する感じを出します。店員さんとの会話なので、命令形やくだけすぎた言い方は避けています。</p>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      レストランで会計のとき、<ruby>私<rt>わたし</rt></ruby>はカードを出しました。でも、店員さんが「<ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ありません、<ruby>現金<rt>げんきん</rt></ruby>のみです」と言いました。<ruby>決済端末<rt>けっさいたんまつ</rt></ruby>に<ruby>不具合<rt>ふぐあい</rt></ruby>があるようでした。私は「そうですか。<ruby>念<rt>ねん</rt></ruby>のため、QRコード<ruby>決済<rt>けっさい</rt></ruby>なら使えますか」と<ruby>聞<rt>き</rt></ruby>きました。店員さんは「すみません、<ruby>今<rt>いま</rt></ruby>はだめです」と答えました。そこで私は<ruby>代替手段<rt>だいたいしゅだん</rt></ruby>として<ruby>交通系<rt>こうつうけい</rt></ruby>ICで払いました。静かなやり取りで、<ruby>安心<rt>あんしん</rt></ruby>して<ruby>会計<rt>かいけい</rt></ruby>できました。
     </div>
-    <div class="pragmatics-item">
-      <h4>2. Relationship Dynamics</h4>
-      <p>この表現は、<strong>客→店員</strong>の場面にぴったりです。相手が初対面でも使いやすく、クレームっぽくならないので安心です。レストラン、コンビニ、ショップなどで、支払い方法をやさしく確認したいときに自然です。</p>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">At the restaurant, when it was time to pay, I took out my card. But the staff member said, “I’m sorry, we only accept cash.” It seemed there was a malfunction with the payment terminal. I asked, “I see. Just in case, can I use QR code payment?” The staff member replied, “Sorry, that doesn’t work right now.” So I paid with a transit IC card as an alternative method. It was a calm exchange, and I was able to pay with peace of mind.</p>
     </div>
-    <div class="pragmatics-item">
-      <h4>3. Key Nuance Highlight</h4>
-      <p><strong>「カードが使えないんですが…」</strong>は、完全な質問というより「使えないようですが、どうしましょう？」という<strong>やわらかい相談</strong>です。<strong>「念のため」</strong>は「一応チェックしてみる」という気持ちを足し、相手に責める感じを出しません。<strong>「現金のみ」</strong>は「カード不可」よりも、ルールを簡潔に伝える店の表示・案内でよく使われます。</p>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: この人はどうやって支払いましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">クレジットカードで払いました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">現金で払いました。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">交通系ICで払いました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">QRコード決済で払いました。</button>
+        </div>
+      </div>
+
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 店員さんは何と言いましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">カードはどこでも使えます。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">今日は無料です。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">現金のみです。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">あとで来てください。</button>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">丁寧で落ち着いた会話です。店員さんには「〜ですが」「〜ですか」「すみません」などのやわらかい表現が使われています。質問は直接的すぎず、「念のため」「〜なら使えますか」で、相手に負担をかけにくい丁寧な確認になっています。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">レストラン、店、駅ナカなどで、店員さんや初対面の人に使いやすい丁寧な日本語です。お客さんと店員さんの関係、またはあまり親しくない相手とのやり取りに مناسبです。友だち同士ならもっとカジュアルにできますが、この場面では敬語寄りのやさしい言い方が自然です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「念のため」は、相手を疑っているのではなく、確認のために追加で聞くときのやわらかい表現です。「使えますか」は、単に「使える？」より丁寧で、店員さんに聞きやすい言い方です。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>

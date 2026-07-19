@@ -425,9 +425,67 @@
       <p>Keep recycling <strong>こまめに</strong>, <strong>無理しないでください</strong>, and <strong>〜たほうがよさそう</strong> in weather, workplace, and travel situations. Next useful upgrade: combine empathy with a practical suggestion, such as <span class="jp">大変そうですね。少し休んだほうがよさそうです。</span></p>
     </section>
   
-    <section class="card ai-reading-card"><h2>Parallel Reading Challenge</h2><div class="reading-text"><p>山田さん：今日は<b>蒸し暑い</b>ですね。もう<b>猛暑日</b>みたいです。</p><p>佐藤さん：そうですね。朝から<b>熱中症</b>が心配です。<b>水分補給</b>を<b>こまめに</b>したほうがよさそうですね。</p><p>山田さん：はい。あと、<b>塩分</b>も少し取ったほうがよさそうですね。会社でも<b>熱中症対策</b>を考えたほうがいいかもしれません。</p><p>佐藤さん：さっき<b>警戒アラート</b>も出ていました。<ruby>体調<rt>たいちょう</rt></ruby>が少し悪い人は、無理しないほうがいいですね。</p></div><button type="button" class="toggle-btn" onclick="toggleById('ai-reading-translation-box')">English Translation</button><div id="ai-reading-translation-box" style="display:none; margin-top:12px;"><div class="translation-box"><p>Yamada: It’s so humid and hot today. It feels like a really hot day already.</p><p>Sato: Yes. I’m worried about heatstroke from this morning. It looks like it would be best to stay hydrated little by little, often.</p><p>Yamada: Right. And it would probably be good to take in a little salt too. We should think about heatstroke prevention measures at work as well.</p><p>Sato: A heat alert was issued a little while ago too. If someone isn’t feeling well, they probably shouldn’t push themselves.</p></div></div><div class="questions"><div class="question"><p>1. この会話で、二人は何を心配していますか。</p><div class="options"><button class="option-btn" onclick="checkOption(this, false)">A. 雨がいつ降るか</button><button class="option-btn" onclick="checkOption(this, true)">B. 熱中症になること</button><button class="option-btn" onclick="checkOption(this, false)">C. 電車の遅れ</button><button class="option-btn" onclick="checkOption(this, false)">D. 寒さが強いこと</button></div></div><div class="question"><p>2. 体調が悪い人はどうしたほうがいいですか。</p><div class="options"><button class="option-btn" onclick="checkOption(this, false)">A. たくさん運動したほうがいい</button><button class="option-btn" onclick="checkOption(this, false)">B. 水を飲まないほうがいい</button><button class="option-btn" onclick="checkOption(this, true)">C. 無理しないほうがいい</button><button class="option-btn" onclick="checkOption(this, false)">D. 外で長く歩いたほうがいい</button></div></div></div></section>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      昼休み、オフィスの外はとても<ruby>蒸し暑<rt>むしあつ</rt></ruby>い。先輩の田中さんが「今日は<ruby>猛暑日<rt>もうしょび</rt></ruby>だから、<ruby>熱中症<rt>ねっちゅうしょう</rt></ruby>に気をつけよう」と言った。新人の山田さんは「はい。<ruby>水分補給<rt>すいぶんほきゅう</rt></ruby>は、<ruby>こまめに</ruby>したほうがよさそうですね」と答える。田中さんは「そうだね。<ruby>体調<rt>たいちょう</rt></ruby>が少しでも変なら、休んでね」とやさしく言った。二人は冷たいお茶を飲みながら、<ruby>熱中症対策<rt>ねっちゅうしょうたいさく</rt></ruby>について少し話した。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">During lunch break, it was very hot and humid outside the office. Senior Tanaka said, “Today is a day over 35°C, so let’s be careful about heatstroke.” New employee Yamada replied, “Yes. It seems better to hydrate frequently.” Tanaka said kindly, “Right. If you feel even a little unwell, please take a rest.” The two talked a little about heatstroke prevention while drinking cold tea.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 田中さんは何に気をつけようと言いましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">かぜ</button>
+          <button class="option-btn" onclick="checkOption(this, true)">熱中症</button>
+          <button class="option-btn" onclick="checkOption(this, false)">花粉症</button>
+          <button class="option-btn" onclick="checkOption(this, false)">けが</button>
+        </div>
+      </div>
 
-    <section class="card ai-pragmatics-card"><h2>Formality &amp; Pragmatics Breakdown</h2><div class="pragmatics-grid"><div class="pragmatics-card"><h3>1. Register &amp; Tone</h3><p>全体は<b>丁寧でやさしい職場会話</b>です。<code>〜ですね</code>、<code>〜ほうがよさそうですね</code>、<code>〜かもしれません</code>を使って、強く命令せず、相手に配慮した言い方になっています。</p></div><div class="pragmatics-card"><h3>2. Relationship Dynamics</h3><p>同僚どうし、または少しフォーマルな職場の相手に自然です。上司にも失礼になりにくいですが、かなり親しい友人なら少し硬く聞こえることもあります。<b>小さな注意をやわらかく伝える</b>場面に向いています。</p></div><div class="pragmatics-card"><h3>3. Key Nuance Highlight</h3><p><code>こまめに</code>は「たくさん一度に」ではなく<b>少しずつ、何回も</b>の感じです。<code>〜たほうがよさそう</code>は「〜たほうがいい」より少しやわらかく、<b>状況から見ておすすめ</b>というニュアンスです。押しつけずにアドバイスできます。</p></div></div></section>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 山田さんは何をしたほうがよさそうだと言いましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">たくさん走る</button>
+          <button class="option-btn" onclick="checkOption(this, false)">長く外で働く</button>
+          <button class="option-btn" onclick="checkOption(this, true)">水分補給をこまめにする</button>
+          <button class="option-btn" onclick="checkOption(this, false)">服を厚くする</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">全体的にやさしいビジネス寄りの会話です。丁寧すぎず、親しい職場の先輩・後輩のやり取りとして自然です。文末は「〜よう」「〜したほうがよさそう」「〜ね」などで、やわらかく注意や提案をしています。命令形はなく、相手を気づかうトーンです。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">職場の先輩と新人、同僚どうしに適しています。上から強く言う感じではなく、相手の体調や負担を考えながら軽く注意したい場面に向いています。目上の人にも使えますが、より丁寧にするなら語尾を少し整えると自然です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「こまめに」は、まとめて一回ではなく、何回かに分けて少しずつする感じです。「水分補給は、こまめにしたほうがよさそうですね」は、「そうしたほうがよさそうだ」とやわらかく勧める表現で、強い命令ではありません。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>

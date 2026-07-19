@@ -451,9 +451,77 @@
       <p class="muted">Difficulty snapshot: beginner-to-lower-intermediate, with focus on short workplace-safe turns and soft sentence endings.</p>
     </section>
   
-    <section class="card ai-reading-card"><h3>Parallel Reading Challenge</h3><p>昼休みに、同僚の田中さんが「<ruby>男子<rt>だんし</rt></ruby>バレー、<ruby>日本<rt>にほん</rt></ruby>ラウンド、<ruby>盛<rt>も</rt></ruby>り上がってましたね」と話し始めました。佐藤さんは「そうですね。<ruby>開幕戦<rt>かいまくせん</rt></ruby>、<ruby>イタリア戦<rt>イタリアせん</rt></ruby>は見ました？ フルセットで、<ruby>逆転勝ち<rt>ぎゃくてんがち</rt></ruby>だったみたいですよ」とやわらかく返します。私は「テレビで結果だけ見ました。<ruby>決勝ラウンド<rt>けっしょうラウンド</rt></ruby>も楽しみですね」と言うと、二人とも「また職場でも話題になりそうですね」と笑いました。スポーツの話は、結果を軽く確認しながら話すと、職場でも自然です。</p><button type="button" class="reveal-btn" onclick="toggleById('ai-reading-translation-box')">英訳を表示</button><div id="ai-reading-translation-box" class="translation-box" style="display:none;"><p>During lunch break, my coworker Tanaka said, “The men’s volleyball Japan round was really exciting.” Sato replied softly, “Right? Did you watch the opening match against Italy? I heard it went to a full set and they won by a comeback.” I said, “I only checked the result on TV. I’m looking forward to the final round too.” Then both of them laughed and said, “This kind of topic will probably come up at work again.” Talking about sports naturally at the office is easy when you lightly confirm the result as you speak.</p></div><div class="mcq-block"><h4>質問1</h4><p>この会話で、田中さんが話し始めた話題は何ですか。</p><div class="options-grid"><button type="button" class="option-btn" onclick="checkOption(this, false)">夏休みの予定</button><button type="button" class="option-btn" onclick="checkOption(this, true)">男子バレーの日本ラウンド</button><button type="button" class="option-btn" onclick="checkOption(this, false)">会社の新しいルール</button><button type="button" class="option-btn" onclick="checkOption(this, false)">通勤電車の混雑</button></div></div><div class="mcq-block"><h4>質問2</h4><p>佐藤さんの話し方として、いちばん近いのはどれですか。</p><div class="options-grid"><button type="button" class="option-btn" onclick="checkOption(this, false)">強い断定で言い切る</button><button type="button" class="option-btn" onclick="checkOption(this, true)">やわらかく、聞いた話として言う</button><button type="button" class="option-btn" onclick="checkOption(this, false)">命令する</button><button type="button" class="option-btn" onclick="checkOption(this, false)">とてもかたく長く説明する</button></div></div></section>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      A: ねえ、きのうの男子バレー、見た？
+B: すこしだけ。<ruby>日本<rt>にほん</rt></ruby>ラウンドの<ruby>開幕戦<rt>かいまくせん</rt></ruby>、<ruby>逆転勝ち<rt>ぎゃくてんがち</rt></ruby>だったみたいですね。
+A: ほんと？ 仕事で見られなくて。
+B: まだ<ruby>結果<rt>けっか</rt></ruby>をちゃんと見てないんですけど、<ruby>フルセット<rt>フルセット</rt></ruby>だったって聞きました。
+A: へえ、<ruby>盛り上がる<rt>もりあがる</rt></ruby>試合だったんだろうね。
+B: そうですね。今夜、<ruby>イタリア戦<rt>イタリアせん</rt></ruby>もあるみたいですよ。あとでニュースで確認します。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">A: Hey, did you watch the men's volleyball match yesterday?
+B: Just a little. I heard the opening match of the Japan round was a come-from-behind win.
+A: Really? I couldn’t watch because of work.
+B: I haven’t checked the results properly yet, but I heard it went to a full set.
+A: Wow, it must have been an exciting match.
+B: Yeah. It looks like there’s also a match against Italy tonight. I’ll check the news later.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: この会話で、開幕戦はどうだったと言っていますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">日本が大きく負けた</button>
+          <button class="option-btn" onclick="checkOption(this, true)">日本が逆転勝ちした</button>
+          <button class="option-btn" onclick="checkOption(this, false)">試合は中止だった</button>
+          <button class="option-btn" onclick="checkOption(this, false)">まだ試合をしていない</button>
+        </div>
+      </div>
 
-    <section class="card ai-pragmatics-card"><h3>Formality &amp; Pragmatics Breakdown</h3><div class="pragmatics-grid"><div class="pragmatics-item"><h4>1. Register &amp; Tone</h4><p>全体は「職場の雑談」なので、<strong>ていねいすぎず、くだけすぎない</strong>中間のトーンです。文末は「〜ですね」「〜みたいですよ」「〜楽しみですね」で、やわらかく共感する形になっています。<br>また、「見ました？」「話題になりそうですね」のような短い文を使うことで、軽い会話らしさが出ます。</p></div><div class="pragmatics-item"><h4>2. Relationship Dynamics</h4><p>使いやすい相手は、<strong>同僚、少し親しい先輩、部署内の雑談相手</strong>です。お客さま相手のかたい場面には少しカジュアルですが、昼休みや休憩中の会話なら自然です。スポーツの結果を話題にするので、政治や個人的な意見よりも安全で、初対面に近い人とも話しやすいです。</p></div><div class="pragmatics-item"><h4>3. Key Nuance Highlight</h4><p><strong>「〜みたいですよ」</strong>は、事実を断定せず、<em>聞いた話・見た感じ</em>としてやさしく伝える表現です。<strong>「逆転勝ちだった」</strong>よりも押しつけが弱く、職場の雑談に合います。<br><strong>「結果だけ見ました」</strong>は、全部は見ていないけれど情報を軽く確認した、という控えめな感じを出します。スポーツに詳しすぎない印象にもなり、会話が自然です。</p></div></div></section>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 話し手Bは、結果についてどう言っていますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">もう全部くわしく見ました</button>
+          <button class="option-btn" onclick="checkOption(this, false)">結果はまったく知らないです</button>
+          <button class="option-btn" onclick="checkOption(this, true)">まだちゃんと見ていないが、フルセットだったと聞きました</button>
+          <button class="option-btn" onclick="checkOption(this, false)">イタリア戦の結果を先に知っています</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">全体にやわらかい職場会話の口調です。Aは「〜た？」のカジュアルな聞き方ですが、Bは「〜みたいですね」「〜って聞きました」「〜あるみたいですよ」のように、はっきり言い切らず、やさしく伝えています。文法は、推量の「みたい」、伝聞の「〜って聞きました」、確認の「あとで〜します」など、初心者〜初中級向けの自然な表現が中心です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">同僚どうし、特に少し親しい同僚や昼休みの雑談に向いています。上司には少しくだけた印象になるので、使うならもっと丁寧に言うと安全です。相手の興味を見ながら、スポーツの結果を軽く共有する場面に合います。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「〜みたいですね」は、断定を避けてやわらかく言う表現です。職場で便利です。「〜って聞きました」は、自分で見ていないけれど情報を伝える感じで、うわさ話になりすぎない安全な言い方です。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>

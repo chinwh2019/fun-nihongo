@@ -345,9 +345,75 @@
       <p class="muted">Focus for later review: modest sports predictions and shared-feeling endings like ですね and よね.</p>
     </section>
   
-    <section class="card ai-reading-card"><h3>Parallel Reading Challenge</h3><p>昼休み、<ruby>田中<rt>たなか</rt></ruby>さんと<ruby>佐藤<rt>さとう</rt></ruby>さんが<ruby>休憩室<rt>きゅうけいしつ</rt></ruby>で<ruby>ワールドカップ<rt>ワールドカップ</rt></ruby>の話をしています。日本代表はグループリーグでまだ<ruby>突破<rt>とっぱ</rt></ruby>が決まっていませんが、昨日の<ruby>快勝<rt>かいしょう</rt></ruby>で少し安心しました。<ruby>勝ち点<rt>かちてん</rt></ruby>は同じでも、<ruby>得失点差<rt>とくしってんさ</rt></ruby>が大事ですね。田中さんは「次の試合も引き分けでもいいけど、できれば勝ってほしいですね」と言います。佐藤さんも「そうですね。まずは次の試合を見ましょう」と笑いました。</p><p><button type="button" onclick="toggleById('ai-reading-translation-box')">英訳を表示 / hide translation</button></p><div id="ai-reading-translation-box" style="display:none; border:1px solid #ccc; padding:12px; margin-top:8px;"><p>At lunch break, Mr. Tanaka and Ms. Sato are talking about the World Cup in the break room. Japan has not yet secured advancement from the group stage, but yesterday&#39;s convincing win made them feel a little relieved. Even if the points are the same, goal difference matters. Tanaka says, &quot;A draw in the next match might be okay too, but I&#39;d like us to win if possible.&quot; Sato smiles and says, &quot;Yes, that&#39;s true. Let&#39;s just watch the next match first.&quot;</p></div><div class="qa-block"><p><strong>1. 日本代表は今、どういう状態ですか。</strong></p><button class="option-btn" onclick="checkOption(this, false)">もう決勝トーナメントに入っています。</button><button class="option-btn" onclick="checkOption(this, true)">まだグループリーグ突破は決まっていません。</button><button class="option-btn" onclick="checkOption(this, false)">試合はもう終わりました。</button><button class="option-btn" onclick="checkOption(this, false)">勝ち点は関係ありません。</button></div><div class="qa-block"><p><strong>2. 田中さんは次の試合についてどう言っていますか。</strong></p><button class="option-btn" onclick="checkOption(this, false)">負けても大丈夫です。</button><button class="option-btn" onclick="checkOption(this, true)">引き分けでもいいが、できれば勝ってほしいと言っています。</button><button class="option-btn" onclick="checkOption(this, false)">試合を見たくないと言っています。</button><button class="option-btn" onclick="checkOption(this, false)">日本代表はもう優勝したと言っています。</button></div></section>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      A: きのうの<ruby>日本代表<rt>にほんだいひょう</rt></ruby>、よかったですね。<ruby>快勝<rt>かいしょう</rt></ruby>でした。
+B: そうですね。これで<ruby>グループリーグ<rt>ぐるーぷりーぐ</rt></ruby>の<ruby>勝ち点<rt>かちてん</rt></ruby>も増えました。
+A: まだ<ruby>決勝トーナメント<rt>けっしょうとーなめんと</rt></ruby>に<ruby>突破<rt>とっぱ</rt></ruby>できる可能性はありますか。
+B: ありますよ。<ruby>次の試合<rt>つぎのしあい</rt></ruby>でよい結果が出れば、少し安心できそうです。
+A: それなら、スウェーデン戦も応援したくなりますね。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">A: The Japan national team was great yesterday. It was a convincing win.
+B: Yes. That also increased our points in the group stage.
+A: Is there still a chance they can advance to the knockout stage?
+B: There is. If they get a good result in the next match, we should feel a bit more安心.
+A: In that case, I want to cheer for the Sweden match too.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: この会話で、Aさんは何を言っていますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">日本代表は負けたと言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">日本代表はよかったと言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">試合を見なかったと言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">スウェーデンが優勝したと言っています。</button>
+        </div>
+      </div>
 
-    <section class="card ai-pragmatics-card"><h3>Formality &amp; Pragmatics Breakdown</h3><div class="grid"><div class="prag-card"><h4>Register &amp; Tone</h4><p>全体は<strong>丁寧だけどかしこまりすぎない</strong>職場の雑談です。文末の「〜ですね」「〜しましょう」は、やわらかく同意を求めたり、軽く話をまとめたりするときに自然です。<br>「〜けど、できれば〜」の形で、強い主張を避けて<strong>控えめな希望</strong>を表しています。</p></div><div class="prag-card"><h4>Relationship Dynamics</h4><p>同僚どうし、または上司がいても使いやすい中立的な言い方です。スポーツの話題なので、仕事の場でも気軽に話しやすく、相手にプレッシャーをかけにくいのがポイントです。<br>部下から上司へ話すときも、今回のような丁寧体なら無理なく使えます。</p></div><div class="prag-card"><h4>Key Nuance Highlight</h4><p><strong>「突破が決まっていません」</strong>は「まだ勝ち抜けが確定していない」という意味で、少しスポーツらしい言い方です。<br><strong>「引き分けでもいいけど、できれば勝ってほしい」</strong>は、楽観しすぎず、でも応援の気持ちはあるという<strong> modest optimism </strong>を出します。「〜でもいい」は最低ライン、「できれば」は本音の希望をやわらかく足す表現です。</p></div></div></section>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: Bさんは次の試合について、どう言っていますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">もう絶対にだめだと言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">何も言っていません。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">よい結果が出れば少し安心できると言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">試合は関係ないと言っています。</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">丁寧すぎない自然な会話体です。です・ます調を使い、職場の雑談に合う落ち着いたトーンです。文型は「〜ですね」「〜できますか」「〜れば〜できそうです」など、やさしい確認・推量表現が中心です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">同僚どうし、または少し親しい先輩・後輩との雑談に適しています。かしこまりすぎず、でも失礼にならない距離感です。上司にはこのままでも使えますが、もう少し丁寧にするとより自然です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「少し安心できそうです」は、強い断定ではなく、控えめに前向きな見通しを述べる表現です。「〜そうです」は“そう感じる・そう見える”のやわらかい予想で、職場の小さな励ましに向いています。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>

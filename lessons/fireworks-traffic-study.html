@@ -270,9 +270,67 @@
       <p>Next time, practice one live response to the coworker prompt, then polish it for naturalness. Good review targets are <strong>よさそうですね</strong>, <strong>〜みたいなんですが</strong>, and staff-safe questions with <strong>どうしたらいいですか</strong>.</p>
     </section>
   
-    <section class="card ai-reading-card"><h2>Parallel Reading Challenge</h2><p>昨日、<ruby>花火大会<rt>はなびたいかい</rt></ruby>の会場に行きました。でも、<ruby>混雑<rt>こんざつ</rt></ruby>がとてもひどくて、駅まで歩くのも大変でした。スタッフの人が「この先は<ruby>交通規制<rt>こうつうきせい</rt></ruby>があります。<ruby>通行止め<rt>つうこうどめ</rt></ruby>の道は通れません」と案内してくれました。私たちは少し離れた場所で<ruby>待ち合わせ<rt>まちあわせ</rt></ruby>をして、そこで友だちに会いました。途中で<ruby>屋台<rt>やたい</rt></ruby>のにおいがして、かき氷を食べました。帰りは<ruby>公共交通機関<rt>こうきょうこうつうきかん</rt></ruby>が少し遅れましたが、無事に帰れました。</p><button type="button" onclick="toggleById('ai-reading-translation-box')">英語訳を見る</button><div id="ai-reading-translation-box" style="display:none; margin-top:1em;"><p>Yesterday, I went to the fireworks festival venue. But the crowd was very heavy, and even walking to the station was difficult. A staff member guided us, saying, “There are traffic restrictions ahead. You cannot go through the closed road.” We met up with our friends at a place a little farther away and saw them there. On the way, we smelled food from the stalls and ate shaved ice. On the way home, public transportation was a little delayed, but we got home safely.</p></div><div class="quiz"><h3>問題1</h3><p>スタッフの人は何を案内しましたか。</p><button class="option-btn" onclick="checkOption(this, false)">花火大会は中止です。</button><button class="option-btn" onclick="checkOption(this, true)">この先は交通規制があります。</button><button class="option-btn" onclick="checkOption(this, false)">屋台はありません。</button><button class="option-btn" onclick="checkOption(this, false)">駅は閉まっています。</button></div><div class="quiz"><h3>問題2</h3><p>私たちはどこで友だちと会いましたか。</p><button class="option-btn" onclick="checkOption(this, false)">会場の中です。</button><button class="option-btn" onclick="checkOption(this, false)">駅のホームです。</button><button class="option-btn" onclick="checkOption(this, true)">少し離れた場所です。</button><button class="option-btn" onclick="checkOption(this, false)">屋台の前です。</button></div></section>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      昨日、駅前で花火大会について話しました。友だちが「<ruby>混雑<rt>こんざつ</rt></ruby>しそうだね」と言ったので、私は「うん、早めに行こう」と答えました。会場の近くでは<ruby>交通規制<rt>こうつうきせい</rt></ruby>があり、車は入れませんでした。屋台もたくさん出ていて、にぎやかでした。でも、帰りは人が多くて少し大変でした。私たちは<ruby>待ち合わせ<rt>まちあわせ</rt></ruby>の場所を先に決めて、迷わないようにしました。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Yesterday, we talked about the fireworks festival in front of the station. My friend said, “It looks like it will be crowded,” so I replied, “Yeah, let’s go early.” Near the venue, there were traffic restrictions, so cars could not enter. There were also many food stalls, and it was lively. But on the way home, there were many people, so it was a little difficult. We decided our meeting place in advance so we wouldn’t get lost.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 会場の近くで、車はどうでしたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">車は自由に入れました。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">車は入れませんでした。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">車はすぐに止まりました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">車は駅の中にありました。</button>
+        </div>
+      </div>
 
-    <section class="card ai-pragmatics-card"><h2>Formality &amp; Pragmatics Breakdown</h2><div class="grid"><div class="pragmatics-item"><h3>Register &amp; Tone</h3><p>この文は、<strong>やさしい丁寧語</strong>が中心です。「行きました」「案内してくれました」「会えました」のように、過去形の丁寧表現で、落ち着いた説明になっています。会話の中では「〜があります」「〜ません」といった、スタッフが案内するときの自然な定型表現も使われています。</p></div><div class="pragmatics-item"><h3>Relationship Dynamics</h3><p>このレジスターは、<strong>スタッフ→来場者</strong>、または<strong>友だち同士の会話</strong>に合います。強い命令ではなく、情報をわかりやすく伝える言い方なので、初対面の人、観光客、家族連れにも使いやすいです。混雑した場所で安全に動いてもらうための、やわらかい案内表現です。</p></div><div class="pragmatics-item"><h3>Key Nuance Highlight</h3><p><strong>「通れません」</strong>は、単に「だめです」よりも理由がありそうな、現場の案内らしい言い方です。また、<strong>「少し離れた場所で待ち合わせ」</strong>は、「駅で会う」よりも混雑を避ける工夫が感じられます。安全面をふくめて、細かく場所を決めるニュアンスが自然です。</p></div></div></section>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 私たちはどうして先に待ち合わせの場所を決めましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">屋台でごはんを食べたかったからです。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">花火大会が中止になったからです。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">迷わないようにするためです。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">車で帰るためです。</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">やさしい会話調で、友だち同士の自然な口語です。「〜しそうだね」「〜ようにしました」など、予測・提案・目的を表す基本表現が中心です。文は短めで、初心者にも追いやすい構成です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">友だちや同年代の人との会話に適しています。駅や会場での案内、イベント前後の軽い小さな会話にも使いやすいですが、店員や係の人にはもう少し丁寧に言い換えるとより自然です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「混雑しそうだね」は、実際に混んでいると言い切るのではなく、「混みそう」という予想をやわらかく伝える表現です。「迷わないようにしました」は、トラブルを避けるために先に準備した、という意味で、実用的で自然な言い方です。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>

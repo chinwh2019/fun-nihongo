@@ -334,9 +334,67 @@
       <p class="jp">〜はあまり詳しくないんですが、〜がちょっと気になりますね。</p>
     </section>
   
-    <section class="card ai-reading-card"><h2>Parallel Reading Challenge</h2><p>「最近、芥川賞<ruby>受賞<rt>じゅしょう</rt></ruby>の本、<ruby>本屋<rt>ほんや</rt></ruby>に並ぶのが早いですよね。」と同僚が言いました。私は「そうですね。ニュースでも<ruby>話題<rt>わだい</rt></ruby>になりますね」と答えました。すると、別の人が「<ruby>直木賞<rt>なおきしょう</rt></ruby>の<ruby>候補作<rt>こうほさく</rt></ruby>も気になります」と言いました。私は「すみません、<ruby>詳<rt>くわ</rt></ruby>しくないんですが、名前はよく聞きます」と笑いました。みんなで少し話したあと、「今度、駅の近くの本屋で見てみますか」となり、昼休みの会話がやわらかく続きました。</p><button type="button" onclick="toggleById('ai-reading-translation-box')">English translation</button><div id="ai-reading-translation-box" style="display:none; margin-top:12px; padding:12px; border:1px solid #ddd; border-radius:8px;"><p>“The books that won the Akutagawa Prize are showing up in bookstores pretty quickly lately,” a coworker said. I replied, “Yes, they even become a topic in the news.” Then another person said, “I’m also curious about the shortlisted works for the Naoki Prize.” I laughed and said, “Sorry, I don’t know much about it, but I often hear the names.” After chatting for a bit, we ended up saying, “Shall we take a look at the bookstore near the station sometime?” and the lunchtime conversation continued in a relaxed way.</p></div><div class="question-block"><p><strong>1. この会話で、みんなは何について話していますか。</strong></p><div class="options"><button class="option-btn" onclick="checkOption(this, false)">昨日の天気</button><button class="option-btn" onclick="checkOption(this, true)">芥川賞と直木賞の本</button><button class="option-btn" onclick="checkOption(this, false)">会社の会議</button><button class="option-btn" onclick="checkOption(this, false)">旅行の予定</button></div></div><div class="question-block"><p><strong>2. 「詳しくないんですが」の気持ちにいちばん近いのはどれですか。</strong></p><div class="options"><button class="option-btn" onclick="checkOption(this, false)">私は何でも知っています</button><button class="option-btn" onclick="checkOption(this, true)">あまり知らないけれど、やわらかく話したい</button><button class="option-btn" onclick="checkOption(this, false)">今は話したくありません</button><button class="option-btn" onclick="checkOption(this, false)">とても怒っています</button></div></div></section>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      「最近、<ruby>芥川賞<rt>あくたがわしょう</rt></ruby>の話、よく<ruby>話題<rt>わだい</rt></ruby>になりますね」と、先輩が言いました。私は「はい。すみません、<ruby>詳<rt>くわ</rt></ruby>しくないんですが、<ruby>本屋<rt>ほんや</rt></ruby>に<ruby>並<rt>なら</rt></ruby>ぶと、ちょっと気になります」と答えました。すると先輩は「そうですね。<ruby>受賞<rt>じゅしょう</rt></ruby>した本は、つい手に取りますよね」と笑いました。私は「今度、<ruby>候補作<rt>こうほさく</rt></ruby>も見てみます」と言いました。仕事のあとでも、少し本の話ができて、やわらかい雰囲気になりました。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">"Recently, the Akutagawa Prize has been a common topic," my senior said. I replied, "Yes. Sorry, I don't know much about it, but when I see it displayed in bookstores, it catches my attention." Then the senior laughed and said, "That’s true. We tend to pick up books that have won awards." I said, "Next time, I’ll also take a look at the nominated works." Even after work, we were able to talk a little about books, and the atmosphere became relaxed and friendly.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 先輩と私は、何の話をしていますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">スポーツの話</button>
+          <button class="option-btn" onclick="checkOption(this, true)">本の話</button>
+          <button class="option-btn" onclick="checkOption(this, false)">旅行の話</button>
+          <button class="option-btn" onclick="checkOption(this, false)">料理の話</button>
+        </div>
+      </div>
 
-    <section class="card ai-pragmatics-card"><h2>Formality &amp; Pragmatics Breakdown</h2><div class="pragmatics-grid"><div class="pragmatics-item"><h3>1. Register &amp; Tone</h3><p>この会話は<strong>丁寧すぎない、でも失礼ではない職場の雑談</strong>です。「〜ですよね」「〜ですね」「〜ますか」は、同僚どうしで使いやすい自然なやわらかさがあります。文法としては、<strong>共感</strong>を作る「〜ですよね」、<strong>話を広げる</strong>「〜みたい／〜気になります」、そして<strong>へりくだる</strong>「詳しくないんですが」が中心です。</p></div><div class="pragmatics-item"><h3>2. Relationship Dynamics</h3><p>この言い方は、<strong>同僚、同年代の先輩、あまり堅くない職場の相手</strong>に向いています。お客さまや目上の人にも使えますが、その場合はもう少し丁寧にすると安心です。雑談の場面なので、知識を競う感じではなく、<strong>相手の話に乗る</strong>雰囲気が大切です。</p></div><div class="pragmatics-item"><h3>3. Key Nuance Highlight</h3><p><strong>「詳しくないんですが」</strong>は、ただの「知りません」よりやわらかく、<strong>話を続けてもいいですよ</strong>という空気を出します。<strong>「話題になる」</strong>は「有名だ」よりも、ニュースや会話の中で自然に注目される感じです。<strong>「本屋に並ぶ」</strong>は、本が実際に店頭に出ているイメージで、書籍の動きが早いことを伝えます。</p></div></div></section>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 「詳しくないんですが」は、どういう意味ですか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">よく知っていますが</button>
+          <button class="option-btn" onclick="checkOption(this, false)">まったく知りません</button>
+          <button class="option-btn" onclick="checkOption(this, true)">あまりよく知りませんが</button>
+          <button class="option-btn" onclick="checkOption(this, false)">とても好きです</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">全体は丁寧でやわらかい職場会話です。「〜ですね」「〜よね」「〜みます」など、相手に圧をかけない自然な表現が使われています。「詳しくないんですが」は、完全に知らないと言い切らず、会話を続けやすくする前置きです。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">先輩と後輩、同僚どうしのような、少し距離はあるけれど親しみのある関係に向いています。フォーマルすぎず、カジュアルすぎないので、職場の小さな雑談に合います。上司にも使えますが、やや丁寧に言うとより自然です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「詳しくないんですが」は、話題に自信がないときのやわらかい言い方です。相手の話を否定せず、自分の知識の少なさをへりくだって伝えます。「本屋に並ぶ」は、店頭で目に入るという自然な表現で、雑誌や新刊にもよく使えます。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>

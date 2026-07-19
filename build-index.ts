@@ -350,7 +350,7 @@ async function generateAiEnrichment(vocabItems: any[], topic: string, level: str
 
   const targetVocabList = vocabItems.map((v, i) => `${i+1}. ${v.kanji} (${v.reading}): ${v.meaning}`).join("\n");
   
-  const prompt = `You are a world-class Japanese linguist and educator. Your task is to generate clean HTML study assets to enrich a Japanese lesson.
+  const prompt = `You are a world-class Japanese linguist and educator. Your task is to generate study assets to enrich a Japanese lesson.
 
 Target Lesson Topic: "${topic}"
 Target Level: "${level}"
@@ -359,29 +359,30 @@ Focus Area: "${focus}"
 Vocabulary of the lesson:
 ${targetVocabList}
 
-Please generate exactly two HTML components to enrich the lesson page.
-Component 1: Parallel Reading Challenge
-- A short story or dialogue (80-120 words) in natural, authentic Japanese. It must naturally use at least 4-5 vocabulary words from the target list.
-- Use standard HTML formatting. For kanji, feel free to use simple Furigana (<ruby>漢字<rt>かんじ</rt></ruby>) for difficult words to aid readability.
-- A side-by-side English translation hidden inside a togglable box (using standard HTML details/summary or a div that can be toggled by our JS helper toggleById('ai-reading-translation-box')).
-- 2 multiple-choice comprehension questions in simple, natural Japanese (matching the target learner's level, do not write questions or options in English). Each question must have 4 options, and each option must be a button with class "option-btn". 
-- In the onclick handler of each option button, use:
-  - onclick="checkOption(this, true)" for the correct choice
-  - onclick="checkOption(this, false)" for the incorrect choices
-
-Component 2: Formality & Pragmatics Breakdown
-- A grid containing 3 elements detailing:
-  1. Register & Tone: Analysis of the conversational style (e.g. polite, casual, business) and key grammar structures.
-  2. Relationship Dynamics: Explaining who this language register is appropriate for (e.g., peers, seniors, customers) and social context.
-  3. Key Nuance Highlight: Break down 1-2 expressions, explaining their subtle differences from standard translations (e.g. why soft hearsay particles like 〜みたいですね were selected).
-
 Format your output strictly as a JSON object with this exact shape:
 {
-  "readingHtml": "<section class=\\"card ai-reading-card\\">... (valid HTML containing title, parallel text, reveal button, togglable translation box, and multiple-choice questions) ...</section>",
-  "pragmaticsHtml": "<section class=\\"card ai-pragmatics-card\\">... (valid HTML containing register, relationship, and nuance breakdown cards) ...</section>"
+  "japaneseStory": "A short story or dialogue (80-120 words) in natural, authentic Japanese using 4-5 vocabulary words from the target list. Use simple furigana tags for difficult kanji (e.g. <ruby>漢字<rt>かんじ</rt></ruby>).",
+  "englishTranslation": "English translation of the story.",
+  "q1": "Comprehension question 1 in Japanese (matching target learner level).",
+  "q1Options": [
+    {"text": "Option A in Japanese", "correct": false},
+    {"text": "Option B in Japanese", "correct": true},
+    {"text": "Option C in Japanese", "correct": false},
+    {"text": "Option D in Japanese", "correct": false}
+  ],
+  "q2": "Comprehension question 2 in Japanese (matching target learner level).",
+  "q2Options": [
+    {"text": "Option A in Japanese", "correct": false},
+    {"text": "Option B in Japanese", "correct": false},
+    {"text": "Option C in Japanese", "correct": true},
+    {"text": "Option D in Japanese", "correct": false}
+  ],
+  "registerTone": "Analysis of register and tone (polite, casual, etc) and key grammar structures.",
+  "relationshipDynamics": "Explain who this language register is appropriate for (peers, seniors, etc).",
+  "keyNuance": "Nuance breakdown of 1-2 expressions."
 }
 
-Ensure all HTML inside the JSON is properly escaped. Output only valid JSON.`;
+Ensure the questions and options are in Japanese. Return ONLY the raw JSON object.`;
 
   try {
     let responseText = "";
@@ -445,7 +446,72 @@ Ensure all HTML inside the JSON is properly escaped. Output only valid JSON.`;
     }
 
     const parsed = JSON.parse(cleanedText);
-    return `\n    ${parsed.readingHtml}\n\n    ${parsed.pragmaticsHtml}`;
+
+    // Validate required fields
+    if (!parsed.japaneseStory || !parsed.englishTranslation || !parsed.q1 || !parsed.q1Options || !parsed.q2 || !parsed.q2Options) {
+      console.error("AI returned incomplete JSON structure");
+      return null;
+    }
+
+    // Build the Reading Card HTML
+    const readingHtml = `
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      ${parsed.japaneseStory}
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">${parsed.englishTranslation}</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: ${parsed.q1}</strong></p>
+        <div class="options-grid">
+          ${parsed.q1Options.map((opt: any) => `
+          <button class="option-btn" onclick="checkOption(this, ${opt.correct})">${opt.text}</button>`).join('')}
+        </div>
+      </div>
+
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: ${parsed.q2}</strong></p>
+        <div class="options-grid">
+          ${parsed.q2Options.map((opt: any) => `
+          <button class="option-btn" onclick="checkOption(this, ${opt.correct})">${opt.text}</button>`).join('')}
+        </div>
+      </div>
+    </div>
+  </section>
+    `;
+
+    // Build the Pragmatics Card HTML
+    const pragmaticsHtml = `
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">${parsed.registerTone || ''}</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">${parsed.relationshipDynamics || ''}</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">${parsed.keyNuance || ''}</p>
+      </div>
+    </div>
+  </section>
+    `;
+
+    return `\n    ${readingHtml}\n\n    ${pragmaticsHtml}`;
   } catch (err) {
     console.error("Error generating AI content:", err);
     return null;

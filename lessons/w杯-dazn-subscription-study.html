@@ -316,9 +316,67 @@
       <p class="muted">Recommended next scenario: asking customer support about a streaming or phone plan without sounding frustrated.</p>
     </section>
   
-    <section class="card ai-reading-card"><h3>Parallel Reading Challenge</h3><p>昨日、<ruby>同僚<rt>どうりょう</rt></ruby>とW杯の試合を見ました。彼は「DAZNの<ruby>料金表示<rt>りょうきんひょうじ</rt></ruby>が<ruby>分かりにくい<rt>わかりにくい</rt></ruby>ですね」と言って、<ruby>月額<rt>げつがく</rt></ruby>だけでなく<ruby>年間契約<rt>ねんかんけいやく</rt></ruby>の<ruby>総額<rt>そうがく</rt></ruby>も<ruby>確認<rt>かくにん</rt></ruby>しました。私は、<ruby>見逃し配信<rt>みのがしはいしん</rt></ruby>があるのは便利だけど、<ruby>途中解約<rt>とちゅうかいやく</rt></ruby>の条件も見ないと少し不安だな、と思いました。結局、二人で「もう少し分かりやすく表示してほしいですね」とやさしく話しました。</p><button type="button" onclick="toggleById('ai-reading-translation-box')">英訳を表示</button><div id="ai-reading-translation-box" style="display:none; margin-top:1em;"><p>Yesterday, I watched a World Cup match with a coworker. He said, "The DAZN price display is hard to understand," and we checked not only the monthly fee but also the total amount for the annual contract. I thought catch-up streaming was convenient, but if I don’t check the cancellation terms for mid-contract cancellation, I feel a little uneasy. In the end, we both said gently, "It would be nice if the pricing were displayed a bit more clearly."</p></div><div class="mcq"><p><strong>1. この会話で、二人は何を確認しましたか。</strong></p><button class="option-btn" onclick="checkOption(this, false)">試合の得点だけ</button><button class="option-btn" onclick="checkOption(this, true)">月額と年間契約の総額</button><button class="option-btn" onclick="checkOption(this, false)">選手の年齢</button><button class="option-btn" onclick="checkOption(this, false)">テレビの音量</button></div><div class="mcq"><p><strong>2. 二人の言い方として、いちばん近いものはどれですか。</strong></p><button class="option-btn" onclick="checkOption(this, false)">強く文句を言う</button><button class="option-btn" onclick="checkOption(this, true)">やさしく確認して、分かりにくさを伝える</button><button class="option-btn" onclick="checkOption(this, false)">相手をからかう</button><button class="option-btn" onclick="checkOption(this, false)">命令する</button></div></section>
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      田中さんと佐藤さんは、会社の休憩室でW杯の話をしています。田中さんは「DAZNの<ruby>料金表示<rt>りょうきんひょうじ</rt></ruby>、ちょっと<ruby>分かりにくい<rt>わかりにくい</rt></ruby>ですね」と言いました。佐藤さんは「そうですね。<ruby>月額<rt>げつがく</rt></ruby>だけでなく、<ruby>年間契約<rt>ねんかんけいやく</rt></ruby>もあるみたいです」と答えます。田中さんは「<ruby>総額<rt>そうがく</rt></ruby>を先に<ruby>確認<rt>かくにん</rt></ruby>したほうが安心ですね。<ruby>見逃し配信<rt>みのがしはいしん</rt></ruby>も見たいですし」と言いました。二人は、あとで公式サイトをもう一度確認することにしました。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Tanaka and Sato are talking about the World Cup in the office break room. Tanaka says, “DAZN’s price display is a little hard to understand.” Sato replies, “Yes. It seems there is not only a monthly fee, but also an annual contract.” Tanaka says, “It feels safer to check the total amount first. I also want to watch the catch-up streaming.” The two decide to check the official website again later.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 田中さんたちは、どこで話していますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">電車の中です。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">会社の休憩室です。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">スタジアムです。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">家の台所です。</button>
+        </div>
+      </div>
 
-    <section class="card ai-pragmatics-card"><h3>Formality &amp; Pragmatics Breakdown</h3><div class="pragmatics-grid"><div class="pragmatics-card"><h4>1. Register &amp; Tone</h4><p>全体は<strong>丁寧すぎない、やわらかい会話</strong>です。<code>〜ですね</code>、<code>〜と思いました</code>、<code>〜ほしいですね</code>のような表現で、強い不満ではなく、<strong>落ち着いて確認する</strong>雰囲気を作っています。<code>分かりにくい</code>は、断定的に責める感じを弱めつつ、実際に使う自然な言い方です。</p></div><div class="pragmatics-card"><h4>2. Relationship Dynamics</h4><p>このレジスターは、<strong>同僚・友人・同級生</strong>など、近い関係での会話に向いています。職場でも、相手やサービスに対して失礼になりにくいので、<strong>安全で穏やかなコメント</strong>として使いやすいです。お客様対応のような場面では、さらに丁寧にして、<code>確認させていただきます</code>などに変えるとより自然です。</p></div><div class="pragmatics-card"><h4>3. Key Nuance Highlight</h4><p><code>料金表示が分かりにくいですね</code>は、英語の "The pricing is confusing" に近いですが、<strong>相手を直接責めない</strong>柔らかさがあります。<code>確認する</code>は単に見るだけでなく、<strong>大事な点をちゃんと調べる</strong>感じです。また、<code>年間契約の総額</code>と言うことで、月額だけで判断せず、<strong>実際にいくら払うか</strong>を意識していることが伝わります。</p></div></div></section>
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 二人は最後に何をしますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">すぐに試合を見ます。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">料金を忘れます。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">公式サイトをもう一度確認します。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">年間契約をすぐにやめます。</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">全体は丁寧でややカジュアルな職場会話です。『〜ですね』『〜みたいです』『〜したほうが安心ですね』のような、やわらかい同意・提案の表現が使われています。文法は短く、初心者でも追いやすい形です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">同僚どうし、または職場の先輩・後輩の会話に合う表現です。強い断定や批判を避けていて、相手に配慮しながら確認する雰囲気があります。社内で料金やサービスについて話すときに自然です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">『分かりにくい』は「難しい」よりも、表示や説明が整理されていなくて理解しづらい感じです。『確認したほうが安心ですね』は、命令ではなく、やわらかく提案する表現で、相手にプレッシャーを与えにくいです。</p>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <script src="../lesson-common.js"></script>
 </body>
