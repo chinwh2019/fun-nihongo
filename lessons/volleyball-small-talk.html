@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking about Men's Volleyball at Work - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-2: #2563eb;
+      --accent-soft: #dff6f2;
+      --blue-soft: #e8f1ff;
+      --border: #d1d5db;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --good: #166534;
+      --good-soft: #dcfce7;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; font-size: 2rem; }
+    h2 { font-size: 1.35rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    p { margin: 0 0 10px; }
+    ul, ol { margin-top: 8px; padding-left: 1.4rem; }
+    li { margin-bottom: 6px; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 0.85rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button.secondary { background: var(--accent-2); }
+    details { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fbfdff;
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+    .dialogue {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .turn {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fcfcfc;
+    }
+    .speaker {
+      display: inline-block;
+      min-width: 6.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .jp { font-size: 1.08rem; }
+    .note {
+      background: var(--blue-soft);
+      border-left: 4px solid var(--accent-2);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    .good {
+      background: var(--good-soft);
+      color: var(--good);
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .bad {
+      background: var(--warn-soft);
+      color: var(--warn);
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+    .mini {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fff;
+    }
+    a { color: var(--accent-2); }
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      .speaker { display: block; min-width: 0; margin-bottom: 4px; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/volleyball.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>男子バレーの話を職場で自然にする</h1>
+      <p class="muted">Session date: 2026-07-15. Level: beginner to lower-intermediate. Focus: workplace-safe small talk about Japan's men's volleyball Nations League Osaka round, using soft hearsay, modest reactions, and result-checking phrases.</p>
+      <span class="tag">workplace small talk</span>
+      <span class="tag">sports topic</span>
+      <span class="tag">〜みたいですね</span>
+      <span class="tag">soft opinions</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p>The topic chosen for this lesson was <strong>男子バレーのネーションズリーグ大阪ラウンド</strong>. On 2026-07-15, Japan's men's Volleyball Nations League Japan round opened in Osaka, and <strong>男子バレー</strong> was appearing in Japanese trend rankings.</p>
+      <p>This is useful because sports are a low-pressure topic for coworker small talk. The goal is not to give expert sports commentary. The goal is to sound natural when someone says, <span class="jp">「昨日の試合、見ました？」</span></p>
+      <div class="note">
+        <strong>Practical focus:</strong> talk about a match even when you do not know the final result yet. Use soft phrasing like <span class="jp">〜みたいですね</span>, <span class="jp">気になります</span>, and <span class="jp">勝てるといいですね</span>.
+      </div>
+      <details>
+        <summary>Sources checked for context</summary>
+        <ul>
+          <li>Trend Calendar: current Japan trend rankings around 2026-07-15 21:30 JST.</li>
+          <li>TBS Volleyball Nations League schedule/results page.</li>
+          <li>ACN VNL 2026 Osaka event site.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Japanese</th>
+            <th>Reading</th>
+            <th>Meaning</th>
+            <th>Use it like this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>男子バレー</td>
+            <td>だんしバレー</td>
+            <td>men's volleyball</td>
+            <td>男子バレー、今けっこう盛り上がってますね。</td>
+          </tr>
+          <tr>
+            <td>日本ラウンド</td>
+            <td>にほんラウンド</td>
+            <td>Japan round</td>
+            <td>日本ラウンドが大阪で始まったみたいですね。</td>
+          </tr>
+          <tr>
+            <td>開幕戦</td>
+            <td>かいまくせん</td>
+            <td>opening match</td>
+            <td>開幕戦、見ました？</td>
+          </tr>
+          <tr>
+            <td>イタリア戦</td>
+            <td>イタリアせん</td>
+            <td>match against Italy</td>
+            <td>イタリア戦、気になりますね。</td>
+          </tr>
+          <tr>
+            <td>決勝ラウンド</td>
+            <td>けっしょうラウンド</td>
+            <td>final round</td>
+            <td>決勝ラウンドに進めるといいですね。</td>
+          </tr>
+          <tr>
+            <td>フルセット</td>
+            <td>フルセット</td>
+            <td>full-set match</td>
+            <td>フルセットになると、かなり熱いですね。</td>
+          </tr>
+          <tr>
+            <td>逆転勝ち</td>
+            <td>ぎゃくてんがち</td>
+            <td>come-from-behind win</td>
+            <td>逆転勝ちだったら、すごいですね。</td>
+          </tr>
+          <tr>
+            <td>盛り上がる</td>
+            <td>もりあがる</td>
+            <td>to get exciting; to become lively</td>
+            <td>今、かなり盛り上がってますね。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <div class="grid">
+        <div class="mini">
+          <h3>1. 〜みたいですね</h3>
+          <p>Use this when you heard something but do not want to sound overly certain.</p>
+          <p class="jp">日本ラウンド、今日から大阪で始まったみたいですね。</p>
+        </div>
+        <div class="mini">
+          <h3>2. 〜といいですね</h3>
+          <p>A soft, safe way to say "I hope..." without sounding too intense.</p>
+          <p class="jp">勝てるといいですね。</p>
+        </div>
+        <div class="mini">
+          <h3>3. まだ〜てないんですが</h3>
+          <p>Useful when you have not checked something yet.</p>
+          <p class="jp">まだ結果はちゃんと見てないんですが、気になります。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <h3>Natural coworker phrases</h3>
+      <ul>
+        <li><span class="jp">男子バレー、今けっこう盛り上がってますね。</span></li>
+        <li><span class="jp">日本ラウンド、今日から大阪で始まったみたいですね。</span></li>
+        <li><span class="jp">イタリア戦、見ました？</span></li>
+        <li><span class="jp">まだ結果はちゃんと見てないんですが、気になります。</span></li>
+        <li><span class="jp">勝てるといいですね。</span></li>
+      </ul>
+      <h3>Too strong vs natural</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Less natural</th>
+            <th>Why</th>
+            <th>More natural</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="bad">日本は絶対勝ちます。</span></td>
+            <td>Too certain for light workplace small talk, especially before knowing the result.</td>
+            <td><span class="good">勝てるといいですね。</span></td>
+          </tr>
+          <tr>
+            <td><span class="bad">結果を教えて。</span></td>
+            <td>Too blunt with a coworker unless you are very close.</td>
+            <td><span class="good">結果、もう見ました？</span></td>
+          </tr>
+          <tr>
+            <td><span class="bad">私はバレーを知らないです。</span></td>
+            <td>Understandable, but a little stiff and conversation-ending.</td>
+            <td><span class="good">詳しくないんですが、最近よく話題になってますね。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Role-Play and Dialogue</h2>
+      <p><strong>Scenario:</strong> The next day at work, a coworker brings up the men's volleyball match. Keep your answer short, friendly, and safe.</p>
+      <div class="dialogue">
+        <div class="turn"><span class="speaker">同僚:</span><span class="jp">昨日の男子バレー、見ました？</span></div>
+        <div class="turn"><span class="speaker">あなた:</span><span class="jp">少しだけ見ました。イタリア戦、かなり盛り上がってましたね。</span></div>
+        <div class="turn"><span class="speaker">同僚:</span><span class="jp">すごかったですよね。日本ラウンド、今日から大阪なんですよね。</span></div>
+        <div class="turn"><span class="speaker">あなた:</span><span class="jp">そうみたいですね。まだ詳しくないんですが、決勝ラウンドに進めるといいですね。</span></div>
+        <div class="turn"><span class="speaker">同僚:</span><span class="jp">本当に。次の試合も楽しみですね。</span></div>
+        <div class="turn"><span class="speaker">あなた:</span><span class="jp">はい。結果だけでも後で見てみます。</span></div>
+      </div>
+      <details>
+        <summary>Alternate answer if you did not watch</summary>
+        <p class="jp">見てないんですが、男子バレー、今けっこう盛り上がってますね。結果、もう見ました？</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner answer was submitted before saving this file, so there are no personal corrections yet.</p>
+      <p>Use this model answer for practice:</p>
+      <div class="note">
+        <p class="jp">まだちゃんと見てないんですが、男子バレー、かなり盛り上がってますね。イタリア戦、気になります。</p>
+      </div>
+      <p class="muted">This keeps the conversation open, admits what you know, and avoids pretending you saw the whole match.</p>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <span class="warning-pill">register</span>
+      <span class="warning-pill">too direct</span>
+      <span class="warning-pill">overconfident claim</span>
+      <ul>
+        <li>Avoid <span class="jp">絶対</span> when you are just making small talk. It can sound too forceful.</li>
+        <li>Use <span class="jp">〜みたいですね</span> when you are relying on something you heard or saw online.</li>
+        <li>Use <span class="jp">〜といいですね</span> to express hope without pushing your opinion too strongly.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p>Read each line aloud twice. First slowly, then at natural speed.</p>
+      <div class="shadow-line jp">男子バレー、今けっこう盛り上がってますね。</div>
+      <div class="shadow-line jp">日本ラウンド、今日から大阪で始まったみたいですね。</div>
+      <div class="shadow-line jp">まだ結果はちゃんと見てないんですが、気になります。</div>
+      <div class="shadow-line jp">勝てるといいですね。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flashcard">
+        <p><strong>Front:</strong> How do you say "Looks like the Japan round started in Osaka today"?</p>
+        <button onclick="toggleById('fc1')">Reveal</button>
+        <p id="fc1" class="reveal jp" hidden>日本ラウンド、今日から大阪で始まったみたいですね。</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>Front:</strong> What is a soft way to say "I hope they can win"?</p>
+        <button onclick="toggleById('fc2')">Reveal</button>
+        <p id="fc2" class="reveal jp" hidden>勝てるといいですね。</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>Front:</strong> How do you say "I haven't properly checked the result yet, but I'm curious"?</p>
+        <button onclick="toggleById('fc3')">Reveal</button>
+        <p id="fc3" class="reveal jp" hidden>まだ結果はちゃんと見てないんですが、気になります。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <ul>
+        <li>Sports can be a safe workplace topic if you keep your reactions modest and invite the other person to talk.</li>
+        <li>If you do not know the result, say so naturally. In Japanese small talk, <span class="jp">まだちゃんと見てないんですが</span> sounds honest and soft.</li>
+        <li><span class="jp">よね</span> and <span class="jp">ね</span> make sports reactions feel shared: <span class="jp">盛り上がってますよね</span>, <span class="jp">楽しみですね</span>.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>
+          Translate: "Men's volleyball is getting pretty exciting right now."
+          <br />
+          <button class="secondary" onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer jp" hidden>男子バレー、今けっこう盛り上がってますね。</p>
+        </li>
+        <li>
+          Which sounds more natural for workplace small talk: <span class="jp">日本は絶対勝ちます</span> or <span class="jp">勝てるといいですね</span>?
+          <br />
+          <button class="secondary" onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden><span class="jp">勝てるといいですね</span> is safer and more natural because it sounds modest.</p>
+        </li>
+        <li>
+          Fill in the blank: <span class="jp">日本ラウンド、今日から大阪で始まった＿＿＿＿。</span>
+          <br />
+          <button class="secondary" onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer jp" hidden>みたいですね</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write one response to this coworker line:</p>
+      <div class="note jp">昨日の男子バレー、見ました？</div>
+      <p>Try using one of these:</p>
+      <ul>
+        <li><span class="jp">少しだけ見ました。</span></li>
+        <li><span class="jp">まだ見てないんですが、気になります。</span></li>
+        <li><span class="jp">今けっこう盛り上がってますね。</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Next time, practice responding after someone gives you the result. Useful patterns:</p>
+      <ul>
+        <li><span class="jp">そうなんですね。すごいですね。</span></li>
+        <li><span class="jp">フルセットだったんですか？</span></li>
+        <li><span class="jp">次の試合も楽しみですね。</span></li>
+      </ul>
+      <p class="muted">Difficulty snapshot: beginner-to-lower-intermediate, with focus on short workplace-safe turns and soft sentence endings.</p>
+    </section>
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>

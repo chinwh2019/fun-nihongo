@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talking about the Akutagawa and Naoki Prizes - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d1d5db;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-bottom: 12px; }
+    p { margin: 0 0 10px; }
+    ul, ol { margin-top: 8px; padding-left: 1.4rem; }
+    li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 0.85rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      margin: 4px 0;
+    }
+    button:hover { filter: brightness(0.96); }
+    details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard { border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin: 10px 0; background: #fff; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: #f9fffd; margin: 10px 0; }
+    .dialogue { display: grid; gap: 8px; }
+    .turn { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; background: #fcfcfc; }
+    .speaker { font-weight: 700; color: var(--accent); display: block; margin-bottom: 2px; }
+    .contrast { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .bad { border-left: 4px solid var(--warn); background: #fffbeb; }
+    .good { border-left: 4px solid var(--accent); background: #f9fffd; }
+    .note { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); }
+    .jp { font-size: 1.05rem; }
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .card { padding: 14px; border-radius: 10px; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr { border: 1px solid var(--border); margin-bottom: 10px; }
+      td { border: none; border-bottom: 1px solid var(--border); }
+      td:last-child { border-bottom: none; }
+      td::before { content: attr(data-label); display: block; font-weight: 700; color: var(--muted); margin-bottom: 2px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/akutagawa-naoki.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>芥川賞・直木賞の話題で自然に話す</h1>
+      <p class="muted">Session date: 2026-07-15. Level: beginner to lower-intermediate. Focus: soft workplace small talk, bookstore phrases, and natural ways to say you are not an expert.</p>
+      <span class="tag">current topic</span>
+      <span class="tag">workplace small talk</span>
+      <span class="tag">bookstore Japanese</span>
+      <span class="tag">soft phrasing</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>On July 15, 2026, Japan's major literary prizes were announced. The Akutagawa Prize went to 小砂川チトさんの『ゾンビ回収婦』, and the Naoki Prize went to 朝倉かすみさんの『けんぐゎい』.</p>
+      <p>This makes a useful Japanese topic because you can mention it lightly with coworkers, friends, or bookstore staff even if you are not deeply into literature. The key is to sound curious and modest, not like you are trying to give a formal book review.</p>
+      <details>
+        <summary>Why this topic is practical</summary>
+        <p>You can use the same patterns for many current topics: 「ニュースで見たんですが」, 「詳しくないんですが」, 「ちょっと気になります」, and 「読んでみようかなと思っています」.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it like this</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Japanese">芥川賞</td>
+            <td data-label="Reading">あくたがわしょう</td>
+            <td data-label="Meaning">Akutagawa Prize</td>
+            <td data-label="Use">芥川賞が発表されたみたいですね。</td>
+          </tr>
+          <tr>
+            <td data-label="Japanese">直木賞</td>
+            <td data-label="Reading">なおきしょう</td>
+            <td data-label="Meaning">Naoki Prize</td>
+            <td data-label="Use">直木賞の受賞作、気になります。</td>
+          </tr>
+          <tr>
+            <td data-label="Japanese">受賞する</td>
+            <td data-label="Reading">じゅしょうする</td>
+            <td data-label="Meaning">to win an award</td>
+            <td data-label="Use">小砂川チトさんが受賞したみたいです。</td>
+          </tr>
+          <tr>
+            <td data-label="Japanese">候補作</td>
+            <td data-label="Reading">こうほさく</td>
+            <td data-label="Meaning">nominated work</td>
+            <td data-label="Use">候補作もいろいろありますね。</td>
+          </tr>
+          <tr>
+            <td data-label="Japanese">話題になる</td>
+            <td data-label="Reading">わだいになる</td>
+            <td data-label="Meaning">to become a topic</td>
+            <td data-label="Use">SNSでも話題になっているみたいです。</td>
+          </tr>
+          <tr>
+            <td data-label="Japanese">本屋に並ぶ</td>
+            <td data-label="Reading">ほんやにならぶ</td>
+            <td data-label="Meaning">to be displayed in bookstores</td>
+            <td data-label="Use">本屋に並んでいたら見てみたいです。</td>
+          </tr>
+          <tr>
+            <td data-label="Japanese">詳しくないんですが</td>
+            <td data-label="Reading">くわしくないんですが</td>
+            <td data-label="Meaning">I do not know much about it, but...</td>
+            <td data-label="Use">文学はあまり詳しくないんですが、読んでみたいです。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <h3>1. 「ニュースで見たんですが...」</h3>
+      <p class="jp">ニュースで見たんですが、芥川賞と直木賞が発表されたみたいですね。</p>
+      <p>Use this to introduce a topic gently. It sounds less abrupt than suddenly announcing a fact.</p>
+      <h3>2. 「〜みたいですね」</h3>
+      <p class="jp">『ゾンビ回収婦』が芥川賞を受賞したみたいですね。</p>
+      <p>This is soft hearsay: "It looks like / I heard that..." Good for workplace small talk when you are not trying to sound overly certain or intense.</p>
+      <h3>3. 「〜かなと思っています」</h3>
+      <p class="jp">本屋で見かけたら、少し読んでみようかなと思っています。</p>
+      <p>A gentle way to say "I am thinking I might..." It sounds more natural than a strong declaration like 「読みます」 when you are only mildly interested.</p>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <ul>
+        <li class="jp">ニュースで見たんですが、芥川賞と直木賞が発表されたみたいですね。</li>
+        <li class="jp">タイトルがちょっと気になりますね。</li>
+        <li class="jp">文学はあまり詳しくないんですが、読んでみたいです。</li>
+        <li class="jp">本屋で見かけたら、少し読んでみようかなと思っています。</li>
+      </ul>
+      <div class="contrast">
+        <div class="note bad">
+          <span class="warning-pill">too blunt</span>
+          <p class="jp">私は文学を知りません。</p>
+          <p>This is understandable, but it sounds too direct and a little unnatural.</p>
+        </div>
+        <div class="note good">
+          <span class="warning-pill">more natural</span>
+          <p class="jp">文学はあまり詳しくないんですが...</p>
+          <p>This means "I do not know much about literature, but..." and sounds modest, soft, and conversation-friendly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p>Scenario: A coworker brings up the literary prize news during a short break. You do not need to sound like a literature expert. Your goal is to respond naturally and keep the conversation going.</p>
+      <div class="dialogue">
+        <div class="turn"><span class="speaker">同僚</span><span class="jp">昨日、芥川賞と直木賞が発表されましたね。見ました？</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">ニュースで少し見ました。文学はあまり詳しくないんですが、タイトルが気になりますね。</span></div>
+        <div class="turn"><span class="speaker">同僚</span><span class="jp">『ゾンビ回収婦』って、タイトルが強いですよね。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">そうですね。ちょっと不思議な感じがします。</span></div>
+        <div class="turn"><span class="speaker">同僚</span><span class="jp">直木賞は『けんぐゎい』だったみたいです。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">そうなんですね。読み方が難しいですね。</span></div>
+        <div class="turn"><span class="speaker">同僚</span><span class="jp">本屋でもすぐ並びそうですね。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">本屋で見かけたら、少し読んでみようかなと思っています。</span></div>
+        <div class="turn"><span class="speaker">同僚</span><span class="jp">いいですね。私も見てみます。</span></div>
+        <div class="turn"><span class="speaker">あなた</span><span class="jp">読んだら、また感想を聞かせてください。</span></div>
+      </div>
+      <details>
+        <summary>Practice prompt</summary>
+        <p class="jp">同僚: 昨日、芥川賞と直木賞が発表されましたね。見ました？</p>
+        <p>Try answering in Japanese with: news source + modest knowledge + one curious reaction.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner answer was submitted yet in this session. Use this model answer for review:</p>
+      <div class="note good">
+        <p class="jp">ニュースで少し見ました。文学はあまり詳しくないんですが、タイトルがちょっと気になりますね。</p>
+        <p>This works because it is soft, honest, and gives the other person something to respond to.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <p>Main correction target: avoid overly blunt self-description when saying you do not know much about a topic.</p>
+      <ul>
+        <li><strong>Pattern:</strong> 「Aはあまり詳しくないんですが、B」</li>
+        <li><strong>Use for:</strong> literature, sports, politics, tech, food trends, or any topic where you want to be modest.</li>
+        <li><strong>Example:</strong> <span class="jp">スポーツはあまり詳しくないんですが、最近バレーが盛り上がっていますね。</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Read each line out loud. Keep it light and conversational.</p>
+      <div class="shadow-line jp">ニュースで見たんですが、芥川賞と直木賞が発表されたみたいですね。</div>
+      <div class="shadow-line jp">文学はあまり詳しくないんですが、タイトルがちょっと気になりますね。</div>
+      <div class="shadow-line jp">本屋で見かけたら、少し読んでみようかなと思っています。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <p><strong>芥川賞</strong></p>
+        <button onclick="toggleById('fc1')">Reveal</button>
+        <p id="fc1" class="reveal" hidden>あくたがわしょう - Akutagawa Prize</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>受賞する</strong></p>
+        <button onclick="toggleById('fc2')">Reveal</button>
+        <p id="fc2" class="reveal" hidden>じゅしょうする - to win an award</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>詳しくないんですが</strong></p>
+        <button onclick="toggleById('fc3')">Reveal</button>
+        <p id="fc3" class="reveal" hidden>くわしくないんですが - I do not know much about it, but...</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>芥川賞 and 直木賞 are widely recognized literary prizes, so they can appear in news, bookstores, and casual conversation.</li>
+        <li>You do not need deep literary knowledge to join the conversation. Japanese small talk often works well with modest interest: 「詳しくないんですが、ちょっと気になります」.</li>
+        <li>When talking with coworkers, soft hearsay like 「〜みたいですね」 is safer and more natural than sounding overly definitive.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <ol>
+        <li>
+          How do you say "I do not know much about literature, but..."?
+          <br /><button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer jp" hidden>文学はあまり詳しくないんですが...</p>
+        </li>
+        <li>
+          Which sounds softer for "I saw it in the news"?
+          <br /><button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer jp" hidden>ニュースで見たんですが...</p>
+        </li>
+        <li>
+          Complete the sentence: 本屋で見かけたら、少し＿＿＿＿かなと思っています。
+          <br /><button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer jp" hidden>読んでみよう</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <p>Write one short answer to this coworker prompt:</p>
+      <div class="note">
+        <p class="jp">昨日、芥川賞と直木賞が発表されましたね。見ました？</p>
+      </div>
+      <p>Try using all three parts: 「ニュースで見たんですが」 + 「詳しくないんですが」 + one reaction such as 「タイトルが気になります」.</p>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next time, practice answering the role-play prompt in Japanese and softening any direct wording. Good target pattern:</p>
+      <p class="jp">〜はあまり詳しくないんですが、〜がちょっと気になりますね。</p>
+    </section>
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
