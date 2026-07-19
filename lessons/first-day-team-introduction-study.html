@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First Day Team Self-Introduction - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f5f7f4;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #0f766e;
+      --accent-strong: #0b5c55;
+      --accent-soft: #def7f1;
+      --line: #d6dde5;
+      --soft: #f8fafc;
+      --warn: #8a4b10;
+      --warn-soft: #fff4d6;
+      --good: #166534;
+      --good-soft: #e8f7eb;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04);
+    }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 { font-size: 1.25rem; margin-bottom: 10px; }
+    h3 { font-size: 1rem; margin-bottom: 6px; }
+    p { margin: 8px 0; }
+    ul, ol { padding-left: 1.25rem; }
+    li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      font-size: 0.85rem;
+    }
+    .note {
+      border-left: 4px solid var(--accent);
+      background: #f7fffd;
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    .warn {
+      border-left: 4px solid var(--warn);
+      background: var(--warn-soft);
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    .good {
+      border-left: 4px solid var(--good);
+      background: var(--good-soft);
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--soft); }
+    code {
+      background: var(--soft);
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      margin: 6px 8px 6px 0;
+      font-weight: 700;
+    }
+    button:hover { background: var(--accent-strong); }
+    details {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      background: #fff;
+    }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flash-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .flashcard {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      background: var(--soft);
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+    .jp { font-size: 1.05rem; font-weight: 700; }
+    .en { color: var(--muted); }
+    .label {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 12px; }
+      h1 { font-size: 1.55rem; }
+      .card { padding: 14px; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/first-day-team-introduction.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>初日のチーム自己紹介</h1>
+      <p class="muted">Session date: 2026-07-19. Level: beginner to lower-intermediate. Focus: first-day team self-introduction, workplace-safe phrasing, daily meeting progress reports, and basic discussion with colleagues.</p>
+      <span class="tag">workplace Japanese</span>
+      <span class="tag">self-introduction</span>
+      <span class="tag">daily meeting</span>
+      <span class="tag">polite but natural</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>This study file saves the current lesson about joining a Japanese-speaking team on your first day. The goal is to sound polite, cooperative, and easy to work with without making your Japanese too stiff.</p>
+      <div class="note">
+        <p><strong>Speaking goal:</strong> introduce yourself to the team, explain your background briefly, say you are still learning Japanese, and show that you want to communicate and contribute.</p>
+      </div>
+      <p>In a Japanese workplace, a first self-introduction is usually humble and team-oriented. Instead of saying only your skills, it is natural to include phrases like <code>早く慣れて</code>, <code>貢献できるように頑張ります</code>, and <code>どうぞよろしくお願いします</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Japanese</th>
+            <th>Reading</th>
+            <th>Meaning / Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>本日</td><td>ほんじつ</td><td>today; more formal than <code>今日</code></td></tr>
+          <tr><td>参加します</td><td>さんかします</td><td>join / participate in</td></tr>
+          <tr><td>担当してきました</td><td>たんとうしてきました</td><td>I have been responsible for...</td></tr>
+          <tr><td>前職</td><td>ぜんしょく</td><td>previous job</td></tr>
+          <tr><td>バックエンド開発</td><td>バックエンドかいはつ</td><td>backend development</td></tr>
+          <tr><td>API開発</td><td>エーピーアイかいはつ</td><td>API development</td></tr>
+          <tr><td>開発フロー</td><td>かいはつフロー</td><td>development workflow</td></tr>
+          <tr><td>慣れる</td><td>なれる</td><td>to get used to</td></tr>
+          <tr><td>キャッチアップする</td><td>キャッチアップする</td><td>to catch up</td></tr>
+          <tr><td>貢献する</td><td>こうけんする</td><td>to contribute</td></tr>
+          <tr><td>共有する</td><td>きょうゆうする</td><td>to share information</td></tr>
+          <tr><td>確認する</td><td>かくにんする</td><td>to check / confirm</td></tr>
+          <tr><td>相談する</td><td>そうだんする</td><td>to consult / ask advice</td></tr>
+          <tr><td>進捗</td><td>しんちょく</td><td>progress</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <details open>
+        <summary>1. これまで〜を担当してきました</summary>
+        <p class="jp">これまでバックエンド開発を中心に担当してきました。</p>
+        <p class="en">I have mainly worked on backend development until now.</p>
+        <p>This is a natural way to summarize your experience without sounding like you are bragging.</p>
+      </details>
+      <details>
+        <summary>2. 早く〜できるように頑張ります</summary>
+        <p class="jp">早くチームに慣れて、貢献できるように頑張ります。</p>
+        <p class="en">I’ll do my best to get used to the team quickly and contribute.</p>
+        <p><code>〜できるように頑張ります</code> is humble and goal-oriented. It sounds safer than saying <code>すぐ貢献します</code>, which can feel too confident.</p>
+      </details>
+      <details>
+        <summary>3. 〜させていただけると助かります</summary>
+        <p class="jp">確認しながら進めさせていただけると助かります。</p>
+        <p class="en">It would help if I could proceed while checking things as needed.</p>
+        <p>This is polite and useful when you want permission or support from a new team.</p>
+      </details>
+      <details>
+        <summary>4. まだ〜中です</summary>
+        <p class="jp">日本語はまだ勉強中です。</p>
+        <p class="en">I’m still studying Japanese.</p>
+        <p>A simple, natural way to set expectations without apologizing too much.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <div class="two-col">
+        <div class="good">
+          <h3>Natural / workplace-safe</h3>
+          <p class="jp">日本語はまだ勉強中ですが、できるだけ日本語でもコミュニケーションを取りたいと思っています。</p>
+          <p class="en">I’m still studying Japanese, but I’d like to communicate in Japanese as much as possible.</p>
+        </div>
+        <div class="warn">
+          <h3>Too plain or incomplete</h3>
+          <p class="jp">日本語が下手です。</p>
+          <p class="en">My Japanese is bad.</p>
+          <p>This is understandable, but it sounds a little negative. <code>まだ勉強中です</code> sounds more positive and natural.</p>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Situation</th>
+            <th>Natural phrase</th>
+            <th>English</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Starting your intro</td>
+            <td>はじめまして。本日からチームに参加します、[Your Name]です。</td>
+            <td>Nice to meet you. I’m [Your Name], and I’m joining the team from today.</td>
+          </tr>
+          <tr>
+            <td>Explaining experience</td>
+            <td>これまでソフトウェア開発を担当してきました。</td>
+            <td>I have worked in software development until now.</td>
+          </tr>
+          <tr>
+            <td>Being humble</td>
+            <td>まだ分からないことも多いと思います。</td>
+            <td>I think there will still be many things I do not know.</td>
+          </tr>
+          <tr>
+            <td>Showing effort</td>
+            <td>早くキャッチアップして、チームに貢献できるように頑張ります。</td>
+            <td>I’ll do my best to catch up quickly and contribute to the team.</td>
+          </tr>
+          <tr>
+            <td>Asking for patience</td>
+            <td>分かりにくい表現があれば、確認しながら進めさせていただけると助かります。</td>
+            <td>If something I say is unclear, it would help if I could check as we go.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p>This is a fuller first-day team meeting scene. Read each Japanese line, then check the English meaning.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Speaker</th>
+            <th>Japanese</th>
+            <th>English</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Manager</td>
+            <td>それでは、新しくチームに参加された方に、簡単に自己紹介をお願いできますか。</td>
+            <td>Now, could our new team member please give a brief self-introduction?</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>はい。はじめまして。本日からチームに参加します、[Your Name]です。</td>
+            <td>Yes. Nice to meet you. I’m [Your Name], and I’m joining the team from today.</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>これまでソフトウェア開発を担当してきました。主にバックエンド開発やAPI開発を経験してきました。</td>
+            <td>I have worked in software development until now. I mainly have experience with backend development and API development.</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>新しい環境なので、最初は分からないことも多いと思います。</td>
+            <td>Since this is a new environment, I think there will be many things I do not know at first.</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>チームの進め方やプロジェクトの内容を早く理解して、少しずつ貢献できるように頑張ります。</td>
+            <td>I’ll do my best to quickly understand the team’s way of working and the project, and gradually contribute.</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>日本語はまだ勉強中ですが、できるだけ日本語でもコミュニケーションを取りたいと思っています。</td>
+            <td>I’m still studying Japanese, but I’d like to communicate in Japanese as much as possible.</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>もし分かりにくい表現があれば、確認しながら進めさせていただけると助かります。</td>
+            <td>If something I say is unclear, it would help if I could check as we go.</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>これからどうぞよろしくお願いします。</td>
+            <td>I look forward to working with you.</td>
+          </tr>
+          <tr>
+            <td>Teammate</td>
+            <td>よろしくお願いします。バックエンドはどのあたりを担当されていたんですか。</td>
+            <td>Nice to meet you too. What areas of backend work were you responsible for?</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>主にAPIの実装やバグ修正を担当していました。テストや調査も少し経験があります。</td>
+            <td>I mainly worked on API implementation and bug fixes. I also have some experience with testing and investigation.</td>
+          </tr>
+          <tr>
+            <td>Manager</td>
+            <td>ありがとうございます。最初は分からないことがあれば、遠慮なく聞いてください。</td>
+            <td>Thank you. At first, if there is anything you do not understand, please feel free to ask.</td>
+          </tr>
+          <tr>
+            <td>You</td>
+            <td>ありがとうございます。確認しながら進めたいと思います。よろしくお願いします。</td>
+            <td>Thank you. I’d like to proceed while checking things as needed. I look forward to working with you.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner-written Japanese attempt was given in this session yet, so this section saves model versions and likely improvements to practice.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Less natural</th>
+            <th>Better version</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>日本語が下手です。</td>
+            <td>日本語はまだ勉強中です。</td>
+            <td>More positive and less self-critical.</td>
+          </tr>
+          <tr>
+            <td>分かりません。</td>
+            <td>この部分がまだよく分かっていなくて、確認してもいいですか。</td>
+            <td>Gives context and asks softly.</td>
+          </tr>
+          <tr>
+            <td>早く貢献します。</td>
+            <td>早くキャッチアップして、チームに貢献できるように頑張ります。</td>
+            <td>More humble and natural for a new joiner.</td>
+          </tr>
+          <tr>
+            <td>説明してください。</td>
+            <td>もう一度説明していただけますか。</td>
+            <td>Polite request; safer with teammates you just met.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <ul>
+        <li><strong>Too direct:</strong> replace short blunt statements with a reason plus a soft request.</li>
+        <li><strong>Too negative:</strong> say <code>まだ勉強中です</code> instead of criticizing your own Japanese.</li>
+        <li><strong>Too confident for first day:</strong> use <code>貢献できるように頑張ります</code> instead of promising immediate results.</li>
+        <li><strong>Register mismatch:</strong> use <code>〜していただけますか</code> with managers or new teammates; <code>〜してもらえますか</code> is okay after the relationship is comfortable.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Say each line out loud three times. Keep the rhythm smooth and pause naturally after each phrase.</p>
+      <div class="shadow-line">
+        <p class="jp">本日からチームに参加します、[Your Name]です。</p>
+        <p class="en">I’m [Your Name], and I’m joining the team from today.</p>
+      </div>
+      <div class="shadow-line">
+        <p class="jp">これまでバックエンド開発を中心に担当してきました。</p>
+        <p class="en">Until now, I have mainly worked on backend development.</p>
+      </div>
+      <div class="shadow-line">
+        <p class="jp">早くキャッチアップして、チームに貢献できるように頑張ります。</p>
+        <p class="en">I’ll do my best to catch up quickly and contribute to the team.</p>
+      </div>
+      <div class="shadow-line">
+        <p class="jp">日本語はまだ勉強中ですが、できるだけ日本語でもコミュニケーションを取りたいと思っています。</p>
+        <p class="en">I’m still studying Japanese, but I’d like to communicate in Japanese as much as possible.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flash-grid">
+        <div class="flashcard">
+          <div class="label">Japanese</div>
+          <p class="jp">貢献する</p>
+          <button onclick="toggleById('fc1')">Reveal</button>
+          <p id="fc1" class="reveal en" hidden>to contribute</p>
+        </div>
+        <div class="flashcard">
+          <div class="label">Japanese</div>
+          <p class="jp">確認しながら進めたいです</p>
+          <button onclick="toggleById('fc2')">Reveal</button>
+          <p id="fc2" class="reveal en" hidden>I’d like to proceed while checking as needed.</p>
+        </div>
+        <div class="flashcard">
+          <div class="label">Japanese</div>
+          <p class="jp">まだ勉強中です</p>
+          <button onclick="toggleById('fc3')">Reveal</button>
+          <p id="fc3" class="reveal en" hidden>I’m still studying.</p>
+        </div>
+        <div class="flashcard">
+          <div class="label">Japanese</div>
+          <p class="jp">担当してきました</p>
+          <button onclick="toggleById('fc4')">Reveal</button>
+          <p id="fc4" class="reveal en" hidden>I have been responsible for...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>A first-day Japanese workplace introduction is usually short, humble, and team-focused.</li>
+        <li><code>どうぞよろしくお願いします</code> is not just “nice to meet you.” In this context it means “I look forward to working with you.”</li>
+        <li>It is okay to mention that your Japanese is still in progress. Pair it with a positive intention: <code>できるだけ日本語でもコミュニケーションを取りたいと思っています</code>.</li>
+        <li>When reporting progress later, use the simple structure: yesterday, today, blocker or question.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <div>
+        <p><strong>1. How do you say “I’m joining the team from today”?</strong></p>
+        <button onclick="toggleById('q1')">Show answer</button>
+        <p id="q1" class="quiz-answer jp" hidden>本日からチームに参加します。</p>
+      </div>
+      <div>
+        <p><strong>2. Which sounds more natural: 日本語が下手です or 日本語はまだ勉強中です?</strong></p>
+        <button onclick="toggleById('q2')">Show answer</button>
+        <p id="q2" class="quiz-answer" hidden><span class="jp">日本語はまだ勉強中です。</span><br /><span class="en">It sounds more positive and workplace-safe.</span></p>
+      </div>
+      <div>
+        <p><strong>3. Fill in the blank: 早くキャッチアップして、チームに______できるように頑張ります。</strong></p>
+        <button onclick="toggleById('q3')">Show answer</button>
+        <p id="q3" class="quiz-answer jp" hidden>貢献</p>
+      </div>
+      <div>
+        <p><strong>4. How do you politely say “Could you explain one more time?”</strong></p>
+        <button onclick="toggleById('q4')">Show answer</button>
+        <p id="q4" class="quiz-answer jp" hidden>もう一度説明していただけますか。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Replace <code>[Your Name]</code> with your real name and read the short version out loud five times.</li>
+        <li>Customize one experience line: <code>これまで〜を担当してきました。</code></li>
+        <li>Prepare one first daily meeting report using: <code>昨日は〜しました。今日は〜する予定です。今、〜で少し困っています。</code></li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next practice should be a live daily meeting role-play: report yesterday’s work, today’s plan, and one blocker. Focus on softening direct phrases with <code>〜で少し困っています</code>, <code>確認してもいいですか</code>, and <code>アドバイスをいただけると助かります</code>.</p>
+    </section>
+  
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      はじめまして。本日<ruby>から<rt>から</rt></ruby>チームに参加します、田中です。前職ではバックエンド開発とAPI開発を担当してきました。<ruby>新<rt>あたら</rt></ruby>しい<ruby>環境<rt>かんきょう</rt></ruby>なので、最初は分からないことも多いと思いますが、早くキャッチアップして、チームに貢献できるように頑張ります。もし分かりにくい表現があれば、確認しながら進めさせていただけると助かります。よろしくお願いします。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Nice to meet you. I’m Tanaka, and I’m joining the team from today. In my previous job, I was responsible for backend development and API development. Since this is a new environment, I think there will be many things I do not know at first, but I’ll do my best to catch up quickly and contribute to the team. If something I say is unclear, it would help if I could check as we go. I look forward to working with you.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 田中さんは前職で主に何を担当していましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">デザインと<ruby>営業<rt>えいぎょう</rt></ruby></button>
+          <button class="option-btn" onclick="checkOption(this, true)">バックエンド開発とAPI開発</button>
+          <button class="option-btn" onclick="checkOption(this, false)">人事と総務</button>
+          <button class="option-btn" onclick="checkOption(this, false)"><ruby>翻訳<rt>ほんやく</rt></ruby>と<ruby>通訳<rt>つうやく</rt></ruby></button>
+        </div>
+      </div>
+
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 田中さんはチームに対して、どんな<ruby>姿勢<rt>しせい</rt></ruby>を<ruby>伝<rt>つた</rt></ruby>えていますか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">まだ分からないことはないと言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">日本語はもう勉強していないと言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">早くキャッチアップして貢献したいと言っています。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">仕事はあまり確認せずに進めたいと言っています。</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">丁寧でフォーマルな職場向けのトーンです。初対面の自己紹介なので、です・ます調を使い、謙虚さを出す表現（「分からないことも多い」「頑張ります」）や依頼表現（「〜いただけると助かります」）が入っています。文型はシンプルで、自己紹介の定型表現として使いやすいです。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">新しい職場で、チームメンバー、先輩、上司に対して使うのに適しています。まだ距離がある相手に対して失礼にならないように配慮した、業務開始初日の自己紹介です。親しい同僚には少し丁寧すぎる場合もありますが、最初の場では問題ありません。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「本日からチームに参加します」は「今日から仲間に入ります」という意味ですが、より丁寧で仕事向けです。「確認しながら進めさせていただけると助かります」は、「分からない点をその場で確認しながら進めたいです」というやわらかい依頼表現で、相手に負担をかけすぎない言い方です。</p>
+      </div>
+    </div>
+  </section>
+    
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
