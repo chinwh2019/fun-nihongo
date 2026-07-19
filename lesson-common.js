@@ -8,21 +8,31 @@
   let recognition = null;
   let voiceCoachSheet = null;
   let voiceCoachBackdrop = null;
+  let mediaRecorder = null;
+  let audioChunks = [];
+  let recordedAudioUrl = null;
+  let userAudioElement = null;
 
   // Initialize features once DOM is ready
   function init() {
-    // 1. Inject Floating Control Panel
+    // 1. Parse Vocab Table
+    const vocabMap = parseVocabTable();
+
+    // 2. Inject Floating Control Panel
     injectControlPanel();
 
-    // 2. Wrap .jp elements and add speech/TTS triggers
-    instrumentJapaneseText();
+    // 3. Wrap .jp elements and add speech/TTS triggers
+    instrumentJapaneseText(vocabMap);
 
-    // 3. Inject Audio Player if voice lesson is available
+    // 4. Set up vocab tooltip listeners
+    setupVocabTooltipListeners(vocabMap);
+
+    // 5. Inject Audio Player if voice lesson is available
     if (window.LESSON_AUDIO) {
       injectAudioPlayer();
     }
 
-    // 4. Load initial Reading Toggle preference
+    // 6. Load initial Reading Toggle preference
     const hideReadingsPref = localStorage.getItem('japanese-hide-readings') === 'true';
     if (hideReadingsPref) {
       document.body.classList.add('hide-readings');
@@ -81,11 +91,16 @@
   }
 
   // Instrument Japanese text (.jp elements) with voice and speech features
-  function instrumentJapaneseText() {
+  function instrumentJapaneseText(vocabMap) {
     const jpElements = document.querySelectorAll('.jp');
     jpElements.forEach(el => {
       // Avoid processing nested elements or already wrapped ones
       if (el.querySelector('.jp-container') || el.classList.contains('jp-container')) return;
+
+      // Highlight vocabulary inside the element before wrapping it
+      if (vocabMap) {
+        highlightVocabInElement(el, vocabMap);
+      }
 
       const originalHtml = el.innerHTML;
       el.innerHTML = '';
@@ -192,6 +207,12 @@
           </div>
           <div class="result-row" style="text-align: center;">
             <span class="score-badge" id="coach-score-badge">0% Match</span>
+            <div class="coach-play-btn-row">
+              <button class="coach-play-btn" id="coach-play-recording-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Listen to My Attempt
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -202,6 +223,21 @@
     document.getElementById('close-coach-btn').addEventListener('click', closeVoiceCoach);
     voiceCoachBackdrop.addEventListener('click', closeVoiceCoach);
     document.getElementById('coach-mic-btn').addEventListener('click', toggleRecording);
+
+    // Bind Play user recording action
+    const playRecBtn = document.getElementById('coach-play-recording-btn');
+    if (playRecBtn) {
+      playRecBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (recordedAudioUrl) {
+          if (userAudioElement) {
+            userAudioElement.pause();
+          }
+          userAudioElement = new Audio(recordedAudioUrl);
+          userAudioElement.play().catch(err => console.warn("Failed to play user recording:", err));
+        }
+      });
+    }
   }
 
   function openVoiceCoach(text) {
@@ -213,6 +249,11 @@
     document.getElementById('coach-status-label').textContent = 'Click mic and speak';
     document.getElementById('coach-mic-btn').className = 'recording-mic-btn';
     
+    const playRecBtn = document.getElementById('coach-play-recording-btn');
+    if (playRecBtn) {
+      playRecBtn.style.display = 'none';
+    }
+
     voiceCoachBackdrop.classList.add('active');
     voiceCoachSheet.classList.add('active');
   }
@@ -220,6 +261,17 @@
   function closeVoiceCoach() {
     if (recognition) {
       recognition.abort();
+    }
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+      mediaRecorder.stop();
+    }
+    if (userAudioElement) {
+      userAudioElement.pause();
+      userAudioElement = null;
+    }
+    if (recordedAudioUrl) {
+      URL.revokeObjectURL(recordedAudioUrl);
+      recordedAudioUrl = null;
     }
     if (voiceCoachSheet) {
       voiceCoachBackdrop.classList.remove('active');
@@ -238,16 +290,30 @@
     const micBtn = document.getElementById('coach-mic-btn');
     const statusLabel = document.getElementById('coach-status-label');
     const resultBox = document.getElementById('coach-result-box');
+    const playRecBtn = document.getElementById('coach-play-recording-btn');
 
     if (recognition && micBtn.classList.contains('recording')) {
       recognition.stop();
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
       return;
+    }
+
+    if (playRecBtn) {
+      playRecBtn.style.display = 'none';
+    }
+    if (recordedAudioUrl) {
+      URL.revokeObjectURL(recordedAudioUrl);
+      recordedAudioUrl = null;
     }
 
     recognition = new SpeechRecognition();
     recognition.lang = 'ja-JP';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
+
+    let micStream = null;
 
     recognition.onstart = () => {
       micBtn.classList.add('recording');
@@ -284,13 +350,47 @@
       console.error("Speech Recognition Error:", e);
       statusLabel.textContent = 'Error matched: ' + e.error;
       micBtn.classList.remove('recording');
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
     };
 
     recognition.onend = () => {
       micBtn.classList.remove('recording');
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
     };
 
-    recognition.start();
+    // Ask for microphone access and start recording
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(stream => {
+        micStream = stream;
+        audioChunks = [];
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = (event) => {
+          if (event.data.size > 0) {
+            audioChunks.push(event.data);
+          }
+        };
+        mediaRecorder.onstop = () => {
+          const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+          recordedAudioUrl = URL.createObjectURL(audioBlob);
+          if (playRecBtn) {
+            playRecBtn.style.display = 'inline-flex';
+          }
+          // release standard media tracks
+          micStream.getTracks().forEach(track => track.stop());
+        };
+        
+        mediaRecorder.start();
+        recognition.start();
+      })
+      .catch(err => {
+        console.error("Microphone access failed:", err);
+        statusLabel.textContent = "Mic access denied or unavailable";
+        micBtn.classList.remove('recording');
+      });
   }
 
   // Normalize Japanese for string diffing
@@ -397,6 +497,9 @@
     const mainContainer = document.querySelector('main.wrap') || document.body;
     if (!mainContainer) return;
 
+    let loopStart = null;
+    let loopEnd = null;
+
     const playerCard = document.createElement('div');
     playerCard.className = 'lesson-audio-player-card';
     playerCard.innerHTML = `
@@ -418,6 +521,11 @@
         <button class="speed-option-btn active" data-speed="1.0">1.0x</button>
         <button class="speed-option-btn" data-speed="1.25">1.25x</button>
       </div>
+      <div class="player-loop-controls">
+        <button class="loop-btn" id="loop-a-btn" title="Set Start Loop (A)">A</button>
+        <button class="loop-btn" id="loop-b-btn" title="Set End Loop (B)">B</button>
+        <button class="loop-btn" id="loop-clear-btn" title="Clear Loop" style="display:none;">Clear</button>
+      </div>
       <audio id="lesson-native-audio" src="${window.LESSON_AUDIO}" preload="metadata"></audio>
     `;
 
@@ -437,6 +545,10 @@
     const timeCurrent = document.getElementById('player-time-current');
     const timeDuration = document.getElementById('player-time-duration');
     const speedButtons = playerCard.querySelectorAll('.speed-option-btn');
+
+    const loopABtn = document.getElementById('loop-a-btn');
+    const loopBBtn = document.getElementById('loop-b-btn');
+    const loopClearBtn = document.getElementById('loop-clear-btn');
 
     function formatTime(secs) {
       const m = Math.floor(secs / 60);
@@ -462,12 +574,25 @@
         slider.value = Math.floor(audio.currentTime);
         timeCurrent.textContent = formatTime(audio.currentTime);
       }
+
+      // A-B Looping logic
+      if (!slider.dragging) {
+        if (loopStart !== null && audio.currentTime < loopStart) {
+          audio.currentTime = loopStart;
+        }
+        if (loopStart !== null && loopEnd !== null && audio.currentTime >= loopEnd) {
+          audio.currentTime = loopStart;
+        }
+      }
     });
 
     audio.addEventListener('ended', () => {
       playIcon.style.display = 'block';
       pauseIcon.style.display = 'none';
-      audio.currentTime = 0;
+      audio.currentTime = loopStart !== null ? loopStart : 0;
+      if (loopStart !== null) {
+        audio.play().catch(e => console.warn(e));
+      }
     });
 
     // Button interactions
@@ -502,6 +627,39 @@
         btn.classList.add('active');
       });
     });
+
+    // Loop point event listeners
+    loopABtn.addEventListener('click', () => {
+      loopStart = audio.currentTime;
+      loopABtn.classList.add('active');
+      loopABtn.textContent = `A: ${formatTime(loopStart)}`;
+      loopClearBtn.style.display = 'inline-block';
+    });
+
+    loopBBtn.addEventListener('click', () => {
+      if (loopStart === null) {
+        alert("Please set Loop Start (A) first!");
+        return;
+      }
+      if (audio.currentTime <= loopStart) {
+        alert("Loop End must be after Loop Start!");
+        return;
+      }
+      loopEnd = audio.currentTime;
+      loopBBtn.classList.add('active');
+      loopBBtn.textContent = `B: ${formatTime(loopEnd)}`;
+      loopClearBtn.style.display = 'inline-block';
+    });
+
+    loopClearBtn.addEventListener('click', () => {
+      loopStart = null;
+      loopEnd = null;
+      loopABtn.classList.remove('active');
+      loopBBtn.classList.remove('active');
+      loopABtn.textContent = 'A';
+      loopBBtn.textContent = 'B';
+      loopClearBtn.style.display = 'none';
+    });
   }
 
   // Load voices before hand to avoid delay on speech click in Chrome/Safari
@@ -510,6 +668,183 @@
     if (window.speechSynthesis.onvoiceschanged !== undefined) {
       window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
     }
+  }
+
+  // Parse vocabulary table from DOM
+  function parseVocabTable() {
+    const vocabMap = {};
+    const tables = document.querySelectorAll('table');
+    
+    tables.forEach(table => {
+      let kanjiIdx = 0;
+      let readingIdx = 1;
+      let meaningIdx = 2;
+      let noteIdx = 3;
+
+      const headers = Array.from(table.querySelectorAll('th')).map(th => th.textContent.trim().toLowerCase());
+      if (headers.length > 0) {
+        const k = headers.findIndex(h => h.includes("japanese") || h.includes("日本語") || h.includes("word") || h.includes("vocab") || h.includes("表現") || h === "語彙");
+        const r = headers.findIndex(h => h.includes("reading") || h.includes("読み") || h.includes("発音") || h === "かな" || h === "ふりがな" || h === "ひらがな");
+        const m = headers.findIndex(h => h.includes("meaning") || h.includes("意味") || h.includes("translation") || h.includes("english") || h.includes("訳") || h.includes("解説"));
+        const n = headers.findIndex(h => h.includes("note") || h.includes("ノート") || h.includes("メモ") || h.includes("useful") || h.includes("補足"));
+        if (k !== -1) kanjiIdx = k;
+        if (r !== -1) readingIdx = r;
+        if (m !== -1) meaningIdx = m;
+        if (n !== -1) noteIdx = n;
+      }
+
+      const rows = table.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const cells = Array.from(row.querySelectorAll('td'));
+        if (cells.length > Math.max(kanjiIdx, meaningIdx)) {
+          const kanji = cells[kanjiIdx].textContent.trim();
+          const reading = cells[readingIdx] ? cells[readingIdx].textContent.trim() : '';
+          const meaning = cells[meaningIdx].textContent.trim();
+          const note = cells[noteIdx] ? cells[noteIdx].textContent.trim() : '';
+
+          if (kanji && meaning) {
+            vocabMap[kanji] = { reading, meaning, note };
+          }
+        }
+      });
+    });
+    
+    return vocabMap;
+  }
+
+  // Highlight vocabulary keywords inside elements
+  function highlightVocabInElement(element, vocabMap) {
+    const words = Object.keys(vocabMap).sort((a, b) => b.length - a.length);
+    if (words.length === 0) return;
+
+    const walk = (node) => {
+      if (node.nodeType === 3) {
+        const text = node.nodeValue;
+        let matchWord = null;
+        let matchIndex = -1;
+        
+        for (const word of words) {
+          const index = text.indexOf(word);
+          if (index !== -1) {
+            matchWord = word;
+            matchIndex = index;
+            break;
+          }
+        }
+        
+        if (matchWord !== null) {
+          const beforeText = text.substring(0, matchIndex);
+          const afterText = text.substring(matchIndex + matchWord.length);
+          const parent = node.parentNode;
+          
+          // Skip if parent is already a highlight, ruby, rt, rp, button, or link
+          if (parent && (
+            parent.classList.contains('vocab-highlight') || 
+            parent.tagName === 'RUBY' || 
+            parent.tagName === 'RT' || 
+            parent.tagName === 'RP' || 
+            parent.tagName === 'BUTTON' || 
+            parent.tagName === 'A'
+          )) {
+            return;
+          }
+          
+          const beforeNode = document.createTextNode(beforeText);
+          const afterNode = document.createTextNode(afterText);
+          
+          const highlightSpan = document.createElement('span');
+          highlightSpan.className = 'vocab-highlight';
+          highlightSpan.setAttribute('data-word', matchWord);
+          highlightSpan.textContent = matchWord;
+          
+          parent.insertBefore(beforeNode, node);
+          parent.insertBefore(highlightSpan, node);
+          parent.insertBefore(afterNode, node);
+          parent.removeChild(node);
+          
+          walk(afterNode);
+        }
+      } else if (node.nodeType === 1) {
+        const ignoreTags = ['RUBY', 'RT', 'RP', 'BUTTON', 'A', 'SCRIPT', 'STYLE'];
+        if (!ignoreTags.includes(node.tagName) && !node.classList.contains('vocab-highlight')) {
+          const children = Array.from(node.childNodes);
+          children.forEach(child => walk(child));
+        }
+      }
+    };
+
+    walk(element);
+  }
+
+  // Floating Tooltip controls
+  function injectVocabTooltipBox() {
+    if (document.getElementById('vocab-tooltip-box')) return;
+    const tooltip = document.createElement('div');
+    tooltip.id = 'vocab-tooltip-box';
+    tooltip.className = 'vocab-tooltip-box';
+    document.body.appendChild(tooltip);
+  }
+
+  function showTooltip(targetEl, word, vocabData) {
+    injectVocabTooltipBox();
+    const tooltip = document.getElementById('vocab-tooltip-box');
+    
+    let html = `<div class="vocab-tooltip-title">${word}</div>`;
+    if (vocabData.reading && vocabData.reading !== '-') {
+      html += `<div class="vocab-tooltip-reading">【${vocabData.reading}】</div>`;
+    }
+    html += `<div class="vocab-tooltip-meaning">${vocabData.meaning}</div>`;
+    if (vocabData.note) {
+      html += `<div class="vocab-tooltip-note">${vocabData.note}</div>`;
+    }
+    tooltip.innerHTML = html;
+    
+    const rect = targetEl.getBoundingClientRect();
+    tooltip.classList.add('active'); // Needs to be active to calculate correct height/width
+    const tooltipHeight = tooltip.offsetHeight || 60;
+    const tooltipWidth = tooltip.offsetWidth || 180;
+    
+    let top = window.scrollY + rect.top - tooltipHeight - 10;
+    let left = window.scrollX + rect.left + (rect.width / 2) - (tooltipWidth / 2);
+    
+    if (rect.top - tooltipHeight - 10 < 0) {
+      top = window.scrollY + rect.bottom + 10;
+    }
+    if (left < 10) {
+      left = 10;
+    }
+    if (left + tooltipWidth > window.innerWidth - 10) {
+      left = window.innerWidth - tooltipWidth - 10;
+    }
+    
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+  }
+
+  function hideTooltip() {
+    const tooltip = document.getElementById('vocab-tooltip-box');
+    if (tooltip) {
+      tooltip.classList.remove('active');
+    }
+  }
+
+  function setupVocabTooltipListeners(vocabMap) {
+    const highlights = document.querySelectorAll('.vocab-highlight');
+    highlights.forEach(el => {
+      const word = el.getAttribute('data-word');
+      const data = vocabMap[word];
+      if (!data) return;
+
+      el.addEventListener('mouseenter', () => showTooltip(el, word, data));
+      el.addEventListener('mouseleave', hideTooltip);
+
+      el.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        showTooltip(el, word, data);
+      });
+    });
+
+    document.addEventListener('touchstart', hideTooltip);
   }
 
   // Launch on DOMContentLoaded
