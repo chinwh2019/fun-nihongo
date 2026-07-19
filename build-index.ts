@@ -261,8 +261,10 @@ function extractSentences(content: string, filename: string, lessonTitle: string
 }
 
 async function generateAiEnrichment(vocabItems: any[], topic: string, level: string, focus: string): Promise<string | null> {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
+  const openAiKey = process.env.OPENAI_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY;
+
+  if (!openAiKey && !geminiKey) {
     if (topic.includes("デジタルパタパタ") || topic.includes("Keikyu") || topic.includes("京急")) {
       const mockReadingHtml = `
   <section class="card ai-reading-card">
@@ -351,34 +353,63 @@ Format your output strictly as a JSON object with this exact shape:
   "pragmaticsHtml": "<section class=\\"card ai-pragmatics-card\\">... (valid HTML containing register, relationship, and nuance breakdown cards) ...</section>"
 }
 
-Do not wrap the JSON output in markdown code block ticks. Just return the raw JSON object. Ensure all HTML inside is properly escaped to be part of a JSON string.`;
+Ensure all HTML inside the JSON is properly escaped. Output only valid JSON.`;
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: {
-          responseMimeType: "application/json"
-        }
-      })
-    });
+    let responseText = "";
 
-    if (!response.ok) {
-      console.error(`AI API request failed: ${response.statusText}`);
-      return null;
+    if (openAiKey) {
+      const url = "https://api.openai.com/v1/chat/completions";
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${openAiKey}`
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini",
+          messages: [{ role: "user", content: prompt }],
+          response_format: { type: "json_object" }
+        })
+      });
+
+      if (!response.ok) {
+        const bodyText = await response.text();
+        console.error(`OpenAI API request failed: ${response.statusText} (${bodyText})`);
+        return null;
+      }
+
+      const data = await response.json();
+      responseText = data.choices?.[0]?.message?.content || "";
+    } else if (geminiKey) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            responseMimeType: "application/json"
+          }
+        })
+      });
+
+      if (!response.ok) {
+        const bodyText = await response.text();
+        console.error(`Gemini API request failed: ${response.statusText} (${bodyText})`);
+        return null;
+      }
+
+      const data = await response.json();
+      responseText = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
     }
 
-    const data = await response.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) {
+    if (!responseText) {
       console.error("AI API returned empty response");
       return null;
     }
 
-    let cleanedText = text.trim();
+    let cleanedText = responseText.trim();
     if (cleanedText.startsWith("```")) {
       cleanedText = cleanedText.replace(/^```(json)?/, "").replace(/```$/, "").trim();
     }
@@ -503,7 +534,7 @@ async function buildDashboard() {
 
       // Check if file already has the AI enrichment
       const hasAiSection = content.includes("ai-reading-card") || content.includes("ai-pragmatics-card");
-      if (!hasAiSection && (process.env.GEMINI_API_KEY || file.includes("keikyu-digital-patapata-study.html"))) {
+      if (!hasAiSection && (process.env.OPENAI_API_KEY || process.env.GEMINI_API_KEY || file.includes("keikyu-digital-patapata-study.html"))) {
         console.log(`✨ [AI Builder] Enriching ${file} with AI study material...`);
         if (lessonVocabs.length > 0) {
           const enrichHtml = await generateAiEnrichment(lessonVocabs, topic, level, focus);
