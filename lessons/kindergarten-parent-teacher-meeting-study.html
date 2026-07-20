@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kindergarten Parent-Teacher Meeting - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #667085;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --line: #d7dce2;
+      --soft: #f8fafc;
+      --warm: #fef7ed;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 { font-size: 1.35rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    p { margin: 0 0 10px; }
+    ul, ol { margin-top: 8px; padding-left: 22px; }
+    li { margin: 5px 0; }
+    .muted { color: var(--muted); }
+    .pill { display: inline-block; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 999px; font-size: 0.9rem; margin-bottom: 8px; }
+    .tag { display: inline-block; margin: 6px 8px 0 0; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--soft); font-size: 0.85rem; }
+    .warning-pill { display: inline-block; background: var(--warn-soft); color: var(--warn); padding: 4px 10px; border-radius: 999px; font-size: 0.85rem; margin: 4px 6px 0 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: var(--soft); }
+    button { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 8px 12px; cursor: pointer; margin: 6px 8px 6px 0; }
+    button.secondary { background: #475467; }
+    details { margin-top: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--soft); }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden], .flash-answer[hidden] { display: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .mini { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: var(--soft); }
+    .jp { font-size: 1.08rem; font-weight: 700; }
+    .en { color: var(--muted); margin-top: 3px; }
+    .note { background: var(--warm); border-left: 4px solid #d97706; padding: 10px 12px; border-radius: 8px; margin: 10px 0; }
+    .shadow-line { padding: 10px; border-left: 4px solid var(--accent); background: #f9fffd; margin: 10px 0; border-radius: 8px; }
+    .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 10px; }
+    .flow div { background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 10px; text-align: center; font-weight: 700; }
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/kindergarten-parent-teacher.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>幼稚園の保護者面談</h1>
+      <p class="muted">Session date: 2026-07-19 JST. Level: beginner to lower-intermediate. Focus: natural parent-teacher meeting phrases for listening, asking questions, sharing home concerns, and closing politely.</p>
+      <span class="tag">kindergarten</span>
+      <span class="tag">parent-teacher meeting</span>
+      <span class="tag">polite speaking</span>
+      <span class="tag">family life in Japan</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>A Japanese kindergarten parent-teacher meeting, <strong>保護者面談（ほごしゃめんだん）</strong>, is usually friendly and collaborative. The teacher explains how your daughter is doing, asks about home life, and works with you to support her.</p>
+      <div class="flow">
+        <div>1. Greeting</div>
+        <div>2. Teacher update</div>
+        <div>3. Parent questions</div>
+        <div>4. Concerns</div>
+        <div>5. Thanks</div>
+      </div>
+      <p class="note">The natural rhythm is: listen first, react briefly, then ask a few thoughtful questions. Short responses like <strong>そうなんですね</strong>, <strong>よかったです</strong>, and <strong>安心しました</strong> sound engaged and parent-like.</p>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead><tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it when...</th></tr></thead>
+        <tbody>
+          <tr><td>保護者面談</td><td>ほごしゃめんだん</td><td>Parent-teacher meeting</td><td>Talking about the meeting itself.</td></tr>
+          <tr><td>幼稚園</td><td>ようちえん</td><td>Kindergarten</td><td>Asking about your daughter at school.</td></tr>
+          <tr><td>娘</td><td>むすめ</td><td>My daughter</td><td>Speaking about your child.</td></tr>
+          <tr><td>お友達</td><td>おともだち</td><td>Friends</td><td>Asking if she gets along with classmates.</td></tr>
+          <tr><td>給食</td><td>きゅうしょく</td><td>School lunch</td><td>Checking whether she eats well.</td></tr>
+          <tr><td>お絵描き</td><td>おえかき</td><td>Drawing</td><td>Sharing what she likes.</td></tr>
+          <tr><td>工作</td><td>こうさく</td><td>Crafts</td><td>Discussing activities she is good at.</td></tr>
+          <tr><td>外遊び</td><td>そとあそび</td><td>Outdoor play</td><td>Asking about physical activity.</td></tr>
+          <tr><td>積極的</td><td>せっきょくてき</td><td>Active, proactive</td><td>Asking if she participates.</td></tr>
+          <tr><td>恥ずかしがり屋</td><td>はずかしがりや</td><td>Shy person</td><td>Explaining personality concerns.</td></tr>
+          <tr><td>集中</td><td>しゅうちゅう</td><td>Concentration</td><td>Asking if she can focus.</td></tr>
+          <tr><td>自信</td><td>じしん</td><td>Confidence</td><td>Discussing growth and encouragement.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <div class="grid">
+        <div class="mini">
+          <h3>Vています</h3>
+          <p class="jp">お友達と仲良く遊んでいます。</p>
+          <p class="en">She plays well with her friends. Used for current habits or ongoing school behavior.</p>
+        </div>
+        <div class="mini">
+          <h3>Vられるようになりました</h3>
+          <p class="jp">自分から話しかけられるようになりました。</p>
+          <p class="en">She has become able to start conversations by herself.</p>
+        </div>
+        <div class="mini">
+          <h3>ほうがいいことはありますか</h3>
+          <p class="jp">家で気を付けたほうがいいことはありますか？</p>
+          <p class="en">Is there anything we should pay attention to at home?</p>
+        </div>
+        <div class="mini">
+          <h3>先生から見て</h3>
+          <p class="jp">先生から見て心配なことはありますか？</p>
+          <p class="en">From your perspective as her teacher, is there anything concerning?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <details open>
+        <summary>Starting the meeting</summary>
+        <table>
+          <tr><td class="jp">先生、よろしくお願いします。</td><td class="en">Thank you for meeting with me. Polite and simple.</td></tr>
+          <tr><td class="jp">本日はありがとうございます。</td><td class="en">Thank you for today.</td></tr>
+          <tr><td class="jp">娘がいつもお世話になっております。</td><td class="en">Thank you for always taking care of my daughter. Very common parent phrase.</td></tr>
+          <tr><td class="jp">今日はいろいろ教えてください。</td><td class="en">I would appreciate hearing about how she is doing today.</td></tr>
+        </table>
+      </details>
+      <details>
+        <summary>Listening reactions</summary>
+        <table>
+          <tr><td class="jp">そうなんですね。</td><td class="en">I see. Gentle and engaged.</td></tr>
+          <tr><td class="jp">なるほど。</td><td class="en">I understand.</td></tr>
+          <tr><td class="jp">よかったです。</td><td class="en">I am glad to hear that.</td></tr>
+          <tr><td class="jp">安心しました。</td><td class="en">That is reassuring.</td></tr>
+          <tr><td class="jp">家では逆なんです。</td><td class="en">It is actually the opposite at home.</td></tr>
+        </table>
+      </details>
+      <details>
+        <summary>Questions to ask the teacher</summary>
+        <table>
+          <tr><td class="jp">お友達とは仲良くできていますか？</td><td class="en">Is she getting along with her friends?</td></tr>
+          <tr><td class="jp">よく一緒に遊ぶお友達はいますか？</td><td class="en">Does she have close friends she often plays with?</td></tr>
+          <tr><td class="jp">積極的に参加していますか？</td><td class="en">Does she participate actively?</td></tr>
+          <tr><td class="jp">指示は理解できていますか？</td><td class="en">Does she understand instructions?</td></tr>
+          <tr><td class="jp">家で練習したほうがいいことはありますか？</td><td class="en">Is there anything we should practice at home?</td></tr>
+        </table>
+      </details>
+      <details>
+        <summary>If you do not understand</summary>
+        <table>
+          <tr><td class="jp">もう一度お願いします。</td><td class="en">Could you say that again?</td></tr>
+          <tr><td class="jp">少しゆっくり話していただけますか？</td><td class="en">Could you speak a little more slowly?</td></tr>
+          <tr><td class="jp">すみません、「〇〇」はどういう意味ですか？</td><td class="en">Sorry, what does "..." mean?</td></tr>
+          <tr><td class="jp">メモを取ってもいいですか？</td><td class="en">May I take notes?</td></tr>
+        </table>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <p>This reconstructed practice dialogue follows the meeting flow and uses the phrases from the lesson. Practice the parent lines aloud.</p>
+      <table>
+        <thead><tr><th>Speaker</th><th>Japanese</th><th>English</th></tr></thead>
+        <tbody>
+          <tr><td>Parent</td><td class="jp">先生、本日はありがとうございます。娘がいつもお世話になっております。</td><td>Thank you for today. Thank you for always taking care of my daughter.</td></tr>
+          <tr><td>Teacher</td><td class="jp">こちらこそ、お忙しい中ありがとうございます。</td><td>Thank you as well for taking time out of your busy schedule.</td></tr>
+          <tr><td>Teacher</td><td class="jp">最近はお友達と元気に遊んでいます。</td><td>Recently she has been playing happily with her friends.</td></tr>
+          <tr><td>Parent</td><td class="jp">そうなんですね。安心しました。</td><td>I see. That is reassuring.</td></tr>
+          <tr><td>Teacher</td><td class="jp">少し恥ずかしがり屋ですが、自分から話しかけることも増えてきました。</td><td>She is a little shy, but she has started initiating conversations more often.</td></tr>
+          <tr><td>Parent</td><td class="jp">よかったです。家では少し恥ずかしがり屋なので、幼稚園ではどうかなと思っていました。</td><td>I am glad to hear that. She is a little shy at home, so I was wondering how she is at kindergarten.</td></tr>
+          <tr><td>Parent</td><td class="jp">よく一緒に遊ぶお友達はいますか？</td><td>Does she have close friends she often plays with?</td></tr>
+          <tr><td>Teacher</td><td class="jp">はい、特定のお友達とよく遊んでいます。最近はお友達も増えました。</td><td>Yes, she often plays with a particular friend. Recently she has made more friends too.</td></tr>
+          <tr><td>Parent</td><td class="jp">それを聞いて安心しました。給食はちゃんと食べていますか？</td><td>I am relieved to hear that. Is she eating her school lunch well?</td></tr>
+          <tr><td>Teacher</td><td class="jp">はい、毎日よく食べています。ただ、野菜が少し苦手です。</td><td>Yes, she eats well every day. Vegetables are still a little difficult for her, though.</td></tr>
+          <tr><td>Parent</td><td class="jp">それは家でも同じです。家で気を付けたほうがいいことはありますか？</td><td>It is the same at home. Is there anything we should pay attention to at home?</td></tr>
+          <tr><td>Teacher</td><td class="jp">今のところ特にありません。少しずつ自信を持てるといいですね。</td><td>At the moment, nothing in particular. It would be nice if she gradually gains more confidence.</td></tr>
+          <tr><td>Parent</td><td class="jp">ありがとうございます。家でも見守ってみます。</td><td>Thank you. We will keep an eye on her at home too.</td></tr>
+          <tr><td>Parent</td><td class="jp">今日はありがとうございました。これからもよろしくお願いします。</td><td>Thank you very much for today. I appreciate your continued support.</td></tr>
+          <tr><td>Teacher</td><td class="jp">こちらこそよろしくお願いします。</td><td>Likewise. I look forward to working together.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner-written answers were corrected in this saved lesson. Use these model parent answers as correction targets for your own practice.</p>
+      <div class="grid">
+        <div class="mini">
+          <span class="warning-pill">natural parent phrase</span>
+          <p class="jp">家では少し恥ずかしがり屋なので、幼稚園ではどうかなと思っていました。</p>
+          <p class="en">She is a little shy at home, so I was wondering how she is at kindergarten.</p>
+        </div>
+        <div class="mini">
+          <span class="warning-pill">work-on-at-home phrase</span>
+          <p class="jp">家で気を付けたほうがいいことはありますか？</p>
+          <p class="en">Is there anything we should pay attention to at home?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <ul>
+        <li><strong>Too direct:</strong> Instead of asking many blunt questions quickly, use soft framing like <strong>先生から見て...</strong> or <strong>家で...したほうがいいことはありますか？</strong></li>
+        <li><strong>Register:</strong> With a kindergarten teacher, warm polite Japanese is best. <strong>娘がいつもお世話になっております</strong> sounds natural and parent-like.</li>
+        <li><strong>Listening style:</strong> Japanese parent meetings often use short reactions. Do not feel pressure to produce long responses every time.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Repeat each line three times. First slowly, then at natural speed.</p>
+      <div class="shadow-line"><strong>娘がいつもお世話になっております。</strong><br><span class="muted">Thank you for always taking care of my daughter.</span></div>
+      <div class="shadow-line"><strong>そうなんですね。安心しました。</strong><br><span class="muted">I see. That is reassuring.</span></div>
+      <div class="shadow-line"><strong>家で気を付けたほうがいいことはありますか？</strong><br><span class="muted">Is there anything we should pay attention to at home?</span></div>
+      <div class="shadow-line"><strong>少しゆっくり話していただけますか？</strong><br><span class="muted">Could you speak a little more slowly?</span></div>
+      <div class="shadow-line"><strong>今日はありがとうございました。これからもよろしくお願いします。</strong><br><span class="muted">Thank you very much for today. I appreciate your continued support.</span></div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="grid">
+        <div class="mini">
+          <p class="jp">保護者面談</p>
+          <button onclick="toggleById('flash1')">Reveal</button>
+          <p id="flash1" class="flash-answer" hidden>ほごしゃめんだん: parent-teacher meeting</p>
+        </div>
+        <div class="mini">
+          <p class="jp">安心しました。</p>
+          <button onclick="toggleById('flash2')">Reveal</button>
+          <p id="flash2" class="flash-answer" hidden>That is reassuring. Use after good news from the teacher.</p>
+        </div>
+        <div class="mini">
+          <p class="jp">積極的に参加していますか？</p>
+          <button onclick="toggleById('flash3')">Reveal</button>
+          <p id="flash3" class="flash-answer" hidden>Does she participate actively?</p>
+        </div>
+        <div class="mini">
+          <p class="jp">家では逆なんです。</p>
+          <button onclick="toggleById('flash4')">Reveal</button>
+          <p id="flash4" class="flash-answer" hidden>It is actually the opposite at home.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>Parent-teacher meetings at kindergarten are usually collaborative, not a strict evaluation of the parent or child.</li>
+        <li>It is common to listen first, nod, and use short supportive responses before asking questions.</li>
+        <li>You do not need perfect Japanese. Teachers are usually patient when a non-native parent is trying.</li>
+        <li>It is completely acceptable to ask the teacher to repeat, slow down, or explain a word.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <ol>
+        <li>
+          How do you say, "Thank you for always taking care of my daughter"?
+          <br><button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer" hidden><strong>娘がいつもお世話になっております。</strong></p>
+        </li>
+        <li>
+          What phrase means "That is reassuring"?
+          <br><button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden><strong>安心しました。</strong></p>
+        </li>
+        <li>
+          Ask: "Is there anything we should pay attention to at home?"
+          <br><button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer" hidden><strong>家で気を付けたほうがいいことはありますか？</strong></p>
+        </li>
+        <li>
+          Ask the teacher to speak a little more slowly.
+          <br><button onclick="toggleById('q4')">Show answer</button>
+          <p id="q4" class="quiz-answer" hidden><strong>少しゆっくり話していただけますか？</strong></p>
+        </li>
+        <li>
+          Say: "She is a little shy at home, so I was wondering how she is at kindergarten."
+          <br><button onclick="toggleById('q5')">Show answer</button>
+          <p id="q5" class="quiz-answer" hidden><strong>家では少し恥ずかしがり屋なので、幼稚園ではどうかなと思っていました。</strong></p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Practice the full dialogue aloud once while reading, then once while covering the English.</li>
+        <li>Prepare three real questions for your next meeting: one about friends, one about participation, and one about home practice.</li>
+        <li>Practice asking for repetition: <strong>もう一度お願いします</strong> and <strong>少しゆっくり話していただけますか</strong>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next recommended practice: do a live role-play where the teacher speaks mostly in natural Japanese. Start with the parent lines from this study file, then add your own details about your daughter.</p>
+      <p class="muted">Mastery target: comfortably use short listening reactions, ask two or three gentle questions, and close the meeting politely.</p>
+    </section>
+  
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      きょうは<ruby>幼稚園<rt>ようちえん</rt></ruby>の<ruby>保護者面談<rt>ほごしゃめんだん</rt></ruby>でした。先生は「<ruby>娘<rt>むすめ</rt></ruby>さんは、<ruby>お友達<rt>おともだち</rt></ruby>と<ruby>外遊び<rt>そとあそび</rt></ruby>を元気にしています」と話しました。母は「家では少し<ruby>恥ずかしがり屋<rt>はずかしがりや</rt></ruby>です」と伝えました。先生は「でも、<ruby>工作<rt>こうさく</rt></ruby>の時間はとても<ruby>積極的<rt>せっきょくてき</rt></ruby>ですよ」と笑いました。母は安心して、「ありがとうございます。これからも<ruby>自信<rt>じしん</rt></ruby>がつくように見守ります」と言いました。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Today was the parent-teacher meeting at kindergarten. The teacher said, “Your daughter is playing energetically outdoors with her friends.” The mother shared, “She is a little shy at home.” The teacher smiled and said, “But during craft time, she is very proactive.” The mother felt relieved and said, “Thank you. We will keep supporting her so she can gain confidence.”</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 先生は、娘さんについて何と言いましたか？</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">給食をあまり食べないと言いました。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">お友達と外遊びを元気にしていると言いました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">工作が苦手だと言いました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">家ではいつも元気すぎると言いました。</button>
+        </div>
+      </div>
+
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: お母さんは、家での娘さんについてどう話しましたか？</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">いつもとても積極的だと話しました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">お友達がいないと話しました。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">少し恥ずかしがり屋だと話しました。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">工作が嫌いだと話しました。</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">丁寧で自然な敬語の会話です。保護者面談らしく、先生には「〜です／〜ます」「〜ですよ」「〜でしょうか」のような柔らかい表現を使っています。母親側も敬意を示しながら、自分の家での様子を簡潔に伝える形です。会話の流れは、挨拶→近況共有→安心→今後への前向きな確認、という面談でよくある基本構造です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">幼稚園の先生と保護者のような、上下関係は強すぎないが丁寧さが必要な関係に適しています。相手が先生や目上の人なので、失礼のない敬語を使いますが、堅すぎず、あたたかい協力関係を感じるトーンです。初対面や定期面談、連絡帳のやり取りにも合います。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「安心しました」は、相手の話を聞いてほっとした気持ちをやわらかく伝える表現です。面談でよく使われます。「見守ります」は、強く干渉せず、あたたかく様子を見るという意味で、子どもへの配慮を表します。どちらも、保護者面談で自然で感じのよい言い方です。</p>
+      </div>
+    </div>
+  </section>
+    
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
