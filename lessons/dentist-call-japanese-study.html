@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dentist Appointment Phone Call - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d1d5db;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --soft: #f8fafc;
+      --line: #eef2f7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1rem; margin-bottom: 6px; }
+    p { margin: 8px 0; }
+    ul { padding-left: 1.2rem; }
+    li { margin: 4px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      font-size: 0.85rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: var(--soft); }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      margin: 8px 8px 0 0;
+    }
+    details { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fbfdfd;
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+    .dialogue {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .turn {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+    .speaker { font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+    .jp { font-size: 1.08rem; }
+    .en { color: var(--muted); margin-top: 4px; }
+    .note {
+      background: var(--soft);
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    .contrast {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .bad, .good {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .bad { background: #fff7ed; }
+    .good { background: #effdf8; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    @media (max-width: 760px) {
+      body { padding: 12px; }
+      h1 { font-size: 1.55rem; }
+      .grid { grid-template-columns: 1fr; }
+      table { font-size: 0.95rem; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/dentist-call.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>歯医者に電話して予約する</h1>
+      <p class="muted">Session date: 2026-07-20 JST. Level: beginner to lower-intermediate. Focus: natural dentist phone calls, making an appointment, rescheduling, symptom answers, and polite checking phrases.</p>
+      <span class="tag">healthcare</span>
+      <span class="tag">phone Japanese</span>
+      <span class="tag">appointment</span>
+      <span class="tag">rescheduling</span>
+      <span class="tag">polite requests</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and context</h2>
+      <p>This lesson helps you call a dental clinic in Japan to make or change an appointment. Dental reception calls are usually short and predictable: state your purpose, answer whether you are a first-time patient, explain your symptom briefly, choose a time, and confirm what to bring.</p>
+      <p>The key sound is polite but not stiff. Instead of direct lines like <strong>予約したいです</strong> or <strong>行けません</strong>, use softer phone phrases such as <strong>予約を取りたいんですが</strong> and <strong>都合が悪くなってしまって</strong>.</p>
+      <div class="note"><strong>Speaking goal:</strong> Handle a realistic dentist reception phone call using short, natural turns.</div>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Reading</th><th>Meaning</th><th>Use it like this</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>歯医者 / 歯科</td><td>はいしゃ / しか</td><td>dentist / dental clinic</td><td>歯医者に電話します。</td></tr>
+          <tr><td>歯科医院</td><td>しかいいん</td><td>dental office</td><td>さくら歯科医院です。</td></tr>
+          <tr><td>予約</td><td>よやく</td><td>appointment</td><td>予約を取りたいんですが。</td></tr>
+          <tr><td>初診</td><td>しょしん</td><td>first visit</td><td>初診なんですが、予約できますか。</td></tr>
+          <tr><td>再診</td><td>さいしん</td><td>return visit</td><td>再診の予約です。</td></tr>
+          <tr><td>診察券</td><td>しんさつけん</td><td>patient card</td><td>診察券番号は今手元にないんですが。</td></tr>
+          <tr><td>保険証</td><td>ほけんしょう</td><td>health insurance card</td><td>保険証を持っていきます。</td></tr>
+          <tr><td>奥歯</td><td>おくば</td><td>molar, back tooth</td><td>右の奥歯が痛いです。</td></tr>
+          <tr><td>虫歯</td><td>むしば</td><td>cavity</td><td>虫歯かもしれません。</td></tr>
+          <tr><td>詰め物</td><td>つめもの</td><td>filling</td><td>詰め物が取れてしまって。</td></tr>
+          <tr><td>腫れる</td><td>はれる</td><td>to swell</td><td>少し腫れています。</td></tr>
+          <tr><td>しみる</td><td></td><td>to feel sensitive</td><td>冷たいものがしみます。</td></tr>
+          <tr><td>変更</td><td>へんこう</td><td>change, reschedule</td><td>予約の変更をお願いしたいんですが。</td></tr>
+          <tr><td>空き</td><td>あき</td><td>opening, available slot</td><td>いちばん早い空きはいつですか。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and patterns</h2>
+      <div class="grid">
+        <div class="note">
+          <h3>1. Vたいんですが</h3>
+          <p><strong>予約を取りたいんですが。</strong></p>
+          <p class="muted">A soft opening: "I would like to make an appointment." The <strong>んですが</strong> makes it sound like you are politely opening the request.</p>
+        </div>
+        <div class="note">
+          <h3>2. Vていただきたいんですが</h3>
+          <p><strong>診ていただきたいんですが。</strong></p>
+          <p class="muted">Polite request: "I would like to be seen by the dentist."</p>
+        </div>
+        <div class="note">
+          <h3>3. 〜てしまって</h3>
+          <p><strong>都合が悪くなってしまって。</strong></p>
+          <p class="muted">Softly explains an inconvenient change: "Something came up."</p>
+        </div>
+        <div class="note">
+          <h3>4. Symptom + timeline</h3>
+          <p><strong>右の奥歯が昨日から痛いです。</strong></p>
+          <p class="muted">Body part + from when + symptom. This is the most useful clinic-answer pattern.</p>
+        </div>
+      </div>
+      <details>
+        <summary>Extra useful pattern: checking softly</summary>
+        <p><strong>念のため確認したいんですが、保険証は必要ですか。</strong></p>
+        <p class="muted">"Just to confirm, do I need my health insurance card?" This is polite and practical for reception calls.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Useful phrases and contrast sets</h2>
+      <table>
+        <thead>
+          <tr><th>Situation</th><th>Natural Japanese</th><th>Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Make appointment</td><td>予約を取りたいんですが。</td><td>I would like to make an appointment.</td></tr>
+          <tr><td>First visit</td><td>初めてなんですが、予約できますか。</td><td>It is my first time. Can I make an appointment?</td></tr>
+          <tr><td>Tooth hurts</td><td>歯が痛くて、診ていただきたいんですが。</td><td>My tooth hurts, and I would like to be seen.</td></tr>
+          <tr><td>Ask availability</td><td>今日か明日で空いている時間はありますか。</td><td>Do you have any openings today or tomorrow?</td></tr>
+          <tr><td>Earliest opening</td><td>いちばん早い空きはいつですか。</td><td>When is the earliest opening?</td></tr>
+          <tr><td>Reschedule</td><td>予約の変更をお願いしたいんですが。</td><td>I would like to change my appointment.</td></tr>
+          <tr><td>Soft reason</td><td>すみません、都合が悪くなってしまって。</td><td>Sorry, something came up.</td></tr>
+          <tr><td>Confirm time</td><td>では、その時間でお願いします。</td><td>Then that time works, please.</td></tr>
+          <tr><td>Ask to repeat</td><td>すみません、もう一度お願いします。</td><td>Sorry, could you say that again?</td></tr>
+        </tbody>
+      </table>
+
+      <div class="contrast">
+        <div class="bad"><span class="warning-pill">Too blunt</span><strong>予約したいです。</strong><br><span class="muted">Understandable, but a little flat for a phone opening.</span></div>
+        <div class="good"><span class="pill">Natural</span><strong>予約を取りたいんですが。</strong><br><span class="muted">Polite, common, and easy to use on the phone.</span></div>
+        <div class="bad"><span class="warning-pill">Too direct</span><strong>行けません。</strong><br><span class="muted">Clear, but it can sound abrupt if you are changing an appointment.</span></div>
+        <div class="good"><span class="pill">Natural</span><strong>すみません、都合が悪くなってしまって。</strong><br><span class="muted">Softly explains that you need to change the appointment.</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Role-play and dialogue</h2>
+      <h3>Dialogue 1: Making a new appointment</h3>
+      <div class="dialogue">
+        <div class="turn"><div class="speaker">受付</div><div class="jp">お電話ありがとうございます。さくら歯科クリニックです。</div><div class="en">Thank you for calling. This is Sakura Dental Clinic.</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">すみません、予約を取りたいんですが。</div><div class="en">Excuse me, I would like to make an appointment.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">初めてのご来院ですか？</div><div class="en">Is this your first visit to our clinic?</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">はい、初めてです。</div><div class="en">Yes, it is my first time.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">今日はどうされましたか？</div><div class="en">What seems to be the problem today?</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">右の奥歯が昨日から痛くて、診ていただきたいんですが。</div><div class="en">My right back tooth has hurt since yesterday, and I would like to be seen.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">かしこまりました。今日の午後か明日の午前でしたら空きがあります。</div><div class="en">Certainly. We have openings this afternoon or tomorrow morning.</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">では、明日の午前でお願いします。</div><div class="en">Then tomorrow morning, please.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">明日の十時はいかがですか？</div><div class="en">How about 10 o'clock tomorrow?</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">はい、大丈夫です。</div><div class="en">Yes, that works.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">お名前とお電話番号をお願いします。</div><div class="en">May I have your name and phone number?</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">名前は〇〇です。電話番号は〇〇です。</div><div class="en">My name is ____. My phone number is ____.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">保険証をお持ちください。</div><div class="en">Please bring your health insurance card.</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">はい、わかりました。よろしくお願いします。</div><div class="en">Yes, understood. Thank you.</div></div>
+      </div>
+
+      <h3>Dialogue 2: Rescheduling an appointment</h3>
+      <div class="dialogue">
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">すみません、予約の変更をお願いしたいんですが。</div><div class="en">Excuse me, I would like to change my appointment.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">お名前と予約日時をお願いします。</div><div class="en">May I have your name and appointment date and time?</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">〇〇です。今日の午後三時に予約しています。</div><div class="en">My name is ____. I have an appointment today at 3 p.m.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">変更ですね。ご希望の日にちはありますか？</div><div class="en">You would like to change it, right? Do you have a preferred date?</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">すみません、都合が悪くなってしまって。明日か明後日で空きはありますか。</div><div class="en">Sorry, something came up. Do you have openings tomorrow or the day after?</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">明後日の十時なら空いています。</div><div class="en">The day after tomorrow at 10 o'clock is available.</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">では、その時間でお願いします。</div><div class="en">Then that time works, please.</div></div>
+        <div class="turn"><div class="speaker">受付</div><div class="jp">かしこまりました。明後日の十時に変更いたします。</div><div class="en">Certainly. I will change it to 10 o'clock the day after tomorrow.</div></div>
+        <div class="turn"><div class="speaker">あなた</div><div class="jp">ありがとうございます。よろしくお願いします。</div><div class="en">Thank you very much.</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My answers and corrections</h2>
+      <p>No learner answers were corrected in this session yet. Use this section as a practice log when you try the role-play later.</p>
+      <table>
+        <thead>
+          <tr><th>If you say...</th><th>Better version</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>予約したいです。</td><td>予約を取りたいんですが。</td><td>Softer and more natural as a phone opener.</td></tr>
+          <tr><td>時間を変えたいです。</td><td>予約の変更をお願いしたいんですが。</td><td>More polite and clinic-appropriate.</td></tr>
+          <tr><td>行けません。</td><td>すみません、都合が悪くなってしまって。</td><td>Less abrupt; gives a polite reason without over-explaining.</td></tr>
+          <tr><td>歯痛いです。</td><td>右の奥歯が昨日から痛いです。</td><td>Complete symptom answer: location + timeline + symptom.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Mistake review</h2>
+      <span class="warning-pill">register mismatch</span>
+      <span class="warning-pill">too direct</span>
+      <span class="warning-pill">incomplete response</span>
+      <p>For dentist calls, your safest habit is to add a soft ending like <strong>〜んですが</strong> when making requests. You do not need long explanations. Short, polite, and specific is the sweet spot.</p>
+      <details>
+        <summary>Phone call survival set</summary>
+        <ul>
+          <li><strong>少しゆっくり話していただけますか。</strong> Could you speak a little more slowly?</li>
+          <li><strong>すみません、もう一度お願いします。</strong> Sorry, one more time, please.</li>
+          <li><strong>念のため確認したいんですが...</strong> Just to confirm...</li>
+          <li><strong>診察券番号は、今手元にないんですが。</strong> I do not have my patient card number with me right now.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing practice</h2>
+      <p>Read each line aloud 3 times. Aim for calm, polite phone rhythm.</p>
+      <div class="shadow-line">予約を取りたいんですが。</div>
+      <div class="shadow-line">歯が痛くて、診ていただきたいんですが。</div>
+      <div class="shadow-line">今日か明日で空いている時間はありますか。</div>
+      <div class="shadow-line">予約の変更をお願いしたいんですが。</div>
+      <div class="shadow-line">すみません、都合が悪くなってしまって。</div>
+      <div class="shadow-line">では、その時間でお願いします。</div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and quick review</h2>
+      <div class="flashcard">
+        <strong>予約を取りたいんですが。</strong>
+        <button onclick="toggleById('fc1')">Reveal meaning</button>
+        <p id="fc1" class="reveal" hidden>I would like to make an appointment.</p>
+      </div>
+      <div class="flashcard">
+        <strong>いちばん早い空きはいつですか。</strong>
+        <button onclick="toggleById('fc2')">Reveal meaning</button>
+        <p id="fc2" class="reveal" hidden>When is the earliest opening?</p>
+      </div>
+      <div class="flashcard">
+        <strong>詰め物が取れてしまって。</strong>
+        <button onclick="toggleById('fc3')">Reveal meaning</button>
+        <p id="fc3" class="reveal" hidden>My filling came out. The 〜てしまって ending makes it sound like an unfortunate situation.</p>
+      </div>
+      <div class="flashcard">
+        <strong>冷たいものがしみます。</strong>
+        <button onclick="toggleById('fc4')">Reveal meaning</button>
+        <p id="fc4" class="reveal" hidden>Cold things make my tooth sensitive.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural notes</h2>
+      <ul>
+        <li>Receptionists often ask fixed questions: first visit, name, phone number, symptom, preferred date, and insurance card.</li>
+        <li>For rescheduling, a brief apology is enough. <strong>都合が悪くなってしまって</strong> is natural and does not require private details.</li>
+        <li>If you miss something on the phone, asking for repetition is completely acceptable.</li>
+        <li>For urgent pain, ask for the earliest opening: <strong>いちばん早い空きはいつですか。</strong></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review quiz</h2>
+      <div class="flashcard">
+        <p><strong>1. How do you naturally say "I would like to make an appointment" on the phone?</strong></p>
+        <button onclick="toggleById('q1')">Show answer</button>
+        <p id="q1" class="quiz-answer" hidden>予約を取りたいんですが。</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>2. The receptionist asks: いつから痛いですか？ Answer: "Since yesterday night."</strong></p>
+        <button onclick="toggleById('q2')">Show answer</button>
+        <p id="q2" class="quiz-answer" hidden>昨日の夜からです。</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>3. Which is softer for rescheduling: 行けません or 都合が悪くなってしまって?</strong></p>
+        <button onclick="toggleById('q3')">Show answer</button>
+        <p id="q3" class="quiz-answer" hidden>都合が悪くなってしまって is softer and more natural.</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>4. Ask: "Do you have openings today or tomorrow?"</strong></p>
+        <button onclick="toggleById('q4')">Show answer</button>
+        <p id="q4" class="quiz-answer" hidden>今日か明日で空いている時間はありますか。</p>
+      </div>
+      <div class="flashcard">
+        <p><strong>5. Say: "My right back tooth has hurt since yesterday."</strong></p>
+        <button onclick="toggleById('q5')">Show answer</button>
+        <p id="q5" class="quiz-answer" hidden>右の奥歯が昨日から痛いです。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ul>
+        <li>Practice Dialogue 1 aloud twice with your real name and phone number replaced by blanks.</li>
+        <li>Practice Dialogue 2 once using a real appointment time, for example <strong>今日の午後三時</strong>.</li>
+        <li>Make three symptom lines: one with <strong>痛い</strong>, one with <strong>しみる</strong>, and one with <strong>取れてしまって</strong>.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Next focus</h2>
+      <p>Next practice: do the call one turn at a time. Start with <strong>予約を取りたいんですが</strong>, then answer the receptionist's questions about first visit, symptom, timing, and availability.</p>
+      <p class="muted">Useful review bridge: reuse <strong>念のため確認したいんですが</strong>, <strong>〜みたいなんですが</strong>, and <strong>〜ていただけますか</strong> from previous service and clinic lessons.</p>
+    </section>
+  
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      田中さんは、<ruby>歯医者<rt>はいしゃ</rt></ruby>に電話しました。<ruby>予約<rt>よやく</rt></ruby>を取りたいんですが、と言うと、受付の人が「<ruby>初診<rt>しょしん</rt></ruby>ですね」と聞きました。田中さんは「はい。<ruby>奥歯<rt>おくば</rt></ruby>が少し<ruby>しみる<rt>しみる</rt></ruby>んです」と答えました。受付の人は、今日の午後に空きがあると伝えました。田中さんは少し考えて、「では、その時間でお願いします」と言いました。最後に、<ruby>診察券<rt>しんさつけん</rt></ruby>と<ruby>保険証<rt>ほけんしょう</rt></ruby>を持って来てください、と案内されました。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Mr. Tanaka called the dentist. When he said he would like to make an appointment, the receptionist asked, “Is this your first visit?” Mr. Tanaka replied, “Yes. My back tooth is a little sensitive.” The receptionist said there was an opening this afternoon. Mr. Tanaka thought for a moment and said, “Then that time works, please.” Finally, he was told to bring his patient card and health insurance card.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 田中さんは何をしましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">歯医者に行かなかった</button>
+          <button class="option-btn" onclick="checkOption(this, true)">歯医者に電話した</button>
+          <button class="option-btn" onclick="checkOption(this, false)">保険証をなくした</button>
+          <button class="option-btn" onclick="checkOption(this, false)">歯をぬいた</button>
+        </div>
+      </div>
+
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 受付の人は最後に何を言いましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">今日の朝に来てください</button>
+          <button class="option-btn" onclick="checkOption(this, false)">予約はできません</button>
+          <button class="option-btn" onclick="checkOption(this, true)">診察券と保険証を持って来てください</button>
+          <button class="option-btn" onclick="checkOption(this, false)">明日また電話してください</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">丁寧で自然な電話の会話です。受付とのやり取りなので、「〜んですが」「〜ていただきたいんですが」「〜でお願いします」などのやわらかい依頼表現が使われています。文は短めで、初心者でも追いやすいレベルです。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">歯科医院の受付と患者の会話として適切です。初対面の相手、医療機関のスタッフ、少し年上の相手に使いやすい丁寧さです。友だち同士の会話では少しかたいですが、電話予約では自然です。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">「〜んですが」は、直接的すぎない前置きで、やわらかく用件を伝える表現です。「では、その時間でお願いします」は、提案された時間を受け入れるときの自然で丁寧な言い方です。</p>
+      </div>
+    </div>
+  </section>
+    
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
