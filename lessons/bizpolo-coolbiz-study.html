@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asking About Summer Office Dress Code - Japanese Study File</title>
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #667085;
+      --accent: #0f766e;
+      --accent-soft: #dff6f2;
+      --border: #d6d9de;
+      --warn: #92400e;
+      --warn-soft: #fff3cf;
+      --good: #166534;
+      --good-soft: #e8f7ed;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04);
+    }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; font-size: 2rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    p { margin: 8px 0; }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 0.85rem;
+    }
+    .warning-pill {
+      display: inline-block;
+      background: var(--warn-soft);
+      color: var(--warn);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    .good-pill {
+      display: inline-block;
+      background: var(--good-soft);
+      color: var(--good);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+      font-weight: 700;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; }
+    ul, ol { padding-left: 1.3rem; }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      margin: 6px 0;
+      font-weight: 700;
+    }
+    button:focus { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+    details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .quiz-answer[hidden], .reveal[hidden] { display: none; }
+    .flashcard {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 10px 0;
+      background: #fcfcfd;
+    }
+    .shadow-line {
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      background: #f9fffd;
+      margin: 10px 0;
+    }
+    .contrast {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfcfd;
+    }
+    .jp { font-size: 1.05rem; font-weight: 700; }
+    .en { color: var(--muted); margin-top: 3px; }
+    .speaker { font-weight: 700; color: var(--accent); }
+    .dialogue td:first-child { width: 22%; }
+    .small { font-size: 0.92rem; }
+    .source-list a { color: var(--accent); }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.6rem; }
+      .contrast { grid-template-columns: 1fr; }
+      th, td { padding: 8px; }
+    }
+  </style>
+  <script>
+    function toggleById(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.hidden = !el.hidden;
+    }
+  </script>
+  <script>window.LESSON_AUDIO = "../voice_lessons/bizpolo-coolbiz.wav";</script>
+  <link rel="stylesheet" href="../lesson-common.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="pill">Japanese lesson review</div>
+      <h1>ビズポロとクールビズ</h1>
+      <p class="muted">Session date: 2026-07-22 JST. Level: beginner to lower-intermediate. Focus: workplace-safe Japanese for asking about summer office dress code, using soft checking phrases, and talking about きちんと感.</p>
+      <span class="tag">workplace small talk</span>
+      <span class="tag">Cool Biz</span>
+      <span class="tag">soft requests</span>
+      <span class="tag">current Japan context</span>
+    </section>
+
+    <section class="card">
+      <h2>Topic and Context</h2>
+      <p>Japan's 2026 summer has made office clothing a practical topic again. Business polo shirts, often called <strong>ビズポロ</strong>, are being discussed as a way to stay cooler while still keeping a professional look.</p>
+      <p>The important cultural point is that Japanese office dress is often talked about through ideas like <strong>身だしなみ</strong>, <strong>清潔感</strong>, <strong>きちんと感</strong>, and whether something might be <strong>失礼</strong> toward a client or visitor. The language goal is not just "Can I wear this?" It is "How do I ask without sounding too casual, blunt, or unaware of the situation?"</p>
+      <p class="muted small">Sources checked for the lesson context: ORICON NEWS on business polos and きちんと感, TV Asahi News on polos as heat countermeasures, and Japan's Environment Ministry 2026 Cool Biz notice.</p>
+      <ul class="source-list small">
+        <li><a href="https://www.oricon.co.jp/special/75813/">ORICON NEWS: ビジネスポロシャツ and office clothing norms</a></li>
+        <li><a href="https://news.tv-asahi.co.jp/news_economy/articles/900195033.html">TV Asahi News: 暑さ対策 and business polo shirts</a></li>
+        <li><a href="https://www.env.go.jp/press/press_04384.html">Environment Ministry: 令和8年度クールビズ</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Vocabulary</h2>
+      <table>
+        <thead>
+          <tr><th>Japanese</th><th>Meaning</th><th>Use it like this</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>クールビズ</td><td>Cool Biz / summer light office dress</td><td>今年もクールビズが始まりましたね。</td></tr>
+          <tr><td>ビズポロ</td><td>business polo shirt</td><td>最近、ビズポロを着ている人が増えましたね。</td></tr>
+          <tr><td>ポロシャツ</td><td>polo shirt</td><td>明日はポロシャツでも大丈夫ですか。</td></tr>
+          <tr><td>服装（ふくそう）</td><td>clothing / dress</td><td>明日の打ち合わせ、服装どうしますか。</td></tr>
+          <tr><td>身だしなみ</td><td>professional appearance / grooming</td><td>身だしなみは大事ですね。</td></tr>
+          <tr><td>きちんと感</td><td>a neat, proper impression</td><td>襟があると、きちんと感がありますね。</td></tr>
+          <tr><td>清潔感（せいけつかん）</td><td>clean, tidy impression</td><td>清潔感があれば大丈夫だと思います。</td></tr>
+          <tr><td>軽装（けいそう）</td><td>light clothing</td><td>軽装でも失礼になりませんか。</td></tr>
+          <tr><td>取引先（とりひきさき）</td><td>client / business partner</td><td>取引先によって違うと思います。</td></tr>
+          <tr><td>失礼にあたる</td><td>to be considered rude or inappropriate</td><td>この服装だと失礼にあたりますか。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Grammar and Patterns</h2>
+      <div class="flashcard">
+        <h3>1. 〜ても大丈夫ですか</h3>
+        <p class="jp">明日はポロシャツでも大丈夫ですか。</p>
+        <p class="en">Is it okay if I wear a polo shirt tomorrow?</p>
+        <p>Use this when you want a practical yes/no check. Add <strong>念のため確認したいんですが</strong> to make it softer and more workplace-safe.</p>
+      </div>
+      <div class="flashcard">
+        <h3>2. 〜でも失礼になりませんか</h3>
+        <p class="jp">明日の打ち合わせは、軽装でも失礼になりませんか。</p>
+        <p class="en">For tomorrow's meeting, would light clothing be inappropriate?</p>
+        <p>This sounds more considerate than only asking what you personally can wear.</p>
+      </div>
+      <div class="flashcard">
+        <h3>3. 〜によって違う</h3>
+        <p class="jp">取引先によって違うと思います。</p>
+        <p class="en">I think it depends on the client.</p>
+        <p>A very useful pattern when rules or expectations vary by workplace, shop, office, or person.</p>
+      </div>
+      <div class="flashcard">
+        <h3>4. 〜みたいですね</h3>
+        <p class="jp">最近、ビズポロを着ている人が増えているみたいですね。</p>
+        <p class="en">It seems more people are wearing business polos lately.</p>
+        <p>This is soft hearsay. It works well for workplace small talk because it does not sound too forceful.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Useful Phrases and Contrast Sets</h2>
+      <div class="contrast">
+        <div class="box">
+          <span class="warning-pill">too blunt</span>
+          <p class="jp">ポロシャツはいいですか。</p>
+          <p class="en">Is a polo shirt okay?</p>
+          <p class="small">Understandable, but a little abrupt for workplace checking.</p>
+        </div>
+        <div class="box">
+          <span class="good-pill">more natural</span>
+          <p class="jp">念のため確認したいんですが、明日はポロシャツでも大丈夫ですか。</p>
+          <p class="en">I'd like to check just in case: is a polo shirt okay tomorrow?</p>
+          <p class="small">The opening softens the question and makes it sound careful.</p>
+        </div>
+      </div>
+      <div class="contrast">
+        <div class="box">
+          <span class="warning-pill">too casual</span>
+          <p class="jp">Tシャツで行ってもいい？</p>
+          <p class="en">Can I go in a T-shirt?</p>
+        </div>
+        <div class="box">
+          <span class="good-pill">workplace-safe</span>
+          <p class="jp">明日の打ち合わせは、軽装でも失礼になりませんか。</p>
+          <p class="en">For tomorrow's meeting, would light clothing be inappropriate?</p>
+        </div>
+      </div>
+      <details>
+        <summary>More quick phrases</summary>
+        <ul>
+          <li><span class="jp">職場によって違いますよね。</span><br><span class="en">It depends on the workplace, doesn't it?</span></li>
+          <li><span class="jp">取引先に会うので、ジャケットを持って行ったほうがよさそうですね。</span><br><span class="en">Since we're meeting a client, it seems better to bring a jacket.</span></li>
+          <li><span class="jp">襟があると、少しきちんと見えますね。</span><br><span class="en">With a collar, it looks a bit more proper.</span></li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Role-Play and Dialogue</h2>
+      <p class="muted">Scenario: You are checking with a coworker before a summer client meeting. The goal is to sound careful, natural, and not too stiff.</p>
+      <table class="dialogue">
+        <thead>
+          <tr><th>Speaker</th><th>Line</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="speaker">Coworker</span></td>
+            <td><span class="jp">最近、暑いですね。明日の打ち合わせ、服装どうしますか。</span><br><span class="en">It's been hot lately, huh? What are you doing about clothes for tomorrow's meeting?</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">You</span></td>
+            <td><span class="jp">念のため確認したいんですが、明日はポロシャツでも大丈夫ですか。</span><br><span class="en">I'd like to check just in case: is a polo shirt okay tomorrow?</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">Coworker</span></td>
+            <td><span class="jp">うちの会社は大丈夫だと思います。ただ、取引先によってはジャケットを持って行ったほうがよさそうですね。</span><br><span class="en">I think it's okay at our company. But depending on the client, it seems better to bring a jacket.</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">You</span></td>
+            <td><span class="jp">そうですね。念のため、ジャケットも持って行きます。</span><br><span class="en">That's true. I'll bring a jacket too, just in case.</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">Coworker</span></td>
+            <td><span class="jp">最近はビズポロを着ている人も増えましたよね。</span><br><span class="en">More people are wearing business polos lately, aren't they?</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">You</span></td>
+            <td><span class="jp">そうですね。襟があると、少しきちんと見える気がします。</span><br><span class="en">Yes. With a collar, I feel like it looks a bit more proper.</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">Coworker</span></td>
+            <td><span class="jp">Tシャツだと、まだ会社によっては難しいかもしれませんね。</span><br><span class="en">With T-shirts, it might still be difficult depending on the company.</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">You</span></td>
+            <td><span class="jp">職場によって違いますよね。明日は清潔感がある感じで行きます。</span><br><span class="en">It depends on the workplace, doesn't it? Tomorrow I'll go with something that gives a clean, tidy impression.</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">Coworker</span></td>
+            <td><span class="jp">それなら大丈夫だと思います。</span><br><span class="en">I think that should be fine.</span></td>
+          </tr>
+          <tr>
+            <td><span class="speaker">You</span></td>
+            <td><span class="jp">ありがとうございます。少し迷っていたので助かりました。</span><br><span class="en">Thank you. I was a little unsure, so that helps.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>My Answers and Corrections</h2>
+      <p>No learner attempt was submitted before this file was saved, so there are no personal corrections yet.</p>
+      <p>Recommended practice answer for the prompt:</p>
+      <div class="shadow-line">
+        <p class="jp">念のため確認したいんですが、明日はポロシャツでも大丈夫ですか。</p>
+        <p class="en">I'd like to check just in case: is a polo shirt okay tomorrow?</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mistake Review</h2>
+      <p>Watch for these likely issues when you practice this scenario:</p>
+      <ul>
+        <li><strong>Too direct:</strong> Instead of <span class="jp">ポロシャツはいいですか</span>, soften with <span class="jp">念のため確認したいんですが</span>.</li>
+        <li><strong>Register mismatch:</strong> <span class="jp">行ってもいい？</span> is casual. Use <span class="jp">〜ても大丈夫ですか</span> with coworkers or staff.</li>
+        <li><strong>Missing nuance:</strong> In office contexts, asking about <span class="jp">失礼になりませんか</span> sounds considerate because it includes the other person's perspective.</li>
+      </ul>
+      <span class="warning-pill">too_direct</span>
+      <span class="warning-pill">register_mismatch</span>
+      <span class="warning-pill">unnatural_phrasing</span>
+    </section>
+
+    <section class="card">
+      <h2>Shadowing Practice</h2>
+      <p class="muted">Read each line aloud once slowly, then once at natural speed.</p>
+      <div class="shadow-line">
+        <p class="jp">念のため確認したいんですが、明日はポロシャツでも大丈夫ですか。</p>
+        <p class="en">Soft checking phrase for workplace dress code.</p>
+      </div>
+      <div class="shadow-line">
+        <p class="jp">明日の打ち合わせは、軽装でも失礼になりませんか。</p>
+        <p class="en">More careful phrase for a client-facing situation.</p>
+      </div>
+      <div class="shadow-line">
+        <p class="jp">取引先によっては、ジャケットを持って行ったほうがよさそうですね。</p>
+        <p class="en">Natural planning phrase using "depending on the client."</p>
+      </div>
+      <div class="shadow-line">
+        <p class="jp">最近、ビズポロを着ている人が増えましたね。</p>
+        <p class="en">Workplace small-talk opener.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Flashcards and Quick Review</h2>
+      <div class="flashcard">
+        <p class="jp">きちんと感</p>
+        <button onclick="toggleById('fc1')">Reveal meaning</button>
+        <p id="fc1" class="reveal" hidden>A neat, proper impression. Useful for talking about whether clothes look workplace-appropriate.</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">念のため</p>
+        <button onclick="toggleById('fc2')">Reveal meaning</button>
+        <p id="fc2" class="reveal" hidden>Just in case. This makes checking questions softer and more careful.</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">取引先によって違う</p>
+        <button onclick="toggleById('fc3')">Reveal meaning</button>
+        <p id="fc3" class="reveal" hidden>It depends on the client or business partner. This is very useful when rules are not universal.</p>
+      </div>
+      <div class="flashcard">
+        <p class="jp">軽装でも失礼になりませんか。</p>
+        <button onclick="toggleById('fc4')">Reveal meaning</button>
+        <p id="fc4" class="reveal" hidden>Would light clothing be inappropriate? A careful, workplace-safe way to ask.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cultural Notes</h2>
+      <ul>
+        <li><strong>おしゃれ vs 身だしなみ:</strong> おしゃれ is personal style. 身だしなみ is about looking appropriate and respectful for the situation.</li>
+        <li><strong>きちんと感:</strong> This phrase often points to whether something gives a neat, proper impression, not whether it is formally correct by a written rule.</li>
+        <li><strong>Client context matters:</strong> Even if your own office allows lighter clothing, people may bring a jacket when meeting a 取引先.</li>
+        <li><strong>Checking is normal:</strong> <span class="jp">念のため確認したいんですが</span> sounds natural because Japanese workplace expectations often depend on situation, seniority, and who you are meeting.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Review Quiz</h2>
+      <ol>
+        <li>
+          How do you politely ask, "Is a polo shirt okay tomorrow?"
+          <br><button onclick="toggleById('q1')">Show answer</button>
+          <p id="q1" class="quiz-answer" hidden><span class="jp">念のため確認したいんですが、明日はポロシャツでも大丈夫ですか。</span></p>
+        </li>
+        <li>
+          What does <span class="jp">きちんと感</span> mean?
+          <br><button onclick="toggleById('q2')">Show answer</button>
+          <p id="q2" class="quiz-answer" hidden>A neat, proper impression. It is often used when discussing whether clothing looks appropriate.</p>
+        </li>
+        <li>
+          Make a soft observation using <span class="jp">〜みたいですね</span>.
+          <br><button onclick="toggleById('q3')">Show answer</button>
+          <p id="q3" class="quiz-answer" hidden><span class="jp">最近、ビズポロを着ている人が増えているみたいですね。</span></p>
+        </li>
+        <li>
+          How can you say "It depends on the client"?
+          <br><button onclick="toggleById('q4')">Show answer</button>
+          <p id="q4" class="quiz-answer" hidden><span class="jp">取引先によって違うと思います。</span></p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Homework</h2>
+      <ol>
+        <li>Write one sentence asking if a polo shirt is okay for tomorrow.</li>
+        <li>Write one sentence saying you will bring a jacket just in case.</li>
+        <li>Say the full role-play aloud once, playing both speakers.</li>
+      </ol>
+      <details>
+        <summary>Model homework answers</summary>
+        <p class="jp">念のため確認したいんですが、明日はポロシャツでも大丈夫ですか。</p>
+        <p class="jp">念のため、ジャケットも持って行きます。</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Next Focus</h2>
+      <p>Keep practicing soft workplace questions instead of blunt yes/no questions. Good phrases to recycle next time:</p>
+      <ul>
+        <li><span class="jp">念のため確認したいんですが</span></li>
+        <li><span class="jp">〜ても大丈夫ですか</span></li>
+        <li><span class="jp">〜でも失礼になりませんか</span></li>
+        <li><span class="jp">〜たほうがよさそうですね</span></li>
+      </ul>
+    </section>
+  
+    
+  <section class="card ai-reading-card">
+    <div class="pill">AI Reading Practice</div>
+    <h2>📖 Parallel Reading Challenge</h2>
+    <p class="muted">Read this alternative story to see today's vocabulary in a fresh context.</p>
+    <div class="ai-reading-text jp" style="font-size: 1.1rem; line-height: 1.8; margin: 15px 0;">
+      新入社員の山田さんは、初めての夏の会議で何を着ればいいか、少し心配でした。先輩に「今月から<ruby>軽装<rt>けいそう</rt></ruby>でいいんですか」と、やわらかく聞きました。先輩は「はい、<ruby>クールビズ<rt>クールビズ</rt></ruby>で大丈夫です。でも、<ruby>取引先<rt>とりひきさき</rt></ruby>に会う日は、<ruby>身だしなみ<rt>みだしなみ</rt></ruby>を少し意識すると、<ruby>きちんと感<rt>かん</rt></ruby>が出ますよ」と答えました。山田さんは、白い<ruby>ビズポロ<rt>ビズポロ</rt></ruby>なら失礼にあたらないか、もう一度確認してみようと思いました。
+    </div>
+    <button class="reveal-btn" onclick="toggleById('ai-reading-translation-box')" style="background: var(--accent-soft); color: var(--accent); font-size: 0.85rem;">Toggle Translation</button>
+    <div id="ai-reading-translation-box" class="reveal" hidden style="margin-top: 10px; padding: 10px; border-left: 3px solid var(--accent); background: var(--soft);">
+      <p class="en" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Yamada, a new employee, was a little worried about what to wear to his first summer meeting. He gently asked a senior coworker, “Is light clothing okay starting this month?” The senior replied, “Yes, Cool Biz is fine. But on days when you meet clients, if you pay a little attention to your appearance, it gives a neat impression.” Yamada thought he would ask once more whether a white business polo shirt would be considered rude or inappropriate.</p>
+    </div>
+    <div class="ai-reading-questions" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+      <h3>理解度チェック (Comprehension Check)</h3>
+      
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q1: 山田さんは、先輩に何を聞きましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">昼ごはんは何ですか。</button>
+          <button class="option-btn" onclick="checkOption(this, true)">今月から軽装でいいか。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">旅行はいつですか。</button>
+          <button class="option-btn" onclick="checkOption(this, false)">会社の電話番号は何ですか。</button>
+        </div>
+      </div>
+
+      <div class="question-block" style="margin-bottom: 15px;">
+        <p><strong>Q2: 取引先に会う日は、何を少し意識するといいと言っていましたか。</strong></p>
+        <div class="options-grid">
+          
+          <button class="option-btn" onclick="checkOption(this, false)">服装を派手にすること</button>
+          <button class="option-btn" onclick="checkOption(this, false)">あまり話さないこと</button>
+          <button class="option-btn" onclick="checkOption(this, true)">身だしなみを意識して、きちんと感を出すこと</button>
+          <button class="option-btn" onclick="checkOption(this, false)">Tシャツだけで行くこと</button>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+    
+  <section class="card ai-pragmatics-card">
+    <div class="pill">AI Social Insights</div>
+    <h2>👥 Formality & Social Register Breakdown</h2>
+    <p class="muted">Understanding the conversational context of this lesson.</p>
+    <div style="display: grid; gap: 15px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 15px;">
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Register & Tone:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">全体はていねいで、職場で使いやすいやわらかい敬語です。『〜んですか』『〜てもいいですか』『〜と、〜が出ますよ』のような、相手に強く言わずに確認する表現が中心です。初心者でも使いやすい、やさしいビジネス会話のトーンです。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Relationship Dynamics:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">新入社員と先輩、同僚どうし、または社内で服装ルールを確認するときに適しています。上司や取引先にも使えますが、直接的すぎない聞き方が大切です。目上の人には、さらに『でしょうか』『よろしいでしょうか』などを加えるとより丁寧になります。</p>
+      </div>
+      <div class="note" style="margin: 0; padding: 12px; border-left: 4px solid var(--accent); background: var(--soft);">
+        <strong>Key Nuance Highlight:</strong>
+        <p style="margin: 5px 0 0; font-size: 0.9rem;">『きちんと感』は、ただきれいというより、整っていて仕事向きに見える印象です。『失礼にあたる』は、相手や場に対して不適切・失礼だと判断されるときに使います。どちらも職場で服装を考えるときによく使う、やわらかい注意表現です。</p>
+      </div>
+    </div>
+  </section>
+    
+  </main>
+  <script src="../lesson-common.js"></script>
+</body>
+</html>
